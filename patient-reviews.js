@@ -888,6 +888,11 @@ function getGenderFromName(name) {
     return femaleNames.includes(firstName) ? 'female' : 'male';
 }
 
+function getPatientAvatarPath(name) {
+    const filename = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '.svg';
+    return `images/patients/${filename}`;
+}
+
 // Reviews functionality
 let currentlyDisplayed = 6; // Reduced initial load for faster performance
 let filteredReviews = [...patientReviews];
@@ -916,7 +921,8 @@ function renderReviews(reviews, append = false) {
         
         reviewCard.innerHTML = `
             <div class="review-header">
-                <div class="patient-avatar-enhanced" data-country="${review.country.toLowerCase()}" data-gender="${getGenderFromName(review.name)}">${getInitials(review.name)}</div>
+                <img src="${getPatientAvatarPath(review.name)}" alt="${review.name}" class="patient-avatar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="patient-avatar-enhanced" data-country="${review.country.toLowerCase()}" data-gender="${getGenderFromName(review.name)}" style="display:none;">${getInitials(review.name)}</div>
                 <div class="patient-info">
                     <h4>${review.name}</h4>
                     <div class="patient-location">${review.flag} ${review.city}, ${review.country}</div>
