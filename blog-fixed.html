@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="version" content="2.0-<?php echo time(); ?>">
     <title>Medical Tourism India Blog | Expert Guides for African & Asian Patients</title>
     <meta name="description" content="Expert medical tourism guides for African and Southeast Asian patients. Learn about cardiac surgery costs in India, best hospitals, visa requirements, and patient success stories. Save up to 80% on medical treatments.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -339,6 +343,21 @@
         .blog-read-more i {
             font-size: 0.9rem;
             transition: all 0.3s ease;
+        }
+
+        /* Hidden blog cards */
+        .blog-card-hidden {
+            display: none;
+        }
+
+        .blog-card-visible {
+            display: flex;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .blog-load-more {
@@ -750,6 +769,152 @@
                         <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+
+                <!-- Additional Blog Posts (Initially Hidden) -->
+                <article class="blog-card blog-card-hidden" data-category="treatments">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="blog-category">Heart Treatments</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                March 20, 2024
+                            </span>
+                            <span class="blog-read-time">
+                                <i class="fas fa-clock"></i>
+                                8 min read
+                            </span>
+                        </div>
+                        <h3>Heart Valve Replacement Surgery in India</h3>
+                        <p>Comprehensive guide to heart valve replacement surgery in India. Learn about procedures, top hospitals, expert surgeons, costs, and recovery process for international patients.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Heart Surgery</span>
+                            <span class="tag">India</span>
+                            <span class="tag">Valve Replacement</span>
+                        </div>
+                        <a href="blog-heart-valve-replacement-india.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card blog-card-hidden" data-category="treatments">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="blog-category">Heart Treatments</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                March 18, 2024
+                            </span>
+                            <span class="blog-read-time">
+                                <i class="fas fa-clock"></i>
+                                10 min read
+                            </span>
+                        </div>
+                        <h3>Coronary Bypass Surgery in India</h3>
+                        <p>Complete guide to coronary bypass surgery in India. Learn about CABG procedures, top cardiac hospitals, expert surgeons, costs, and recovery for international patients.</p>
+                        <div class="blog-tags">
+                            <span class="tag">CABG</span>
+                            <span class="tag">India</span>
+                            <span class="tag">Bypass Surgery</span>
+                        </div>
+                        <a href="blog-bypass-surgery-india.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card blog-card-hidden" data-category="treatments">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <div class="blog-category">Heart Treatments</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                March 16, 2024
+                            </span>
+                            <span class="blog-read-time">
+                                <i class="fas fa-clock"></i>
+                                7 min read
+                            </span>
+                        </div>
+                        <h3>Angioplasty and Stent Placement in India</h3>
+                        <p>Complete guide to angioplasty and stent procedures in India. Learn about coronary interventions, advanced stent technology, costs, and outcomes for international patients.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Angioplasty</span>
+                            <span class="tag">Stent</span>
+                            <span class="tag">Minimally Invasive</span>
+                        </div>
+                        <a href="blog-angioplasty-stent-india.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card blog-card-hidden" data-category="treatments">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="blog-category">Heart Treatments</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                March 14, 2024
+                            </span>
+                            <span class="blog-read-time">
+                                <i class="fas fa-clock"></i>
+                                12 min read
+                            </span>
+                        </div>
+                        <h3>Heart Transplant Surgery in India</h3>
+                        <p>Comprehensive guide to heart transplant surgery in India. Learn about transplant centers, selection criteria, donor matching, costs, and outcomes for international patients.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Heart Transplant</span>
+                            <span class="tag">Advanced Surgery</span>
+                            <span class="tag">India</span>
+                        </div>
+                        <a href="blog-heart-transplant-india.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card blog-card-hidden" data-category="treatments">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="blog-category">Orthopedic Treatments</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                March 22, 2024
+                            </span>
+                            <span class="blog-read-time">
+                                <i class="fas fa-clock"></i>
+                                9 min read
+                            </span>
+                        </div>
+                        <h3>Knee Replacement Surgery in India</h3>
+                        <p>Complete guide to knee replacement surgery in India. Learn about total and partial knee replacement, robotic surgery, top hospitals, costs, and recovery for international patients.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Knee Replacement</span>
+                            <span class="tag">Robotic Surgery</span>
+                            <span class="tag">Orthopedic</span>
+                        </div>
+                        <a href="blog-knee-replacement-india.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
             </div>
             
             <div class="blog-load-more">
@@ -820,6 +985,56 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
+    
+    <script>
+        // Load More Blog Articles Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing Load More functionality...');
+            
+            const loadMoreBtn = document.querySelector('.blog-load-more .btn-outline');
+            const hiddenCards = document.querySelectorAll('.blog-card-hidden');
+            
+            console.log('Load More Button:', loadMoreBtn);
+            console.log('Hidden Cards Count:', hiddenCards.length);
+            
+            if (loadMoreBtn && hiddenCards.length > 0) {
+                loadMoreBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Load More button clicked!');
+                    
+                    // Change button text to show loading
+                    loadMoreBtn.textContent = 'Loading...';
+                    loadMoreBtn.disabled = true;
+                    
+                    // Show all hidden blog cards
+                    hiddenCards.forEach(function(card, index) {
+                        setTimeout(function() {
+                            console.log('Showing card', index + 1);
+                            card.classList.remove('blog-card-hidden');
+                            card.classList.add('blog-card-visible');
+                            card.style.display = 'flex';
+                        }, index * 150); // Slightly longer delay for better effect
+                    });
+                    
+                    // Hide the Load More button after showing all cards
+                    setTimeout(function() {
+                        loadMoreBtn.style.display = 'none';
+                        console.log('All cards loaded, hiding Load More button');
+                    }, hiddenCards.length * 150 + 500);
+                });
+            } else {
+                console.log('Load More functionality not initialized - missing elements');
+            }
+        });
+        
+        // Alternative method if DOMContentLoaded doesn't work
+        window.addEventListener('load', function() {
+            console.log('Window loaded, checking Load More functionality...');
+            const loadMoreBtn = document.querySelector('.blog-load-more .btn-outline');
+            const hiddenCards = document.querySelectorAll('.blog-card-hidden');
+            console.log('Window load - Button:', loadMoreBtn, 'Hidden cards:', hiddenCards.length);
+        });
+    </script>
 </body>
 </html>
