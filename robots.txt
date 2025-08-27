@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Important pages for medical tourism
+Allow: /index.html
+Allow: /blog.html
+Allow: /sitemap.xml
+
+# Disallow backend and sensitive files
+Disallow: /server.js
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /google-service-account.json
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://meditravel-india.com/sitemap.xml
+
+# Crawl delay for respect
+Crawl-delay: 1

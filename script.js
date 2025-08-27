@@ -319,6 +319,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Blog filtering functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const loadMoreBtn = document.querySelector('.blog-load-more button');
+
+    // Blog category filtering
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter blog cards
+            blogCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    card.classList.remove('hidden');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.add('hidden');
+                }
+            });
+            
+            // Add animation
+            setTimeout(() => {
+                blogCards.forEach(card => {
+                    if (!card.classList.contains('hidden')) {
+                        card.style.animation = 'fadeInUp 0.6s ease-out';
+                    }
+                });
+            }, 100);
+        });
+    });
+
+    // Load more functionality (simulated)
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            const hiddenCards = document.querySelectorAll('.blog-card.hidden');
+            const cardsToShow = Array.from(hiddenCards).slice(0, 3);
+            
+            cardsToShow.forEach(card => {
+                card.classList.remove('hidden');
+                card.style.display = 'flex';
+                card.style.animation = 'fadeInUp 0.6s ease-out';
+            });
+            
+            // If no more hidden cards, hide load more button
+            if (hiddenCards.length <= 3) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+    }
+
+    // Blog card hover effects
+    blogCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+});
+
 // Enhanced form interaction
 document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(field => {
     field.addEventListener('focus', function() {
