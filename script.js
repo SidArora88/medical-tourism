@@ -70,21 +70,57 @@ if (consultationForm) {
             return;
         }
         
-        // Simulate form submission
+        // Submit form to backend
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
-            showMessage('Thank you! We\'ll contact you within 24 hours with a personalized treatment plan.', 'success');
-            this.reset();
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        }, 1500);
+        // Send data to backend API
+        submitFormData(data)
+            .then(response => {
+                showMessage(response.message, 'success');
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Form submission error:', error);
+                showMessage(error.message || 'An error occurred. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
     });
+}
+
+// API Configuration
+const API_BASE_URL = 'http://localhost:3000';
+
+// Form submission function
+async function submitFormData(formData) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/submit-consultation`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || `HTTP error! status: ${response.status}`);
+        }
+
+        return result;
+    } catch (error) {
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+            throw new Error('Unable to connect to server. Please check if the backend is running.');
+        }
+        throw error;
+    }
 }
 
 // Utility functions

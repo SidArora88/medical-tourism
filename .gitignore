@@ -11,6 +11,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Google Service Account Key
+google-service-account.json
+
 # IDE and Editor files
 .vscode/
 .idea/
