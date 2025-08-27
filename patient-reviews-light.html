@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Reviews & Success Stories | Medical Tourism India | MediTravel</title>
+    <meta name="description" content="Read authentic patient reviews and success stories from Middle East and African patients who chose medical treatment in India. Real experiences, verified testimonials, and treatment outcomes.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: #ffffff;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h1 {
+            color: #2563eb;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .nav-logo h1 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-secondary, .btn-primary {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        .btn-secondary {
+            background: #f8fafc;
+            color: #1e293b;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .reviews-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .reviews-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+
+        .reviews-hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .reviews-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .reviews-hero-stats .stat {
+            text-align: center;
+        }
+
+        .reviews-hero-stats .stat h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviews-hero-stats .stat p {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .reviews-main {
+            padding: 60px 0;
+            background: #ffffff;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .patient-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .patient-info h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .patient-location {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .treatment-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .rating-text {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .review-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .review-text {
+            color: #374151;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-details {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #22c55e;
+        }
+
+        .review-details h5 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+
+        .detail-label {
+            color: #64748b;
+        }
+
+        .detail-value {
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .hospital-name {
+            font-weight: 500;
+            color: #2563eb;
+        }
+
+        .review-date {
+            color: #64748b;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn-outline {
+            padding: 16px 32px;
+            background: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-actions {
+                display: none;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .reviews-hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .reviews-hero-content h1 {
+                font-size: 2rem;
+            }
+            .review-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">MediTravel</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="patient-reviews-light.html" class="nav-link active">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Reviews Hero Section -->
+    <section class="reviews-hero">
+        <div class="container">
+            <div class="reviews-hero-content">
+                <h1>Patient Reviews & Success Stories</h1>
+                <p>Read authentic experiences from over 1,000+ patients from Middle East and Africa who chose medical treatment in India.</p>
+                <div class="reviews-hero-stats">
+                    <div class="stat">
+                        <h3>1,200+</h3>
+                        <p>Patient Reviews</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.8/5</h3>
+                        <p>Average Rating</p>
+                    </div>
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Would Recommend</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Main Content -->
+    <section class="reviews-main">
+        <div class="container">
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="patient-avatar">AH</div>
+                        <div class="patient-info">
+                            <h4>Ahmed Hassan</h4>
+                            <div class="patient-location">🇪🇬 Cairo, Egypt</div>
+                            <div class="treatment-badge">Heart Bypass Surgery</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">5/5 stars</span>
+                    </div>
+                    
+                    <div class="review-content">
+                        <p class="review-text">"I came to India from Cairo for my triple bypass surgery after being quoted $120,000 in Germany. The entire experience at Fortis was exceptional. Dr. Trehan and his team were incredibly professional, and the hospital facilities were world-class. I saved over $75,000 and received better care than I could have imagined."</p>
+                        
+                        <div class="review-details">
+                            <h5>Treatment Details</h5>
+                            <div class="detail-item">
+                                <span class="detail-label">Hospital:</span>
+                                <span class="detail-value">Fortis Escorts Heart Institute, Delhi</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Doctor:</span>
+                                <span class="detail-value">Dr. Naresh Trehan</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cost Saved:</span>
+                                <span class="detail-value">$75,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-footer">
+                        <span class="hospital-name">Fortis Escorts</span>
+                        <span class="review-date">March 2024</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="patient-avatar">FA</div>
+                        <div class="patient-info">
+                            <h4>Fatima Al-Zahra</h4>
+                            <div class="patient-location">🇦🇪 Dubai, UAE</div>
+                            <div class="treatment-badge">Knee Replacement</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">5/5 stars</span>
+                    </div>
+                    
+                    <div class="review-content">
+                        <p class="review-text">"After years of knee pain, I decided to get my knee replacement done in India. Apollo Hospital in Chennai exceeded all my expectations. The robotic surgery was painless, and I was walking within 2 days. The cost was 70% less than what I was quoted in Dubai."</p>
+                        
+                        <div class="review-details">
+                            <h5>Treatment Details</h5>
+                            <div class="detail-item">
+                                <span class="detail-label">Hospital:</span>
+                                <span class="detail-value">Apollo Hospital, Chennai</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Doctor:</span>
+                                <span class="detail-value">Dr. Raju Easwaran</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cost Saved:</span>
+                                <span class="detail-value">$45,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-footer">
+                        <span class="hospital-name">Apollo Hospital</span>
+                        <span class="review-date">February 2024</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="patient-avatar">MO</div>
+                        <div class="patient-info">
+                            <h4>Mohammed Osei</h4>
+                            <div class="patient-location">🇬🇭 Accra, Ghana</div>
+                            <div class="treatment-badge">Liver Transplant</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">5/5 stars</span>
+                    </div>
+                    
+                    <div class="review-content">
+                        <p class="review-text">"I was diagnosed with end-stage liver disease and needed an urgent transplant. The doctors in Ghana said it would take years. MediTravel arranged everything within 3 weeks. Dr. Rela at Global Hospital performed a living donor transplant with my brother as donor. They literally saved my life."</p>
+                        
+                        <div class="review-details">
+                            <h5>Treatment Details</h5>
+                            <div class="detail-item">
+                                <span class="detail-label">Hospital:</span>
+                                <span class="detail-value">Global Hospital, Chennai</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Doctor:</span>
+                                <span class="detail-value">Dr. Mohamed Rela</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cost Saved:</span>
+                                <span class="detail-value">$180,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-footer">
+                        <span class="hospital-name">Global Hospital</span>
+                        <span class="review-date">January 2024</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="patient-avatar">ZM</div>
+                        <div class="patient-info">
+                            <h4>Zara Mbeki</h4>
+                            <div class="patient-location">🇿🇦 Johannesburg, South Africa</div>
+                            <div class="treatment-badge">Breast Cancer Surgery</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">5/5 stars</span>
+                    </div>
+                    
+                    <div class="review-content">
+                        <p class="review-text">"When I was diagnosed with breast cancer, I was devastated. The treatment costs in South Africa were overwhelming. I found MediTravel online and decided to come to India. Dr. Mistry at Tata Memorial Hospital is simply the best. I'm now cancer-free and saved a fortune."</p>
+                        
+                        <div class="review-details">
+                            <h5>Treatment Details</h5>
+                            <div class="detail-item">
+                                <span class="detail-label">Hospital:</span>
+                                <span class="detail-value">Tata Memorial Hospital, Mumbai</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Doctor:</span>
+                                <span class="detail-value">Dr. Rajesh Mistry</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cost Saved:</span>
+                                <span class="detail-value">$85,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-footer">
+                        <span class="hospital-name">Tata Memorial</span>
+                        <span class="review-date">December 2023</span>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="patient-avatar">OR</div>
+                        <div class="patient-info">
+                            <h4>Omar Al-Rashid</h4>
+                            <div class="patient-location">🇸🇦 Riyadh, Saudi Arabia</div>
+                            <div class="treatment-badge">Spinal Fusion Surgery</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">5/5 stars</span>
+                    </div>
+                    
+                    <div class="review-content">
+                        <p class="review-text">"I suffered from severe back pain for 5 years due to spinal stenosis. I came to Medanta Hospital in Gurgaon, and Dr. Jayaswal performed minimally invasive spinal fusion. The surgery was a complete success. I'm now pain-free and back to my normal activities."</p>
+                        
+                        <div class="review-details">
+                            <h5>Treatment Details</h5>
+                            <div class="detail-item">
+                                <span class="detail-label">Hospital:</span>
+                                <span class="detail-value">Medanta Hospital, Gurgaon</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Doctor:</span>
+                                <span class="detail-value">Dr. Arvind Jayaswal</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cost Saved:</span>
+                                <span class="detail-value">$95,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-footer">
+                        <span class="hospital-name">Medanta Hospital</span>
+                        <span class="review-date">November 2023</span>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="patient-avatar">GO</div>
+                        <div class="patient-info">
+                            <h4>Grace Okafor</h4>
+                            <div class="patient-location">🇳🇬 Lagos, Nigeria</div>
+                            <div class="treatment-badge">Dental Implants</div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">5/5 stars</span>
+                    </div>
+                    
+                    <div class="review-content">
+                        <p class="review-text">"I needed 8 dental implants and was quoted $25,000 in Nigeria. Through MediTravel, I got the same treatment at Apollo White Dental in Mumbai for just $8,000. Dr. Kothari used the latest Swiss implants, and the results are amazing. My smile looks natural and beautiful."</p>
+                        
+                        <div class="review-details">
+                            <h5>Treatment Details</h5>
+                            <div class="detail-item">
+                                <span class="detail-label">Hospital:</span>
+                                <span class="detail-value">Apollo White Dental, Mumbai</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Doctor:</span>
+                                <span class="detail-value">Dr. Kamlesh Kothari</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Cost Saved:</span>
+                                <span class="detail-value">$15,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-footer">
+                        <span class="hospital-name">Apollo White Dental</span>
+                        <span class="review-date">October 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <a href="patient-reviews.html" class="btn-outline">View All 50+ Reviews</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

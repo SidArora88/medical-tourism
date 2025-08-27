@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Patient Reviews & Success Stories | Medical Tourism India | MediTravel</title>
+    <meta name="description" content="Read authentic patient reviews and success stories from Middle East and African patients who chose medical treatment in India. Real experiences, verified testimonials, and treatment outcomes.">
+    
+    <!-- Schema Markup for Review Section -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Patient Reviews & Success Stories",
+        "description": "Authentic patient reviews and success stories from Middle East and African patients who chose medical treatment in India.",
+        "url": "https://meditravel-india.com/patient-reviews.html",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Medical Tourism Patient Reviews",
+            "description": "Collection of verified patient reviews for medical treatments in India",
+            "numberOfItems": 51,
+            "itemListElement": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Ahmed Hassan"
+                    },
+                    "datePublished": "2024-03-15",
+                    "reviewBody": "I came to India from Cairo for my triple bypass surgery after being quoted $120,000 in Germany. The entire experience at Fortis was exceptional.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": 5,
+                        "bestRating": 5
+                    },
+                    "itemReviewed": {
+                        "@type": "MedicalBusiness",
+                        "name": "Fortis Escorts Heart Institute",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Delhi",
+                            "addressCountry": "India"
+                        }
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 4.8,
+            "reviewCount": 51,
+            "bestRating": 5,
+            "worstRating": 4
+        }
+    }
+    </script>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Patient Reviews & Success Stories | Medical Tourism India">
+    <meta property="og:description" content="Read authentic patient reviews and success stories from Middle East and African patients who chose medical treatment in India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meditravel-india.com/patient-reviews.html">
+    <meta property="og:image" content="https://meditravel-india.com/images/patient-reviews-cover.jpg">
+    <meta property="og:site_name" content="MediTravel">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patient Reviews & Success Stories | Medical Tourism India">
+    <meta name="twitter:description" content="Authentic patient reviews from Middle East and African patients who chose medical treatment in India.">
+    <meta name="twitter:image" content="https://meditravel-india.com/images/patient-reviews-cover.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h1 {
+            color: #2563eb;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .nav-logo h1 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-secondary, .btn-primary {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        .btn-secondary {
+            background: #f8fafc;
+            color: #1e293b;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        /* Reviews Hero Section */
+        .reviews-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .reviews-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+
+        .reviews-hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .reviews-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .reviews-hero-stats .stat {
+            text-align: center;
+        }
+
+        .reviews-hero-stats .stat h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviews-hero-stats .stat p {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        /* Filter Section */
+        .reviews-filter {
+            padding: 40px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            color: #64748b;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 12px 16px 12px 40px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            width: 300px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        /* Reviews Grid */
+        .reviews-main {
+            padding: 60px 0;
+            background: #ffffff;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .patient-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+            border: 3px solid #e2e8f0;
+        }
+
+        .patient-info h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .patient-location {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .treatment-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .rating-text {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .review-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .review-text {
+            color: #374151;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-details {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #22c55e;
+        }
+
+        .review-details h5 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+
+        .detail-label {
+            color: #64748b;
+        }
+
+        .detail-value {
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .hospital-name {
+            font-weight: 500;
+            color: #2563eb;
+        }
+
+        .review-date {
+            color: #64748b;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn-outline {
+            padding: 16px 32px;
+            background: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-actions {
+                display: none;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .reviews-hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box input {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .reviews-hero-content h1 {
+                font-size: 2rem;
+            }
+            .review-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Hidden reviews for Load More functionality */
+        .review-card-hidden {
+            display: none;
+        }
+
+        .review-card-visible {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Loading state */
+        .loading-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-state p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">MediTravel</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="patient-reviews-light.html" class="nav-link active">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Reviews Hero Section -->
+    <section class="reviews-hero">
+        <div class="container">
+            <div class="reviews-hero-content">
+                <h1>All Patient Reviews & Success Stories</h1>
+                <p>Browse through 50+ authentic experiences from patients across Middle East and Africa who chose medical treatment in India. Filter by treatment type or search by location.</p>
+                <div class="reviews-hero-stats">
+                    <div class="stat">
+                        <h3>1,200+</h3>
+                        <p>Patient Reviews</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.8/5</h3>
+                        <p>Average Rating</p>
+                    </div>
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Would Recommend</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="reviews-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Reviews</button>
+                    <button class="filter-btn" data-category="cardiac">Heart Surgery</button>
+                    <button class="filter-btn" data-category="orthopedic">Orthopedic</button>
+                    <button class="filter-btn" data-category="cancer">Cancer Treatment</button>
+                    <button class="filter-btn" data-category="dental">Dental</button>
+                    <button class="filter-btn" data-category="cosmetic">Cosmetic</button>
+                    <button class="filter-btn" data-category="neurological">Neurology</button>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search by country, treatment, or hospital..." id="reviewSearch">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Main Content -->
+    <section class="reviews-main">
+        <div class="container">
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Loading state -->
+                <div class="loading-state" id="loadingState">
+                    <div class="loading-spinner"></div>
+                    <p>Loading patient reviews...</p>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn-outline" id="loadMoreReviews">Load More Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediTravel</h3>
+                    <p>Your trusted partner for safe, affordable, and high-quality medical care worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Medical Consultation</a></li>
+                        <li><a href="index.html#services">Treatment Planning</a></li>
+                        <li><a href="index.html#services">Travel Coordination</a></li>
+                        <li><a href="index.html#services">Post-Care Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Destinations</h4>
+                    <ul>
+                        <li><a href="index.html#destinations">India</a></li>
+                        <li><a href="index.html#destinations">Turkey</a></li>
+                        <li><a href="index.html#destinations">Thailand</a></li>
+                        <li><a href="index.html#destinations">UAE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="blog-fixed.html">Blog</a></li>
+                        <li><a href="patient-reviews-light.html">Patient Reviews</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="patient-reviews.js"></script>
+</body>
+</html>
