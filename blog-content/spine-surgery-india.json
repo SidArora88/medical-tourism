@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Spine Surgery in India: Advanced Treatment for Back Pain Relief",
+    "description": "Comprehensive guide to spine surgery in India. Learn about minimally invasive procedures, top neurosurgeons, costs, and recovery for international patients seeking back pain relief.",
+    "category": "Orthopedic Treatments",
+    "subcategory": "treatments",
+    "date": "March 26, 2024",
+    "readTime": "9 min read",
+    "author": "Dr. Sarah Mitchell",
+    "tags": ["Spine Surgery", "Back Pain", "India", "Neurosurgery", "Minimally Invasive"],
+    "heroIcon": "fas fa-spine",
+    "fileName": "blog-spine-surgery-india.html"
+  },
+  "content": {
+    "excerpt": "Advanced spine surgery in India offers world-class treatment for back pain, herniated discs, and spinal deformities. Learn about minimally invasive procedures, expert neurosurgeons, and significant cost savings for international patients.",
+    "sections": [
+      {
+        "heading": "Understanding Spine Surgery",
+        "content": "Spine surgery in India has become a global destination for patients seeking advanced treatment for back pain, herniated discs, spinal stenosis, and complex spinal deformities. With state-of-the-art technology and world-renowned neurosurgeons, India offers comprehensive spine care at a fraction of international costs."
+      },
+      {
+        "heading": "Types of Spine Surgery Available",
+        "content": "India's leading spine centers offer a full range of surgical procedures tailored to each patient's specific condition:",
+        "subsections": [
+          {
+            "subheading": "Minimally Invasive Spine Surgery",
+            "points": [
+              "Smaller incisions and faster recovery",
+              "Reduced muscle damage and scarring",
+              "Lower risk of complications",
+              "Same-day or overnight hospital stay"
+            ]
+          },
+          {
+            "subheading": "Complex Spinal Fusion",
+            "points": [
+              "Treatment for severe spinal instability",
+              "Advanced instrumentation techniques",
+              "Computer-guided navigation systems",
+              "Excellent long-term outcomes"
+            ]
+          },
+          {
+            "subheading": "Disc Replacement Surgery",
+            "points": [
+              "Preserves natural spine movement",
+              "Alternative to spinal fusion",
+              "Artificial disc implants",
+              "Faster return to activities"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Leading Spine Surgery Centers",
+        "content": "India is home to world-class spine surgery centers with internationally trained neurosurgeons:",
+        "hospitals": [
+          {
+            "name": "All India Institute of Medical Sciences (AIIMS), Delhi",
+            "specialty": "Premier government hospital with advanced neurosurgery department",
+            "features": ["Complex spinal deformity correction", "Pediatric spine surgery", "Research excellence"]
+          },
+          {
+            "name": "Apollo Hospitals",
+            "specialty": "Largest network of spine centers across India",
+            "features": ["Minimally invasive techniques", "Robotic spine surgery", "International patient services"]
+          },
+          {
+            "name": "Fortis Healthcare",
+            "specialty": "Advanced spine surgery with cutting-edge technology",
+            "features": ["Computer navigation systems", "Endoscopic procedures", "Comprehensive rehabilitation"]
+          },
+          {
+            "name": "Medanta - The Medicity",
+            "specialty": "State-of-the-art spine institute with multidisciplinary approach",
+            "features": ["Complex revision surgeries", "Spinal cord tumor removal", "Advanced imaging"]
+          }
+        ]
+      },
+      {
+        "heading": "Cost Comparison",
+        "content": "Spine surgery costs in India are significantly lower than Western countries while maintaining the same quality standards:",
+        "costTable": {
+          "India": "$3,000 - $12,000",
+          "USA": "$50,000 - $150,000",
+          "UK": "$25,000 - $80,000",
+          "Germany": "$20,000 - $70,000",
+          "Australia": "$30,000 - $90,000"
+        }
+      },
+      {
+        "heading": "Common Conditions Treated",
+        "content": "Indian spine surgeons successfully treat a wide range of spinal conditions:",
+        "subsections": [
+          {
+            "subheading": "Degenerative Conditions",
+            "points": [
+              "Herniated discs and bulging discs",
+              "Spinal stenosis and arthritis",
+              "Degenerative disc disease",
+              "Spondylolisthesis"
+            ]
+          },
+          {
+            "subheading": "Spinal Deformities",
+            "points": [
+              "Scoliosis correction surgery",
+              "Kyphosis and lordosis",
+              "Congenital spinal abnormalities",
+              "Adult spinal deformity"
+            ]
+          },
+          {
+            "subheading": "Trauma and Tumors",
+            "points": [
+              "Spinal fractures and injuries",
+              "Spinal cord tumors",
+              "Metastatic spine disease",
+              "Infection management"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Recovery and Rehabilitation",
+        "content": "Comprehensive recovery programs ensure optimal outcomes for spine surgery patients. Most patients experience significant pain relief and improved mobility within weeks of surgery. The recovery timeline varies based on the complexity of the procedure and individual factors."
+      },
+      {
+        "heading": "Why Choose India for Spine Surgery",
+        "content": "India offers unique advantages for international patients seeking spine surgery: world-class expertise, advanced technology, comprehensive care packages, shorter waiting times, and English-speaking medical staff. The combination of quality care and affordability makes India the preferred destination for spine surgery worldwide."
+      }
+    ],
+    "stats": [
+      {
+        "number": "95%",
+        "description": "Success rate for spine surgery"
+      },
+      {
+        "number": "50K+",
+        "description": "Spine surgeries performed annually"
+      },
+      {
+        "number": "80%",
+        "description": "Cost savings vs Western countries"
+      },
+      {
+        "number": "48hrs",
+        "description": "Average hospital stay for minimally invasive procedures"
+      }
+    ]
+  }
+}

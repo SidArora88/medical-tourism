@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "REPLACE: Your Blog Title Here (Keep it under 60 characters for SEO)",
+    "description": "REPLACE: Brief description of your blog post for search engines (150-160 characters). This appears in Google search results.",
+    "category": "CHOOSE ONE: Heart Treatments | Orthopedic Treatments | Oncology Treatments | Dental Treatments | Cosmetic Treatments",
+    "subcategory": "treatments",
+    "date": "REPLACE: March 27, 2024 (Use current date)",
+    "readTime": "REPLACE: 8 min read (Estimate based on content length)",
+    "author": "REPLACE: Your Name",
+    "tags": ["REPLACE", "With", "Relevant", "Keywords", "Max 5 tags"],
+    "heroIcon": "CHOOSE ONE: fas fa-heart | fas fa-bone | fas fa-user-md | fas fa-tooth | fas fa-cut | fas fa-procedures",
+    "fileName": "REPLACE: blog-your-topic-india.html (Use lowercase, hyphens, no spaces)"
+  },
+  "content": {
+    "excerpt": "REPLACE: Write a compelling 2-3 sentence summary of your blog post. This appears on the blog listing page and should make readers want to click.",
+    "sections": [
+      {
+        "heading": "REPLACE: Introduction Section Title",
+        "content": "REPLACE: Write your opening paragraph here. Introduce the topic, explain why it's important, and what readers will learn. Make it engaging and informative."
+      },
+      {
+        "heading": "REPLACE: Main Topic Section",
+        "content": "REPLACE: Detailed content about your main topic. Explain procedures, benefits, or important information.",
+        "subsections": [
+          {
+            "subheading": "REPLACE: Subtopic 1",
+            "points": [
+              "REPLACE: Key point 1",
+              "REPLACE: Key point 2", 
+              "REPLACE: Key point 3",
+              "REPLACE: Add more points as needed"
+            ]
+          },
+          {
+            "subheading": "REPLACE: Subtopic 2",
+            "points": [
+              "REPLACE: Another key point",
+              "REPLACE: Another benefit or feature",
+              "REPLACE: Important information",
+              "DELETE THIS LINE if you don't need it"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Top Hospitals and Centers in India",
+        "content": "REPLACE: Introduction to leading hospitals for this treatment in India:",
+        "hospitals": [
+          {
+            "name": "REPLACE: Hospital Name 1",
+            "specialty": "REPLACE: What they specialize in",
+            "features": [
+              "REPLACE: Key feature 1",
+              "REPLACE: Key feature 2", 
+              "REPLACE: Key feature 3"
+            ]
+          },
+          {
+            "name": "REPLACE: Hospital Name 2",
+            "specialty": "REPLACE: Their specialty area",
+            "features": [
+              "REPLACE: Feature A",
+              "REPLACE: Feature B",
+              "REPLACE: Feature C"
+            ]
+          },
+          {
+            "name": "REPLACE: ADD MORE HOSPITALS",
+            "specialty": "REPLACE: Or delete this section",
+            "features": [
+              "REPLACE: If not needed",
+              "DELETE: Extra hospital entries"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Cost Comparison",
+        "content": "REPLACE: Treatment costs in India compared to other countries:",
+        "costTable": {
+          "India": "REPLACE: $X,XXX - $X,XXX",
+          "USA": "REPLACE: $XX,XXX - $XX,XXX", 
+          "UK": "REPLACE: $XX,XXX - $XX,XXX",
+          "Germany": "REPLACE: $XX,XXX - $XX,XXX",
+          "Australia": "REPLACE: $XX,XXX - $XX,XXX (or delete this line)"
+        }
+      },
+      {
+        "heading": "REPLACE: Benefits and Advantages",
+        "content": "REPLACE: Explain the key benefits of getting this treatment in India.",
+        "subsections": [
+          {
+            "subheading": "REPLACE: Medical Excellence", 
+            "points": [
+              "REPLACE: World-class surgeons and specialists",
+              "REPLACE: International training and certification",
+              "REPLACE: Advanced medical technology",
+              "REPLACE: High success rates"
+            ]
+          },
+          {
+            "subheading": "REPLACE: Cost and Value",
+            "points": [
+              "REPLACE: 70-80% cost savings vs Western countries",
+              "REPLACE: Transparent pricing with no hidden costs",
+              "REPLACE: Comprehensive treatment packages",
+              "REPLACE: Excellent value for money"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "REPLACE: Recovery and Follow-up Care",
+        "content": "REPLACE: Describe the recovery process, timeline, and what patients can expect after treatment."
+      },
+      {
+        "heading": "Why Choose India for [Your Treatment]",
+        "content": "REPLACE: Summarize why India is the best choice for this treatment. Include expertise, technology, costs, and patient experience."
+      }
+    ],
+    "stats": [
+      {
+        "number": "REPLACE: 95%",
+        "description": "REPLACE: Success rate or key statistic"
+      },
+      {
+        "number": "REPLACE: 50K+", 
+        "description": "REPLACE: Number of procedures annually"
+      },
+      {
+        "number": "REPLACE: 75%",
+        "description": "REPLACE: Cost savings percentage"
+      },
+      {
+        "number": "REPLACE: 20+",
+        "description": "REPLACE: Years of experience or other metric"
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Hip Replacement Surgery in India: Complete Guide",
+    "description": "Comprehensive guide to hip replacement surgery in India. Learn about procedures, costs, recovery, and top hospitals for international patients.",
+    "category": "Orthopedic Treatments",
+    "subcategory": "treatments",
+    "date": "March 25, 2024",
+    "readTime": "8 min read",
+    "author": "Medical Tourism Expert",
+    "tags": ["Hip Replacement", "Orthopedic", "India", "Surgery"],
+    "heroIcon": "fas fa-bone",
+    "fileName": "blog-hip-replacement-india.html"
+  },
+  "content": {
+    "excerpt": "Complete guide to hip replacement surgery in India. Learn about total and partial hip replacement, minimally invasive techniques, costs, and recovery process for international patients.",
+    "sections": [
+      {
+        "heading": "Understanding Hip Replacement Surgery",
+        "content": "Hip replacement surgery in India has become a leading choice for international patients seeking high-quality orthopedic care at affordable costs. This procedure involves replacing damaged hip joint components with artificial implants to restore mobility and reduce pain."
+      },
+      {
+        "heading": "Types of Hip Replacement",
+        "content": "India offers various hip replacement options including total hip replacement, partial hip replacement, and minimally invasive techniques. Each approach is tailored to the patient's specific condition and needs.",
+        "subsections": [
+          {
+            "subheading": "Total Hip Replacement",
+            "points": [
+              "Complete replacement of hip joint",
+              "Best for advanced arthritis",
+              "15-20 year implant lifespan",
+              "Excellent pain relief outcomes"
+            ]
+          },
+          {
+            "subheading": "Partial Hip Replacement",
+            "points": [
+              "Only damaged parts replaced",
+              "Preserves healthy bone",
+              "Faster recovery time",
+              "Suitable for fractures"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Cost Comparison",
+        "content": "Hip replacement surgery in India offers significant cost savings compared to Western countries:",
+        "costTable": {
+          "India": "$4,000 - $8,000",
+          "USA": "$32,000 - $45,000",
+          "UK": "$18,000 - $28,000",
+          "Germany": "$16,000 - $25,000"
+        }
+      },
+      {
+        "heading": "Top Hospitals in India",
+        "content": "India's leading orthopedic centers offer world-class hip replacement services:",
+        "hospitals": [
+          {
+            "name": "Apollo Hospitals",
+            "specialty": "Largest joint replacement program in Asia",
+            "features": ["Robotic surgery", "International standards", "25+ centers"]
+          },
+          {
+            "name": "Fortis Healthcare", 
+            "specialty": "Advanced minimally invasive techniques",
+            "features": ["Expert surgeons", "Modern facilities", "Excellent outcomes"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "number": "95%",
+        "description": "Success rate for hip replacement"
+      },
+      {
+        "number": "80K+",
+        "description": "Hip surgeries performed annually"
+      },
+      {
+        "number": "75%",
+        "description": "Cost savings vs Western countries"
+      },
+      {
+        "number": "20+",
+        "description": "Years average implant lifespan"
+      }
+    ]
+  }
+}
