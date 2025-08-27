@@ -877,6 +877,17 @@ const patientAvatars = {
     // ... we'll create the actual images with appropriate names
 };
 
+// Helper functions for avatar generation
+function getInitials(name) {
+    return name.split(' ').map(n => n[0]).join('').toUpperCase();
+}
+
+function getGenderFromName(name) {
+    const femaleNames = ['fatima', 'zara', 'grace', 'amina', 'leyla', 'noura', 'maryam', 'aaliya', 'fatou', 'halima', 'amira', 'esther', 'hadiya', 'nadia', 'salma', 'zineb', 'layla', 'yasmin', 'hauwa', 'mariam'];
+    const firstName = name.split(' ')[0].toLowerCase();
+    return femaleNames.includes(firstName) ? 'female' : 'male';
+}
+
 // Reviews functionality
 let currentlyDisplayed = 6; // Reduced initial load for faster performance
 let filteredReviews = [...patientReviews];
@@ -905,7 +916,7 @@ function renderReviews(reviews, append = false) {
         
         reviewCard.innerHTML = `
             <div class="review-header">
-                <img src="images/patients/default-avatar.svg" alt="${review.name}" class="patient-avatar" loading="lazy">
+                <div class="patient-avatar-enhanced" data-country="${review.country.toLowerCase()}" data-gender="${getGenderFromName(review.name)}">${getInitials(review.name)}</div>
                 <div class="patient-info">
                     <h4>${review.name}</h4>
                     <div class="patient-location">${review.flag} ${review.city}, ${review.country}</div>
