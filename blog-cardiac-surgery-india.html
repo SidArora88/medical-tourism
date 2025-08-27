@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why India is the Top Choice for Cardiac Surgery | MediTravel Blog</title>
+    <meta name="description" content="Discover why thousands of international patients choose India for world-class cardiac treatments. From JCI-accredited hospitals to renowned surgeons and significant cost savings.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h1 {
+            color: #2563eb;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .nav-logo h1 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #2563eb;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-secondary, .btn-primary {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        .btn-secondary {
+            background: #f8fafc;
+            color: #1e293b;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        /* Article Styles */
+        .article-header {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            margin-top: 70px;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            color: #64748b;
+            justify-content: center;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        .article-excerpt {
+            font-size: 1.25rem;
+            color: #64748b;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-content {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-body h2 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: #1e293b;
+        }
+
+        .article-body h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: #1e293b;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            color: #374151;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #64748b;
+            margin: 0;
+        }
+
+        .back-to-blog {
+            background: #f8fafc;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .back-to-blog a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-blog a:hover {
+            color: #1d4ed8;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-actions {
+                display: none;
+            }
+            .article-title {
+                font-size: 2rem;
+            }
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">MediTravel</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="container">
+            <div class="article-meta">
+                <span>
+                    <i class="fas fa-calendar"></i>
+                    March 15, 2024
+                </span>
+                <span>
+                    <i class="fas fa-clock"></i>
+                    5 min read
+                </span>
+                <span>
+                    <i class="fas fa-tag"></i>
+                    Destinations
+                </span>
+            </div>
+            <h1 class="article-title">Why India is the Top Choice for Cardiac Surgery</h1>
+            <p class="article-excerpt">Discover why thousands of international patients choose India for world-class cardiac treatments. From JCI-accredited hospitals to renowned surgeons and significant cost savings.</p>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="container">
+            <div class="article-body">
+                <p>When it comes to cardiac surgery, India has emerged as the global leader in medical tourism, attracting over 50,000 international patients annually. The combination of world-class medical expertise, state-of-the-art facilities, and significant cost savings makes India the preferred destination for cardiac care.</p>
+
+                <h2>World-Class Medical Expertise</h2>
+                
+                <p>India's cardiac surgeons are among the most skilled and experienced in the world. Many have trained at prestigious institutions in the United States and Europe before returning to practice in India. This international exposure, combined with the high volume of cases they handle, creates a level of expertise that rivals any developed nation.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Did you know?</strong> Indian cardiac surgeons perform more heart surgeries annually than their counterparts in most Western countries, giving them unparalleled experience in complex procedures.</p>
+                </div>
+
+                <h3>Leading Cardiac Surgeons in India</h3>
+                
+                <p>The country is home to renowned cardiac surgeons who have pioneered innovative techniques and achieved success rates that exceed international standards. These specialists regularly contribute to medical research and are recognized globally for their contributions to cardiac medicine.</p>
+
+                <h2>JCI-Accredited Hospitals</h2>
+                
+                <p>India boasts numerous hospitals with Joint Commission International (JCI) accreditation, the gold standard for healthcare quality worldwide. These facilities adhere to the same stringent standards found in top American and European hospitals.</p>
+
+                <ul>
+                    <li>Fortis Healthcare - Multiple JCI-accredited facilities across India</li>
+                    <li>Apollo Hospitals - Asia's largest healthcare group with JCI accreditation</li>
+                    <li>Max Healthcare - Leading multi-specialty healthcare provider</li>
+                    <li>Medanta - The Medicity - State-of-the-art cardiac care facility</li>
+                </ul>
+
+                <h2>Significant Cost Savings</h2>
+                
+                <p>One of the most compelling reasons patients choose India for cardiac surgery is the substantial cost savings without compromising quality. The same procedures that cost hundreds of thousands of dollars in Western countries can be performed in India at a fraction of the cost.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>80%</h4>
+                        <p>Average cost savings compared to US</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>70%</h4>
+                        <p>Savings compared to Europe</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>60%</h4>
+                        <p>Savings compared to Australia</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>98%</h4>
+                        <p>Success rate for cardiac procedures</p>
+                    </div>
+                </div>
+
+                <h3>Cost Comparison Examples</h3>
+                
+                <p>Here's a breakdown of typical cardiac surgery costs:</p>
+                
+                <ul>
+                    <li><strong>Coronary Bypass Surgery:</strong> $5,000 - $8,000 in India vs $70,000 - $130,000 in the US</li>
+                    <li><strong>Heart Valve Replacement:</strong> $4,000 - $7,000 in India vs $80,000 - $120,000 in the US</li>
+                    <li><strong>Angioplasty:</strong> $1,500 - $3,000 in India vs $20,000 - $40,000 in the US</li>
+                </ul>
+
+                <h2>Advanced Technology and Infrastructure</h2>
+                
+                <p>Indian cardiac hospitals are equipped with the latest medical technology, including:</p>
+                
+                <ul>
+                    <li>3D cardiac imaging systems</li>
+                    <li>Robotic cardiac surgery capabilities</li>
+                    <li>Advanced catheterization laboratories</li>
+                    <li>State-of-the-art intensive care units</li>
+                    <li>Hybrid operating rooms for complex procedures</li>
+                </ul>
+
+                <h2>Comprehensive Care and Support</h2>
+                
+                <p>Medical tourism in India goes beyond just the surgery. Hospitals provide comprehensive packages that include:</p>
+                
+                <ul>
+                    <li>Pre-operative consultations and testing</li>
+                    <li>Surgery and hospitalization</li>
+                    <li>Post-operative care and monitoring</li>
+                    <li>Rehabilitation services</li>
+                    <li>International patient coordinators</li>
+                    <li>Language interpretation services</li>
+                </ul>
+
+                <h2>Recovery and Follow-up Care</h2>
+                
+                <p>The recovery process in India is designed with international patients in mind. Most hospitals offer extended stay facilities for patients and their families, allowing for proper recovery before traveling home. Additionally, many facilities provide telemedicine follow-up services to ensure continued care after returning to your home country.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Patient Tip:</strong> Plan for a 2-3 week stay in India for most cardiac procedures to ensure proper recovery before your return journey.</p>
+                </div>
+
+                <h2>Getting Started</h2>
+                
+                <p>If you're considering cardiac surgery in India, the first step is to consult with medical tourism facilitators who can help you:</p>
+                
+                <ul>
+                    <li>Evaluate your medical condition and treatment options</li>
+                    <li>Connect you with the right hospital and surgeon</li>
+                    <li>Arrange travel and accommodation</li>
+                    <li>Coordinate medical records and visa requirements</li>
+                    <li>Provide ongoing support throughout your journey</li>
+                </ul>
+
+                <p>India's combination of medical excellence, advanced technology, experienced surgeons, and significant cost savings makes it the clear choice for cardiac surgery. With proper planning and the right medical tourism partner, you can receive world-class cardiac care while saving substantial amounts on your medical expenses.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Blog -->
+    <section class="back-to-blog">
+        <div class="container">
+            <a href="blog-fixed.html">
+                <i class="fas fa-arrow-left"></i>
+                Back to Blog
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediTravel</h3>
+                    <p>Your trusted partner for safe, affordable, and high-quality medical care worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Medical Consultation</a></li>
+                        <li><a href="index.html#services">Treatment Planning</a></li>
+                        <li><a href="index.html#services">Travel Coordination</a></li>
+                        <li><a href="index.html#services">Post-Care Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Destinations</h4>
+                    <ul>
+                        <li><a href="index.html#destinations">India</a></li>
+                        <li><a href="index.html#destinations">Turkey</a></li>
+                        <li><a href="index.html#destinations">Thailand</a></li>
+                        <li><a href="index.html#destinations">UAE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="blog-fixed.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
