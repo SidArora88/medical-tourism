@@ -1,7 +1,6 @@
 [build]
-  # No build command needed for static site
-  command = ""
-  # Publish the root directory
+  # Static site deployment
+  command = "echo 'Static site - no build required'"
   publish = "."
 
 # Optional: Set up redirects for better SEO
