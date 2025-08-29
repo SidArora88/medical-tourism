@@ -1,35 +1,83 @@
 [build]
-  # Static site deployment
+  # Static site deployment with optimization
   command = "echo 'Static site - no build required'"
   publish = "."
 
-# Performance optimizations - Simplified
+# Edge Processing and Compression
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Performance optimizations - Enhanced
 [[headers]]
   for = "/*"
   [headers.values]
-    # Cache static assets
-    Cache-Control = "public, max-age=3600"
+    # Cache static assets aggressively
+    Cache-Control = "public, max-age=31536000, immutable"
     # Security headers
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+    # Performance headers
+    X-DNS-Prefetch-Control = "on"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    # Homepage - shorter cache but with revalidation
+    Cache-Control = "public, max-age=0, must-revalidate"
+    # Edge cache longer
+    Netlify-CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+    # Preload critical resources
+    Link = "</styles.css>; rel=preload; as=style, </script.js>; rel=preload; as=script, <https://fonts.googleapis.com>; rel=preconnect; crossorigin, <https://fonts.gstatic.com>; rel=preconnect; crossorigin"
 
 [[headers]]
   for = "*.html"
   [headers.values]
-    # HTML files - shorter cache
-    Cache-Control = "public, max-age=1800"
+    # HTML files - edge caching with revalidation
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Netlify-CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
 
 [[headers]]
   for = "*.css"
   [headers.values]
-    # CSS files - longer cache
-    Cache-Control = "public, max-age=86400"
+    # CSS files - long cache with immutable
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css; charset=utf-8"
 
 [[headers]]
   for = "*.js"
   [headers.values]
-    # JavaScript files - longer cache
+    # JavaScript files - long cache with immutable
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/javascript; charset=utf-8"
+
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    # Font files - very long cache
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "*.xml"
+  [headers.values]
+    # XML files (sitemap) - moderate cache
     Cache-Control = "public, max-age=86400"
+    Content-Type = "application/xml; charset=utf-8"
 
 # Force HTTPS redirect
 [[redirects]]
