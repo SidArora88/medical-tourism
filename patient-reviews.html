@@ -349,44 +349,58 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-            border: 3px solid #e2e8f0;
-            background: linear-gradient(135deg, #2563eb, #10b981);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 3px solid #f1f5f9;
+            background: linear-gradient(135deg, #64748b, #475569);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        
+        .patient-avatar-enhanced::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            z-index: -1;
         }
 
-        /* Country-specific avatar colors */
-        .patient-avatar-enhanced[data-country="egypt"] { background: linear-gradient(135deg, #dc2626, #fbbf24); }
-        .patient-avatar-enhanced[data-country="uae"] { background: linear-gradient(135deg, #059669, #dc2626); }
-        .patient-avatar-enhanced[data-country="ghana"] { background: linear-gradient(135deg, #dc2626, #fbbf24, #059669); }
-        .patient-avatar-enhanced[data-country="south africa"] { background: linear-gradient(135deg, #1f2937, #fbbf24, #dc2626); }
-        .patient-avatar-enhanced[data-country="saudi arabia"] { background: linear-gradient(135deg, #059669, #ffffff); }
-        .patient-avatar-enhanced[data-country="nigeria"] { background: linear-gradient(135deg, #059669, #ffffff); }
-        .patient-avatar-enhanced[data-country="qatar"] { background: linear-gradient(135deg, #7c2d12, #ffffff); }
-        .patient-avatar-enhanced[data-country="mali"] { background: linear-gradient(135deg, #059669, #fbbf24, #dc2626); }
-        .patient-avatar-enhanced[data-country="kenya"] { background: linear-gradient(135deg, #1f2937, #dc2626, #059669); }
-        .patient-avatar-enhanced[data-country="turkey"] { background: linear-gradient(135deg, #dc2626, #ffffff); }
-        .patient-avatar-enhanced[data-country="senegal"] { background: linear-gradient(135deg, #059669, #fbbf24, #dc2626); }
-        .patient-avatar-enhanced[data-country="kuwait"] { background: linear-gradient(135deg, #059669, #ffffff, #dc2626); }
-        .patient-avatar-enhanced[data-country="lebanon"] { background: linear-gradient(135deg, #dc2626, #ffffff, #059669); }
-        .patient-avatar-enhanced[data-country="pakistan"] { background: linear-gradient(135deg, #059669, #ffffff); }
-        .patient-avatar-enhanced[data-country="iraq"] { background: linear-gradient(135deg, #dc2626, #ffffff, #1f2937); }
-        .patient-avatar-enhanced[data-country="uganda"] { background: linear-gradient(135deg, #1f2937, #fbbf24, #dc2626); }
-        .patient-avatar-enhanced[data-country="morocco"] { background: linear-gradient(135deg, #dc2626, #059669); }
-        .patient-avatar-enhanced[data-country="oman"] { background: linear-gradient(135deg, #dc2626, #ffffff, #059669); }
-        .patient-avatar-enhanced[data-country="jordan"] { background: linear-gradient(135deg, #1f2937, #ffffff, #dc2626); }
-        .patient-avatar-enhanced[data-country="sudan"] { background: linear-gradient(135deg, #dc2626, #ffffff, #1f2937); }
-        .patient-avatar-enhanced[data-country="bahrain"] { background: linear-gradient(135deg, #dc2626, #ffffff); }
-        .patient-avatar-enhanced[data-country="sierra leone"] { background: linear-gradient(135deg, #059669, #ffffff, #2563eb); }
-        .patient-avatar-enhanced[data-country="algeria"] { background: linear-gradient(135deg, #059669, #ffffff); }
-        .patient-avatar-enhanced[data-country="ivory coast"] { background: linear-gradient(135deg, #f97316, #ffffff, #059669); }
-        .patient-avatar-enhanced[data-country="syria"] { background: linear-gradient(135deg, #dc2626, #ffffff, #1f2937); }
-        .patient-avatar-enhanced[data-country="cameroon"] { background: linear-gradient(135deg, #059669, #dc2626, #fbbf24); }
-        .patient-avatar-enhanced[data-country="yemen"] { background: linear-gradient(135deg, #dc2626, #ffffff, #1f2937); }
-        .patient-avatar-enhanced[data-country="burkina faso"] { background: linear-gradient(135deg, #dc2626, #ffffff, #059669); }
-        .patient-avatar-enhanced[data-country="guinea"] { background: linear-gradient(135deg, #dc2626, #fbbf24, #059669); }
-        .patient-avatar-enhanced[data-country="zimbabwe"] { background: linear-gradient(135deg, #059669, #fbbf24, #dc2626); }
+        /* Country-specific avatar colors - professional, muted tones */
+        .patient-avatar-enhanced[data-country="egypt"] { background: linear-gradient(135deg, #b91c1c, #d97706); }
+        .patient-avatar-enhanced[data-country="uae"] { background: linear-gradient(135deg, #047857, #b91c1c); }
+        .patient-avatar-enhanced[data-country="ghana"] { background: linear-gradient(135deg, #b91c1c, #d97706); }
+        .patient-avatar-enhanced[data-country="south africa"] { background: linear-gradient(135deg, #374151, #d97706); }
+        .patient-avatar-enhanced[data-country="saudi arabia"] { background: linear-gradient(135deg, #047857, #6b7280); }
+        .patient-avatar-enhanced[data-country="nigeria"] { background: linear-gradient(135deg, #047857, #6b7280); }
+        .patient-avatar-enhanced[data-country="qatar"] { background: linear-gradient(135deg, #92400e, #6b7280); }
+        .patient-avatar-enhanced[data-country="mali"] { background: linear-gradient(135deg, #047857, #d97706); }
+        .patient-avatar-enhanced[data-country="kenya"] { background: linear-gradient(135deg, #374151, #b91c1c); }
+        .patient-avatar-enhanced[data-country="turkey"] { background: linear-gradient(135deg, #b91c1c, #6b7280); }
+        .patient-avatar-enhanced[data-country="senegal"] { background: linear-gradient(135deg, #047857, #d97706); }
+        .patient-avatar-enhanced[data-country="kuwait"] { background: linear-gradient(135deg, #047857, #6b7280); }
+        .patient-avatar-enhanced[data-country="lebanon"] { background: linear-gradient(135deg, #b91c1c, #047857); }
+        .patient-avatar-enhanced[data-country="pakistan"] { background: linear-gradient(135deg, #047857, #6b7280); }
+        .patient-avatar-enhanced[data-country="iraq"] { background: linear-gradient(135deg, #b91c1c, #374151); }
+        .patient-avatar-enhanced[data-country="uganda"] { background: linear-gradient(135deg, #374151, #d97706); }
+        .patient-avatar-enhanced[data-country="morocco"] { background: linear-gradient(135deg, #b91c1c, #047857); }
+        .patient-avatar-enhanced[data-country="oman"] { background: linear-gradient(135deg, #b91c1c, #047857); }
+        .patient-avatar-enhanced[data-country="jordan"] { background: linear-gradient(135deg, #374151, #b91c1c); }
+        .patient-avatar-enhanced[data-country="sudan"] { background: linear-gradient(135deg, #b91c1c, #374151); }
+        .patient-avatar-enhanced[data-country="bahrain"] { background: linear-gradient(135deg, #b91c1c, #6b7280); }
+        .patient-avatar-enhanced[data-country="sierra leone"] { background: linear-gradient(135deg, #047857, #2563eb); }
+        .patient-avatar-enhanced[data-country="algeria"] { background: linear-gradient(135deg, #047857, #6b7280); }
+        .patient-avatar-enhanced[data-country="ivory coast"] { background: linear-gradient(135deg, #ea580c, #047857); }
+        .patient-avatar-enhanced[data-country="syria"] { background: linear-gradient(135deg, #b91c1c, #374151); }
+        .patient-avatar-enhanced[data-country="cameroon"] { background: linear-gradient(135deg, #047857, #d97706); }
+        .patient-avatar-enhanced[data-country="yemen"] { background: linear-gradient(135deg, #b91c1c, #374151); }
+        .patient-avatar-enhanced[data-country="burkina faso"] { background: linear-gradient(135deg, #b91c1c, #047857); }
+        .patient-avatar-enhanced[data-country="guinea"] { background: linear-gradient(135deg, #b91c1c, #d97706); }
+        .patient-avatar-enhanced[data-country="zimbabwe"] { background: linear-gradient(135deg, #047857, #d97706); }
 
         /* Gender-specific styling adjustments */
         .patient-avatar-enhanced[data-gender="female"] {
@@ -870,6 +884,6 @@
         </div>
     </footer>
 
-    <script src="patient-reviews.js"></script>
+    <script src="patient-reviews.js?v=20240829-realistic"></script>
 </body>
 </html>

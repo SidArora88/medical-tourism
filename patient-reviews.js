@@ -888,62 +888,231 @@ function getGenderFromName(name) {
     return femaleNames.includes(firstName) ? 'female' : 'male';
 }
 
-function getPatientAvatarPath(name) {
-    const patientImages = {
-        "Ahmed Hassan": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-        "Fatima Al-Zahra": "https://images.unsplash.com/photo-1494790108755-2616b612b5c5?w=300&h=300&fit=crop&crop=face",
-        "Mohammed Osei": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face",
-        "Zara Mbeki": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=300&fit=crop&crop=face",
-        "Omar Al-Rashid": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-        "Grace Okafor": "https://images.unsplash.com/photo-1485893086445-ed75865251e0?w=300&h=300&fit=crop&crop=face",
-        "Hassan Al-Mansoori": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-        "Amina Traore": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=300&h=300&fit=crop&crop=face",
-        "David Mutua": "https://images.unsplash.com/photo-1541647376583-8934aaf3448a?w=300&h=300&fit=crop&crop=face",
-        "Leyla Ozturk": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-        "Ibrahim Diallo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=300&h=300&fit=crop&crop=face",
-        "Noura Al-Sabah": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=300&h=300&fit=crop&crop=face",
-        "Samuel Ochieng": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
-        "Maryam Jaber": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
-        "Kwame Asante": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=face",
-        "Aaliya Hassan": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?w=300&h=300&fit=crop&crop=face",
-        "Fatou Sow": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=300&h=300&fit=crop&crop=face",
-        "Youssef El-Masry": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face",
-        "Halima Al-Zahra": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=300&fit=crop&crop=face",
-        "John Ouma": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=300&h=300&fit=crop&crop=face",
-        "Amira Benali": "https://images.unsplash.com/photo-1494790108755-2616b612b5c5?w=300&h=300&fit=crop&crop=face",
-        "Tariq Al-Mansouri": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-        "Esther Mwangi": "https://images.unsplash.com/photo-1557862921-37829c790f19?w=300&h=300&fit=crop&crop=face",
-        "Rashid Al-Maktoum": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-        "Fatima Kone": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=300&fit=crop&crop=face",
-        "Ali Al-Rashid": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-        "Grace Mensah": "https://images.unsplash.com/photo-1485893086445-ed75865251e0?w=300&h=300&fit=crop&crop=face",
-        "Mahmoud Farouk": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face",
-        "Aisha Osman": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=300&h=300&fit=crop&crop=face",
-        "Hassan Al-Dosari": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=300&h=300&fit=crop&crop=face",
-        "Mariam Sesay": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=300&h=300&fit=crop&crop=face",
-        "Omar Belkadi": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-        "Hadiya Al-Sabah": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=300&h=300&fit=crop&crop=face",
-        "Joseph Ankrah": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=300&h=300&fit=crop&crop=face",
-        "Nadia Al-Masri": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=300&fit=crop&crop=face",
-        "Emmanuel Nyong": "https://images.unsplash.com/photo-1541647376583-8934aaf3448a?w=300&h=300&fit=crop&crop=face",
-        "Salma Al-Zahra": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
-        "Kwaku Osei": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
-        "Zineb Benali": "https://images.unsplash.com/photo-1494790108755-2616b612b5c5?w=300&h=300&fit=crop&crop=face",
-        "Ahmed Al-Dosari": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-        "Fatima Keita": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=300&fit=crop&crop=face",
-        "Ibrahim Okafor": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=face",
-        "Layla Al-Rashid": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-        "Moses Nkomo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=300&h=300&fit=crop&crop=face",
-        "Yasmin Al-Mansoori": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=300&h=300&fit=crop&crop=face",
-        "Adama Traore": "https://images.unsplash.com/photo-1541647376583-8934aaf3448a?w=300&h=300&fit=crop&crop=face",
-        "Khalid Al-Sabah": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-        "Amina Diallo": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=300&h=300&fit=crop&crop=face",
-        "Samir Belkacem": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face",
-        "Hauwa Ibrahim": "https://images.unsplash.com/photo-1557862921-37829c790f19?w=300&h=300&fit=crop&crop=face",
-        "Mahmoud Al-Dosari": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=300&h=300&fit=crop&crop=face"
+// Patient demographic mapping for culturally appropriate image generation
+function getPatientDemographics(name, country) {
+    const demographics = {
+        // Middle Eastern Countries
+        "Egypt": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "UAE": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Saudi Arabia": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Qatar": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Kuwait": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Bahrain": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Oman": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Jordan": { ethnicity: "middle_eastern", region: "levantine", skin: "medium" },
+        "Lebanon": { ethnicity: "middle_eastern", region: "levantine", skin: "medium" },
+        "Syria": { ethnicity: "middle_eastern", region: "levantine", skin: "medium" },
+        "Iraq": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        "Yemen": { ethnicity: "middle_eastern", region: "arab", skin: "medium" },
+        
+        // North African Countries
+        "Morocco": { ethnicity: "middle_eastern", region: "north_african", skin: "medium" },
+        "Algeria": { ethnicity: "middle_eastern", region: "north_african", skin: "medium" },
+        "Sudan": { ethnicity: "black", region: "north_african", skin: "dark" },
+        
+        // Sub-Saharan African Countries
+        "Nigeria": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Ghana": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Kenya": { ethnicity: "black", region: "east_african", skin: "dark" },
+        "Uganda": { ethnicity: "black", region: "east_african", skin: "dark" },
+        "South Africa": { ethnicity: "black", region: "southern_african", skin: "dark" },
+        "Zimbabwe": { ethnicity: "black", region: "southern_african", skin: "dark" },
+        "Mali": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Senegal": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Sierra Leone": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Ivory Coast": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Cameroon": { ethnicity: "black", region: "central_african", skin: "dark" },
+        "Guinea": { ethnicity: "black", region: "west_african", skin: "dark" },
+        "Burkina Faso": { ethnicity: "black", region: "west_african", skin: "dark" },
+        
+        // South Asian Countries
+        "Pakistan": { ethnicity: "south_asian", region: "south_asian", skin: "medium" },
+        
+        // Other
+        "Turkey": { ethnicity: "white", region: "mediterranean", skin: "medium" }
     };
     
-    return patientImages[name] || 'images/patients/default-avatar.svg';
+    return demographics[country] || { ethnicity: "mixed", region: "global", skin: "medium" };
+}
+
+function generatePatientImageUrl(name, country, gender, age = null) {
+    console.log(`Generating REALISTIC image for ${name} (${country}, ${gender}, age: ${age})`);
+    const demographics = getPatientDemographics(name, country);
+    console.log(`Demographics:`, demographics);
+    
+    // Generate realistic age for medical tourism patients if not provided
+    if (!age) {
+        const nameHash = name.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+        age = 30 + (nameHash % 25); // Ages 30-54 for medical tourism
+    }
+    
+    // Create unique patient identifier for consistent images
+    const patientSeed = `${name.toLowerCase().replace(/\s+/g, '')}-${country.toLowerCase().replace(/\s+/g, '')}-${demographics.ethnicity}-${gender}`;
+    const uniqueHash = patientSeed.split('').reduce((a, b) => {
+        a = ((a << 5) - a) + b.charCodeAt(0);
+        return a & a;
+    }, 0);
+    
+    // Use This Person Does Not Exist with demographic parameters
+    // This generates actual realistic human faces
+    const thisPersonUrl = `https://thispersondoesnotexist.com/image?seed=${Math.abs(uniqueHash)}`;
+    
+    // Use Generated Photos API (free tier) for realistic faces
+    const generatedPhotosUrl = `https://images.generated.photos/api/v1/face?gender=${gender}&age=${age}&ethnicity=${mapEthnicityForAPI(demographics.ethnicity)}&emotion=neutral&eye_color=brown&hair_color=brown&order_by=random&per_page=1&seed=${Math.abs(uniqueHash)}`;
+    
+    // Use a curated collection of realistic patient-appropriate photos
+    // These are actual professional headshots suitable for medical context
+    const realisticPatientPhotos = getRealisticPatientPhotosByDemographic(demographics.ethnicity, gender, uniqueHash);
+    
+    if (realisticPatientPhotos && realisticPatientPhotos.length > 0) {
+        const photoIndex = Math.abs(uniqueHash) % realisticPatientPhotos.length;
+        const selectedPhoto = realisticPatientPhotos[photoIndex];
+        console.log(`Selected realistic patient photo for ${name}: ${selectedPhoto}`);
+        return selectedPhoto;
+    }
+    
+    // Fallback to This Person Does Not Exist for unique realistic faces
+    console.log(`Using realistic generated face for ${name}: ${thisPersonUrl}`);
+    return thisPersonUrl;
+}
+
+function mapEthnicityForAPI(ethnicity) {
+    const mapping = {
+        'middle_eastern': 'middle_eastern',
+        'black': 'black',
+        'south_asian': 'south_asian',
+        'white': 'white'
+    };
+    return mapping[ethnicity] || 'mixed';
+}
+
+function getRealisticPatientPhotosByDemographic(ethnicity, gender, hash) {
+    // Curated realistic patient photos organized by demographics
+    // These are professional, serious-looking photos appropriate for medical context
+    const patientPhotos = {
+        'middle_eastern_male': [
+            'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1578885536328-34e978b4b2b2?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1613743983303-b3e89f8a4e6c?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1622445275576-721325763afe?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1574701148212-8518049fb38b?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1578774204375-826dc5d996ed?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ],
+        'middle_eastern_female': [
+            'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1617019114583-affb34d6b2cd?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1617824744854-60c4efd2c24e?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1608681299041-cc19878f79f1?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ],
+        'black_male': [
+            'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1615109398623-88346a601842?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1601455763557-db1bea8a9a5a?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1612833603922-21a41b7c191b?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1612833609193-7ba30b4b5de0?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1597248881519-db089d3744a5?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ],
+        'black_female': [
+            'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1557862921-37829c790f19?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1601412436009-d964bd02edbc?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ],
+        'south_asian_male': [
+            'https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1582233479366-6d38bc390a08?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ],
+        'south_asian_female': [
+            'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ],
+        'white_female': [
+            'https://images.unsplash.com/photo-1494790108755-2616b612b5c5?w=300&h=300&fit=crop&crop=face&q=80&auto=format',
+            'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=300&fit=crop&crop=face&q=80&auto=format'
+        ]
+    };
+    
+    const demographicKey = `${ethnicity}_${gender}`;
+    return patientPhotos[demographicKey] || [];
+}
+
+// End of patient image generation system
+
+function getPatientAvatarPath(name) {
+    // Map each patient to their country and gender for appropriate image generation
+    const patientData = {
+        "Ahmed Hassan": { country: "Egypt", gender: "male" },
+        "Fatima Al-Zahra": { country: "UAE", gender: "female" },
+        "Mohammed Osei": { country: "Ghana", gender: "male" },
+        "Zara Mbeki": { country: "South Africa", gender: "female" },
+        "Omar Al-Rashid": { country: "Saudi Arabia", gender: "male" },
+        "Grace Okafor": { country: "Nigeria", gender: "female" },
+        "Hassan Al-Mansoori": { country: "Qatar", gender: "male" },
+        "Amina Traore": { country: "Mali", gender: "female" },
+        "David Mutua": { country: "Kenya", gender: "male" },
+        "Leyla Ozturk": { country: "Turkey", gender: "female" },
+        "Ibrahim Diallo": { country: "Senegal", gender: "male" },
+        "Noura Al-Sabah": { country: "Kuwait", gender: "female" },
+        "Samuel Ochieng": { country: "Kenya", gender: "male" },
+        "Maryam Jaber": { country: "Lebanon", gender: "female" },
+        "Kwame Asante": { country: "Ghana", gender: "male" },
+        "Aaliya Hassan": { country: "Pakistan", gender: "female" },
+        "Fatou Sow": { country: "Senegal", gender: "female" },
+        "Youssef El-Masry": { country: "Egypt", gender: "male" },
+        "Halima Al-Zahra": { country: "Iraq", gender: "female" },
+        "John Ouma": { country: "Uganda", gender: "male" },
+        "Amira Benali": { country: "Morocco", gender: "female" },
+        "Tariq Al-Mansouri": { country: "Oman", gender: "male" },
+        "Esther Mwangi": { country: "Kenya", gender: "female" },
+        "Rashid Al-Maktoum": { country: "UAE", gender: "male" },
+        "Fatima Kone": { country: "Ivory Coast", gender: "female" },
+        "Ali Al-Rashid": { country: "Jordan", gender: "male" },
+        "Grace Mensah": { country: "Ghana", gender: "female" },
+        "Mahmoud Farouk": { country: "Egypt", gender: "male" },
+        "Aisha Osman": { country: "Sudan", gender: "female" },
+        "Hassan Al-Dosari": { country: "Bahrain", gender: "male" },
+        "Mariam Sesay": { country: "Sierra Leone", gender: "female" },
+        "Omar Belkadi": { country: "Algeria", gender: "male" },
+        "Hadiya Al-Sabah": { country: "Kuwait", gender: "female" },
+        "Joseph Ankrah": { country: "Ghana", gender: "male" },
+        "Nadia Al-Masri": { country: "Syria", gender: "female" },
+        "Emmanuel Nyong": { country: "Cameroon", gender: "male" },
+        "Salma Al-Zahra": { country: "Yemen", gender: "female" },
+        "Kwaku Osei": { country: "Ghana", gender: "male" },
+        "Zineb Benali": { country: "Morocco", gender: "female" },
+        "Ahmed Al-Dosari": { country: "Qatar", gender: "male" },
+        "Fatima Keita": { country: "Mali", gender: "female" },
+        "Ibrahim Okafor": { country: "Nigeria", gender: "male" },
+        "Layla Al-Rashid": { country: "UAE", gender: "female" },
+        "Moses Nkomo": { country: "Zimbabwe", gender: "male" },
+        "Yasmin Al-Mansoori": { country: "Oman", gender: "female" },
+        "Adama Traore": { country: "Burkina Faso", gender: "male" },
+        "Khalid Al-Sabah": { country: "Kuwait", gender: "male" },
+        "Amina Diallo": { country: "Guinea", gender: "female" },
+        "Samir Belkacem": { country: "Algeria", gender: "male" },
+        "Hauwa Ibrahim": { country: "Nigeria", gender: "female" },
+        "Mahmoud Al-Dosari": { country: "Bahrain", gender: "male" }
+    };
+    
+    const patient = patientData[name];
+    if (patient) {
+        // Generate age based on medical tourism demographic (30-55)
+        const nameHash = name.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+        const age = 30 + (nameHash % 26); // Ages 30-55
+        return generatePatientImageUrl(name, patient.country, patient.gender, age);
+    }
+    
+    return 'images/patients/default-avatar.svg';
 }
 
 // Reviews functionality
