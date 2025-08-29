@@ -3,6 +3,61 @@
   command = "echo 'Static site - no build required'"
   publish = "."
 
+# Performance optimizations
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Enable text compression
+    Content-Encoding = "gzip, br"
+    # Cache static assets for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    # HTML files - shorter cache, enable compression
+    Cache-Control = "public, max-age=86400"
+    # Enable text compression for HTML
+    Content-Type = "text/html; charset=utf-8"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    # CSS files - cache for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    # JavaScript files - cache for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript; charset=utf-8"
+
+# Force HTTPS redirect
+[[redirects]]
+  from = "http://afiyaindia.com/*"
+  to = "https://afiyaindia.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.afiyaindia.com/*"
+  to = "https://www.afiyaindia.com/:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www for better performance
+[[redirects]]
+  from = "https://www.afiyaindia.com/*"
+  to = "https://afiyaindia.com/:splat"
+  status = 301
+  force = true
+
 # Optional: Set up redirects for better SEO
 [[redirects]]
   from = "/patient-reviews"
