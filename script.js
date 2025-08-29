@@ -41,11 +41,9 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Form validation and submission
-const consultationForm = document.getElementById('consultationForm');
-
-if (consultationForm) {
-    consultationForm.addEventListener('submit', function(e) {
+// Form validation and submission for both forms
+function handleFormSubmission(form) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Get form data
@@ -54,19 +52,19 @@ if (consultationForm) {
         
         // Basic validation
         if (!data.name || !data.email || !data.phone || !data.treatment) {
-            showMessage('Please fill in all required fields.', 'error');
+            showMessage('Please fill in all required fields.', 'error', this);
             return;
         }
         
         // Email validation
         if (!isValidEmail(data.email)) {
-            showMessage('Please enter a valid email address.', 'error');
+            showMessage('Please enter a valid email address.', 'error', this);
             return;
         }
         
         // Phone validation
         if (!isValidPhone(data.phone)) {
-            showMessage('Please enter a valid phone number.', 'error');
+            showMessage('Please enter a valid phone number.', 'error', this);
             return;
         }
         
@@ -80,18 +78,30 @@ if (consultationForm) {
         // Send data to backend API
         submitFormData(data)
             .then(response => {
-                showMessage(response.message, 'success');
+                showMessage(response.message || 'Thank you! We will contact you within 24 hours.', 'success', this);
                 this.reset();
             })
             .catch(error => {
                 console.error('Form submission error:', error);
-                showMessage(error.message || 'An error occurred. Please try again.', 'error');
+                showMessage(error.message || 'An error occurred. Please try again.', 'error', this);
             })
             .finally(() => {
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
             });
     });
+}
+
+// Apply form handling to both forms
+const consultationForm = document.getElementById('consultationForm');
+const heroConsultationForm = document.getElementById('heroConsultationForm');
+
+if (consultationForm) {
+    handleFormSubmission(consultationForm);
+}
+
+if (heroConsultationForm) {
+    handleFormSubmission(heroConsultationForm);
 }
 
 // API Configuration
@@ -134,9 +144,10 @@ function isValidPhone(phone) {
     return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
 }
 
-function showMessage(message, type) {
-    // Remove existing messages
-    const existingMessage = document.querySelector('.form-message');
+function showMessage(message, type, form = null) {
+    // Remove existing messages for this form
+    const targetForm = form || consultationForm;
+    const existingMessage = targetForm.parentElement.querySelector('.form-message');
     if (existingMessage) {
         existingMessage.remove();
     }
@@ -160,7 +171,7 @@ function showMessage(message, type) {
     `;
     
     // Insert message after form
-    consultationForm.insertAdjacentElement('afterend', messageElement);
+    targetForm.insertAdjacentElement('afterend', messageElement);
     
     // Remove message after 5 seconds
     setTimeout(() => {

@@ -235,22 +235,30 @@ p {
     margin: 0;
 }
 
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-form {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
 }
 
-.hero-placeholder {
-    width: 400px;
-    height: 400px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 8rem;
+.hero-form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-form-header h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero-form-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0;
 }
 
 /* Section Styling */

@@ -107,16 +107,12 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Contact Form -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">Medical Tourism India: World-Class Healthcare for African & Asian Patients</h1>
-                <p class="hero-subtitle">Get premium medical treatments in India at 70% lower costs. Connect with JCI-accredited hospitals, internationally trained surgeons, and comprehensive support from consultation to recovery. Specialized services for patients from Nigeria, South Africa, Kenya, Indonesia, Malaysia, and Thailand.</p>
-                <div class="hero-actions">
-                    <button class="btn-primary btn-large" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Start Your Journey</button>
-                    <button class="btn-outline btn-large">Learn More</button>
-                </div>
+                <p class="hero-subtitle">Get premium medical treatments in India at 70% lower costs. Connect with JCI-accredited hospitals, internationally trained surgeons, and comprehensive support from consultation to recovery.</p>
                 <div class="hero-stats">
                     <div class="stat">
                         <h3>50,000+</h3>
@@ -132,10 +128,38 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-placeholder">
-                    <i class="fas fa-user-md"></i>
+            <div class="hero-form">
+                <div class="hero-form-header">
+                    <h3>Get Your Free Medical Consultation</h3>
+                    <p>Expert guidance in 24 hours</p>
                 </div>
+                <form id="heroConsultationForm">
+                    <div class="form-group">
+                        <input type="text" id="heroName" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="heroEmail" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="heroPhone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="heroTreatment" name="treatment" required>
+                            <option value="">Select Treatment Type</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="oncology">Oncology</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="cosmetic">Cosmetic Surgery</option>
+                            <option value="dental">Dental Treatment</option>
+                            <option value="fertility">Fertility Treatment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="heroMessage" name="message" placeholder="Tell us about your medical needs..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Get Free Consultation</button>
+                </form>
             </div>
         </div>
     </section>
