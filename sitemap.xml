@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Homepage -->
   <url>
-    <loc>https://meditravel-india.com/</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://afiyaindia.com/</loc>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meditravel-india.com/"/>
-    <xhtml:link rel="alternate" hreflang="en-ng" href="https://meditravel-india.com/ng/"/>
-    <xhtml:link rel="alternate" hreflang="en-za" href="https://meditravel-india.com/za/"/>
-    <xhtml:link rel="alternate" hreflang="en-ke" href="https://meditravel-india.com/ke/"/>
-    <xhtml:link rel="alternate" hreflang="en-id" href="https://meditravel-india.com/id/"/>
-    <xhtml:link rel="alternate" hreflang="en-my" href="https://meditravel-india.com/my/"/>
-    <xhtml:link rel="alternate" hreflang="en-th" href="https://meditravel-india.com/th/"/>
   </url>
   
   <!-- Blog -->
   <url>
-    <loc>https://meditravel-india.com/blog.html</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://afiyaindia.com/blog-fixed.html</loc>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Services -->
+  <!-- Patient Reviews -->
   <url>
-    <loc>https://meditravel-india.com/#services</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://afiyaindia.com/patient-reviews-light.html</loc>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Destinations -->
+  <!-- Services Section -->
   <url>
-    <loc>https://meditravel-india.com/#destinations</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://afiyaindia.com/#services</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Destinations Section -->
+  <url>
+    <loc>https://afiyaindia.com/#destinations</loc>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Testimonials -->
+  <!-- Testimonials Section -->
   <url>
-    <loc>https://meditravel-india.com/#testimonials</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://afiyaindia.com/#testimonials</loc>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
-  <!-- Contact -->
+  <!-- Contact Section -->
   <url>
-    <loc>https://meditravel-india.com/#contact</loc>
-    <lastmod>2024-03-15</lastmod>
+    <loc>https://afiyaindia.com/#contact</loc>
+    <lastmod>2024-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
