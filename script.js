@@ -68,27 +68,37 @@ function handleFormSubmission(form) {
             return;
         }
         
-        // Submit form to backend
+        // Submit form to Formspree
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Send data to backend API
-        submitFormData(data)
-            .then(response => {
-                showMessage(response.message || 'Thank you! We will contact you within 24 hours.', 'success', this);
+        // Submit form using fetch to Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                showMessage('Thank you! We will contact you within 24 hours.', 'success', this);
                 this.reset();
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                showMessage(error.message || 'An error occurred. Please try again.', 'error', this);
-            })
-            .finally(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            });
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            showMessage('An error occurred. Please try again.', 'error', this);
+        })
+        .finally(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
     });
 }
 
@@ -104,34 +114,8 @@ if (heroConsultationForm) {
     handleFormSubmission(heroConsultationForm);
 }
 
-// API Configuration
-const API_BASE_URL = 'http://localhost:3000';
-
-// Form submission function
-async function submitFormData(formData) {
-    try {
-        const response = await fetch(`${API_BASE_URL}/api/submit-consultation`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
-
-        const result = await response.json();
-
-        if (!response.ok) {
-            throw new Error(result.message || `HTTP error! status: ${response.status}`);
-        }
-
-        return result;
-    } catch (error) {
-        if (error.name === 'TypeError' && error.message.includes('fetch')) {
-            throw new Error('Unable to connect to server. Please check if the backend is running.');
-        }
-        throw error;
-    }
-}
+// Formspree integration - no additional API configuration needed
+// Forms now submit directly to Formspree endpoint
 
 // Utility functions
 function isValidEmail(email) {

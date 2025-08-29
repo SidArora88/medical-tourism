@@ -133,7 +133,7 @@
                     <h3>Get Your Free Medical Consultation</h3>
                     <p>Expert guidance in 24 hours</p>
                 </div>
-                <form id="heroConsultationForm">
+                <form id="heroConsultationForm" action="https://formspree.io/f/xnnbjryd" method="POST">
                     <div class="form-group">
                         <input type="text" id="heroName" name="name" placeholder="Full Name" required>
                     </div>
@@ -158,6 +158,7 @@
                     <div class="form-group">
                         <textarea id="heroMessage" name="message" placeholder="Tell us about your medical needs..." rows="3"></textarea>
                     </div>
+                    <input type="hidden" name="form_source" value="Hero Form">
                     <button type="submit" class="btn-primary btn-full">Get Free Consultation</button>
                 </form>
             </div>
@@ -393,7 +394,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="consultationForm">
+                    <form id="consultationForm" action="https://formspree.io/f/xnnbjryd" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Full Name" required>
                         </div>
@@ -418,6 +419,7 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Tell us about your medical needs..." rows="4"></textarea>
                         </div>
+                        <input type="hidden" name="form_source" value="Contact Section">
                         <button type="submit" class="btn-primary btn-full">Get Free Consultation</button>
                     </form>
                 </div>
