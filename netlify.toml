@@ -1,0 +1,22 @@
+[build]
+  # No build command needed for static site
+  command = ""
+  # Publish the root directory
+  publish = "."
+
+# Optional: Set up redirects for better SEO
+[[redirects]]
+  from = "/patient-reviews"
+  to = "/patient-reviews.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog-fixed.html"
+  status = 200
+
+# Handle 404s
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
