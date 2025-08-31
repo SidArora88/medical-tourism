@@ -93,6 +93,27 @@
             align-items: center;
         }
 
+        .language-selector {
+            margin-right: 0.5rem;
+        }
+
+        .language-dropdown {
+            padding: 0.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: #fff;
+            color: #1e293b;
+            font-size: 0.85rem;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgb(37 99 235 / 0.2);
+        }
+
         .btn-secondary, .btn-primary {
             padding: 12px 24px;
             border-radius: 8px;
@@ -507,6 +528,9 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            .language-selector {
+                display: none;
+            }
         }
 
         @media (max-width: 640px) {
@@ -548,6 +572,24 @@
                     </li>
                 </ul>
                 <div class="nav-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="en">🇺🇸 English</option>
+                            <option value="bn">🇧🇩 Bengali</option>
+                            <option value="ur">🇵🇰 Urdu</option>
+                            <option value="ar">🇸🇦 Arabic</option>
+                            <option value="ku">🇮🇶 Kurdish</option>
+                            <option value="so">🇸🇴 Somali</option>
+                            <option value="bal">🇴🇲 Baluchi</option>
+                            <option value="om">🇪🇹 Oromo</option>
+                            <option value="am">🇪🇹 Amharic</option>
+                            <option value="mey">🇾🇪 Mahri</option>
+                            <option value="tk">🇹🇲 Turkmen</option>
+                            <option value="ru">🇷🇺 Russian</option>
+                            <option value="uz">🇺🇿 Uzbek</option>
+                            <option value="sw">🇰🇪 Swahili</option>
+                        </select>
+                    </div>
                     <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
                     <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
                 </div>
@@ -1092,6 +1134,414 @@
             const loadMoreBtn = document.querySelector('.blog-load-more .btn-outline');
             const hiddenCards = document.querySelectorAll('.blog-card-hidden');
             console.log('Window load - Button:', loadMoreBtn, 'Hidden cards:', hiddenCards.length);
+        });
+    </script>
+    
+    <!-- Blog Language Translation Functionality -->
+    <script>
+        function changeLanguage(langCode) {
+            // Store selected language in localStorage
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Show loading indicator
+            document.body.style.opacity = '0.7';
+            
+            // Comprehensive language mappings for blog components
+            const translations = {
+                'en': {
+                    // Navigation
+                    'nav-home': 'Home', 'nav-destinations': 'Destinations', 'nav-services': 'Services', 'nav-blog': 'Blog', 'nav-reviews': 'Patient Reviews', 'nav-contact': 'Contact',
+                    'btn-consult': 'Consult Online', 'btn-quote': 'Get Free Quote',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Medical Tourism Blog',
+                    'blog-hero-subtitle': 'Expert insights, destination guides, patient stories, and everything you need to know about medical tourism worldwide.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Articles',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Destinations', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Success Stories',
+                    // Blog Filters
+                    'filter-all': 'All Posts', 'filter-destinations': 'Destinations', 'filter-treatments': 'Treatments', 'filter-tips': 'Travel Tips', 'filter-success': 'Success Stories',
+                    // Blog CTA
+                    'blog-cta-title': 'Ready to Start Your Medical Journey?',
+                    'blog-cta-subtitle': 'Get personalized recommendations and expert guidance for your medical tourism needs.',
+                    'btn-consultation': 'Get Free Consultation', 'btn-explore': 'Explore Destinations',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Your trusted partner for safe, affordable, and high-quality medical care worldwide.',
+                    'footer-services': 'Services', 'footer-destinations': 'Destinations', 'footer-support': 'Support',
+                    'footer-copyright': '© 2024 MediTravel. All rights reserved.'
+                },
+                'ar': {
+                    // Navigation
+                    'nav-home': 'الرئيسية', 'nav-destinations': 'الوجهات', 'nav-services': 'الخدمات', 'nav-blog': 'المدونة', 'nav-reviews': 'تقييمات المرضى', 'nav-contact': 'اتصل بنا',
+                    'btn-consult': 'استشارة عبر الإنترنت', 'btn-quote': 'احصل على عرض أسعار مجاني',
+                    // Blog Hero Section
+                    'blog-hero-title': 'مدونة السياحة العلاجية',
+                    'blog-hero-subtitle': 'رؤى الخبراء، أدلة الوجهات، قصص المرضى، وكل ما تحتاج لمعرفته حول السياحة العلاجية في جميع أنحاء العالم.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'مقالة',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'وجهة', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'قصة نجاح',
+                    // Blog Filters
+                    'filter-all': 'جميع المشاركات', 'filter-destinations': 'الوجهات', 'filter-treatments': 'العلاجات', 'filter-tips': 'نصائح السفر', 'filter-success': 'قصص النجاح',
+                    // Blog CTA
+                    'blog-cta-title': 'هل أنت مستعد لبدء رحلتك الطبية؟',
+                    'blog-cta-subtitle': 'احصل على توصيات مخصصة وإرشادات الخبراء لاحتياجاتك في السياحة العلاجية.',
+                    'btn-consultation': 'احصل على استشارة مجانية', 'btn-explore': 'استكشف الوجهات',
+                    // Footer
+                    'footer-brand': 'ميدي ترافيل', 'footer-tagline': 'شريكك الموثوق للرعاية الطبية الآمنة والميسورة التكلفة وعالية الجودة في جميع أنحاء العالم.',
+                    'footer-services': 'الخدمات', 'footer-destinations': 'الوجهات', 'footer-support': 'الدعم',
+                    'footer-copyright': '© 2024 ميدي ترافيل. جميع الحقوق محفوظة.'
+                },
+                'bn': {
+                    // Navigation
+                    'nav-home': 'হোম', 'nav-destinations': 'গন্তব্য', 'nav-services': 'সেবাসমূহ', 'nav-blog': 'ব্লগ', 'nav-reviews': 'রোগীর পর্যালোচনা', 'nav-contact': 'যোগাযোগ',
+                    'btn-consult': 'অনলাইন পরামর্শ', 'btn-quote': 'বিনামূল্যে উদ্ধৃতি পান',
+                    // Blog Hero Section
+                    'blog-hero-title': 'চিকিৎসা পর্যটন ব্লগ',
+                    'blog-hero-subtitle': 'বিশেষজ্ঞের অন্তর্দৃষ্টি, গন্তব্য গাইড, রোগীর গল্প এবং বিশ্বব্যাপী চিকিৎসা পর্যটন সম্পর্কে যা জানা প্রয়োজন।',
+                    'blog-stat1': '৫০+', 'blog-stat1-text': 'নিবন্ধ',
+                    'blog-stat2': '২৫+', 'blog-stat2-text': 'গন্তব্য', 
+                    'blog-stat3': '১০০+', 'blog-stat3-text': 'সফলতার গল্প',
+                    // Blog Filters
+                    'filter-all': 'সমস্ত পোস্ট', 'filter-destinations': 'গন্তব্যসমূহ', 'filter-treatments': 'চিকিৎসা', 'filter-tips': 'ভ্রমণ টিপস', 'filter-success': 'সফলতার গল্প',
+                    // Blog CTA
+                    'blog-cta-title': 'আপনার চিকিৎসা যাত্রা শুরু করতে প্রস্তুত?',
+                    'blog-cta-subtitle': 'আপনার চিকিৎসা পর্যটনের প্রয়োজনের জন্য ব্যক্তিগত সুপারিশ এবং বিশেষজ্ঞ নির্দেশনা পান।',
+                    'btn-consultation': 'বিনামূল্যে পরামর্শ নিন', 'btn-explore': 'গন্তব্য অন্বেষণ করুন',
+                    // Footer
+                    'footer-brand': 'মেডিট্রাভেল', 'footer-tagline': 'বিশ্বব্যাপী নিরাপদ, সাশ্রয়ী এবং উচ্চ মানের চিকিৎসা সেবার জন্য আপনার বিশ্বস্ত অংশীদার।',
+                    'footer-services': 'সেবাসমূহ', 'footer-destinations': 'গন্তব্য', 'footer-support': 'সহায়তা',
+                    'footer-copyright': '© ২০২৪ মেডিট্রাভেল। সমস্ত অধিকার সংরক্ষিত।'
+                },
+                'ru': {
+                    // Navigation
+                    'nav-home': 'Главная', 'nav-destinations': 'Направления', 'nav-services': 'Услуги', 'nav-blog': 'Блог', 'nav-reviews': 'Отзывы пациентов', 'nav-contact': 'Контакты',
+                    'btn-consult': 'Онлайн консультация', 'btn-quote': 'Получить бесплатное предложение',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Блог медицинского туризма',
+                    'blog-hero-subtitle': 'Экспертные идеи, путеводители по направлениям, истории пациентов и все, что вам нужно знать о медицинском туризме по всему миру.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Статей',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Направлений', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Историй успеха',
+                    // Blog Filters
+                    'filter-all': 'Все посты', 'filter-destinations': 'Направления', 'filter-treatments': 'Лечение', 'filter-tips': 'Советы путешественникам', 'filter-success': 'Истории успеха',
+                    // Blog CTA
+                    'blog-cta-title': 'Готовы начать свое медицинское путешествие?',
+                    'blog-cta-subtitle': 'Получите персонализированные рекомендации и экспертное руководство для ваших потребностей медицинского туризма.',
+                    'btn-consultation': 'Получить бесплатную консультацию', 'btn-explore': 'Исследовать направления',
+                    // Footer
+                    'footer-brand': 'МедиТрэвел', 'footer-tagline': 'Ваш надежный партнер для безопасной, доступной и высококачественной медицинской помощи по всему миру.',
+                    'footer-services': 'Услуги', 'footer-destinations': 'Направления', 'footer-support': 'Поддержка',
+                    'footer-copyright': '© 2024 МедиТрэвел. Все права защищены.'
+                },
+                'sw': {
+                    // Navigation
+                    'nav-home': 'Nyumbani', 'nav-destinations': 'Maeneo', 'nav-services': 'Huduma', 'nav-blog': 'Blogu', 'nav-reviews': 'Maoni ya Wagonjwa', 'nav-contact': 'Mawasiliano',
+                    'btn-consult': 'Ushauri Mtandaoni', 'btn-quote': 'Pata Nukuu ya Bure',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Blogu ya Utalii wa Kimatibabu',
+                    'blog-hero-subtitle': 'Maarifa ya kitaalamu, miongozo ya maeneo, hadithi za wagonjwa, na kila kitu unachohitaji kujua kuhusu utalii wa kimatibabu ulimwenguni.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Makala',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Maeneo', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Hadithi za Mafanikio',
+                    // Blog Filters
+                    'filter-all': 'Machapisho Yote', 'filter-destinations': 'Maeneo', 'filter-treatments': 'Matibabu', 'filter-tips': 'Vidokezo vya Usafiri', 'filter-success': 'Hadithi za Mafanikio',
+                    // Blog CTA
+                    'blog-cta-title': 'Uko Tayari Kuanza Safari Yako ya Kimatibabu?',
+                    'blog-cta-subtitle': 'Pata mapendekezo binafsi na mwongozo wa kitaalamu kwa mahitaji yako ya utalii wa kimatibabu.',
+                    'btn-consultation': 'Pata Ushauri wa Bure', 'btn-explore': 'Chunguza Maeneo',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Mshirika wako wa kuaminika kwa huduma za kimatibabu salama, za bei nafuu na za hali ya juu ulimwenguni.',
+                    'footer-services': 'Huduma', 'footer-destinations': 'Maeneo', 'footer-support': 'Msaada',
+                    'footer-copyright': '© 2024 MediTravel. Haki zote zimehifadhiwa.'
+                },
+                'ur': {
+                    // Navigation
+                    'nav-home': 'ہوم', 'nav-destinations': 'منزلیں', 'nav-services': 'خدمات', 'nav-blog': 'بلاگ', 'nav-reviews': 'مریضوں کے جائزے', 'nav-contact': 'رابطہ',
+                    'btn-consult': 'آن لائن مشاورت', 'btn-quote': 'مفت قیمت حاصل کریں',
+                    // Blog Hero Section
+                    'blog-hero-title': 'طبی سیاحت بلاگ',
+                    'blog-hero-subtitle': 'ماہرانہ بصیرت، منزل کے رہنما، مریضوں کی کہانیاں، اور دنیا بھر میں طبی سیاحت کے بارے میں جو کچھ آپ کو جاننے کی ضرورت ہے۔',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'مضامین',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'منزلیں', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'کامیابی کی کہانیاں',
+                    // Blog Filters
+                    'filter-all': 'تمام پوسٹس', 'filter-destinations': 'منزلیں', 'filter-treatments': 'علاج', 'filter-tips': 'سفری تجاویز', 'filter-success': 'کامیابی کی کہانیاں',
+                    // Blog CTA
+                    'blog-cta-title': 'اپنا طبی سفر شروع کرنے کے لیے تیار ہیں؟',
+                    'blog-cta-subtitle': 'اپنی طبی سیاحت کی ضروریات کے لیے ذاتی سفارشات اور ماہرانہ رہنمائی حاصل کریں۔',
+                    'btn-consultation': 'مفت مشاورت حاصل کریں', 'btn-explore': 'منزلیں دریافت کریں',
+                    // Footer
+                    'footer-brand': 'میڈی ٹریول', 'footer-tagline': 'دنیا بھر میں محفوظ، سستی اور اعلیٰ معیار کی طبی دیکھ بھال کے لیے آپ کا قابل اعتماد شریک۔',
+                    'footer-services': 'خدمات', 'footer-destinations': 'منزلیں', 'footer-support': 'مدد',
+                    'footer-copyright': '© 2024 میڈی ٹریول۔ تمام حقوق محفوظ ہیں۔'
+                },
+                'uz': {
+                    // Navigation
+                    'nav-home': 'Bosh sahifa', 'nav-destinations': 'Yo\'nalishlar', 'nav-services': 'Xizmatlar', 'nav-blog': 'Blog', 'nav-reviews': 'Bemorlarning sharhlari', 'nav-contact': 'Aloqa',
+                    'btn-consult': 'Onlayn maslahat', 'btn-quote': 'Bepul taklif oling',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Tibbiy turizm blogi',
+                    'blog-hero-subtitle': 'Mutaxassis tushunchalari, yo\'nalish qo\'llanmalari, bemor hikoyalari va butun dunyo bo\'ylab tibbiy turizm haqida bilishingiz kerak bo\'lgan hamma narsa.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Maqolalar',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Yo\'nalishlar', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Muvaffaqiyat hikoyalari',
+                    // Blog Filters
+                    'filter-all': 'Barcha postlar', 'filter-destinations': 'Yo\'nalishlar', 'filter-treatments': 'Davolash', 'filter-tips': 'Sayohat maslahatlari', 'filter-success': 'Muvaffaqiyat hikoyalari',
+                    // Blog CTA
+                    'blog-cta-title': 'Tibbiy sayohatingizni boshlashga tayyormisiz?',
+                    'blog-cta-subtitle': 'Tibbiy turizm ehtiyojlaringiz uchun shaxsiylashtirilgan tavsiyalar va mutaxassis yo\'l-yo\'riqni oling.',
+                    'btn-consultation': 'Bepul maslahat oling', 'btn-explore': 'Yo\'nalishlarni o\'rganing',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Butun dunyo bo\'ylab xavfsiz, arzon va yuqori sifatli tibbiy yordam uchun ishonchli hamkoringiz.',
+                    'footer-services': 'Xizmatlar', 'footer-destinations': 'Yo\'nalishlar', 'footer-support': 'Qo\'llab-quvvatlash',
+                    'footer-copyright': '© 2024 MediTravel. Barcha huquqlar himoyalangan.'
+                },
+                'tk': {
+                    // Navigation
+                    'nav-home': 'Baş sahypa', 'nav-destinations': 'Ugurlar', 'nav-services': 'Hyzmatlar', 'nav-blog': 'Blog', 'nav-reviews': 'Näsaglaryň syn-pikirleri', 'nav-contact': 'Aragatnaşyk',
+                    'btn-consult': 'Onlaýn maslahat', 'btn-quote': 'Mugt teklip alyň',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Lukmançylyk turizmi blogy',
+                    'blog-hero-subtitle': 'Hünärmen düşünjeleri, ugur gollanmalary, näsag hekaýalary we bütin dünýäde lukmançylyk turizmi barada bilmeli zadyňyz.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Makalalar',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Ugurlar', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Üstünlik hekaýalary',
+                    // Blog Filters
+                    'filter-all': 'Ähli postlar', 'filter-destinations': 'Ugurlar', 'filter-treatments': 'Bejergi', 'filter-tips': 'Syýahat maslahatlary', 'filter-success': 'Üstünlik hekaýalary',
+                    // Blog CTA
+                    'blog-cta-title': 'Lukmançylyk syýahatyňyzy başlamaga taýynmy?',
+                    'blog-cta-subtitle': 'Lukmançylyk turizmi zerurlyklarynyz üçin şahsylaşdyrylan maslahatlar we hünärmen ýol-görkezmäni alyň.',
+                    'btn-consultation': 'Mugt maslahat alyň', 'btn-explore': 'Ugurlar öwren',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Bütin dünýäde howpsuz, arzan we ýokary hilli lukmançylyk kömegi üçin ygtybarly hyzmatdaşyňyz.',
+                    'footer-services': 'Hyzmatlar', 'footer-destinations': 'Ugurlar', 'footer-support': 'Goldaw',
+                    'footer-copyright': '© 2024 MediTravel. Ähli hukuklar goragly.'
+                },
+                'ku': {
+                    // Navigation
+                    'nav-home': 'Malper', 'nav-destinations': 'Cih', 'nav-services': 'Karûbar', 'nav-blog': 'Blog', 'nav-reviews': 'Nirxandina nexweşan', 'nav-contact': 'Têkilî',
+                    'btn-consult': 'Şûreyê online', 'btn-quote': 'Pêşniyarek belaş bistîne',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Bloga geroka bijîjkî',
+                    'blog-hero-subtitle': 'Têgihiştinên pispor, rêberên cihan, çîrokên nexweşan û her tiştê ku hûn hewce ne ku li ser geroka bijîjkî ya li tevahiya cîhanê bizanibin.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Gotar',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Cih', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Çîrokên serkeftinê',
+                    // Blog Filters
+                    'filter-all': 'Hemû postan', 'filter-destinations': 'Cih', 'filter-treatments': 'Dermanan', 'filter-tips': 'Şîretên rêwîtiyê', 'filter-success': 'Çîrokên serkeftinê',
+                    // Blog CTA
+                    'blog-cta-title': 'Amade ne ku rêwîtiya xwe ya bijîjkî dest pê bikin?',
+                    'blog-cta-subtitle': 'Ji bo hewcedariyên xwe yên geroka bijîjkî pêşniyar û rêberiya pispor bistînin.',
+                    'btn-consultation': 'Şûreyeke belaş bistînin', 'btn-explore': 'Cihan vekolin',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Hevkarê we yê muteber ji bo lêçûnên bijîjkî yên ewle, erzan û kalîteyeke bilind li tevahiya cîhanê.',
+                    'footer-services': 'Karûbar', 'footer-destinations': 'Cih', 'footer-support': 'Piştgirî',
+                    'footer-copyright': '© 2024 MediTravel. Hemû maf parastî ne.'
+                },
+                'so': {
+                    // Navigation
+                    'nav-home': 'Hore', 'nav-destinations': 'Meelaha', 'nav-services': 'Adeegyo', 'nav-blog': 'Qoraal', 'nav-reviews': 'Dib-u-eegista bukaannada', 'nav-contact': 'Xidhiidh',
+                    'btn-consult': 'La-tashi onlayn', 'btn-quote': 'Hel qiime bilaash ah',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Qoraalka dalxiiska caafimaadka',
+                    'blog-hero-subtitle': 'Aragtiyo khibradeed, tilmaamaha meelaha, sheekooyinka bukaannada, iyo wax kasta oo aad u baahan tahay inaad ka ogaato dalxiiska caafimaadka adduunka.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Maqaallo',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Meelaha', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Sheekooyinka guusha',
+                    // Blog Filters
+                    'filter-all': 'Dhammaan qoraalada', 'filter-destinations': 'Meelaha', 'filter-treatments': 'Daaweynta', 'filter-tips': 'Talooyinka safarka', 'filter-success': 'Sheekooyinka guusha',
+                    // Blog CTA
+                    'blog-cta-title': 'Ma diyaar u tahay inaad bilowdo safarkaga caafimaadka?',
+                    'blog-cta-subtitle': 'Ka hel talooyinka gaarka ah iyo hagitaanka khibradda leh ee baahiyahaaga dalxiiska caafimaadka.',
+                    'btn-consultation': 'Hel la-tashi bilaash ah', 'btn-explore': 'Sahami meelaha',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Lammaanaha aad ku kalsoonaan karto ee daryeelka caafimaadka badbaadada, jaban, iyo tayada sare ah adduunka oo dhan.',
+                    'footer-services': 'Adeegyo', 'footer-destinations': 'Meelaha', 'footer-support': 'Taageero',
+                    'footer-copyright': '© 2024 MediTravel. Xuquuqda oo dhan way dhawran yihiin.'
+                },
+                'bal': {
+                    // Navigation
+                    'nav-home': 'خانه', 'nav-destinations': 'مقصدها', 'nav-services': 'خدمات', 'nav-blog': 'وبلاگ', 'nav-reviews': 'نظرات بیماران', 'nav-contact': 'تماس',
+                    'btn-consult': 'مشاوره آنلاین', 'btn-quote': 'پیشنهاد رایگان دریافت کنید',
+                    // Blog Hero Section
+                    'blog-hero-title': 'وبلاگ گردشگری پزشکی',
+                    'blog-hero-subtitle': 'بینش‌های متخصص، راهنماهای مقصد، داستان‌های بیماران و همه چیزهایی که باید در مورد گردشگری پزشکی در سراسر جهان بدانید.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'مقاله',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'مقصد', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'داستان‌های موفقیت',
+                    // Blog Filters
+                    'filter-all': 'همه پست‌ها', 'filter-destinations': 'مقصدها', 'filter-treatments': 'درمان‌ها', 'filter-tips': 'نکات سفر', 'filter-success': 'داستان‌های موفقیت',
+                    // Blog CTA
+                    'blog-cta-title': 'آماده شروع سفر پزشکی خود هستید؟',
+                    'blog-cta-subtitle': 'توصیه‌های شخصی و راهنمایی متخصص برای نیازهای گردشگری پزشکی خود دریافت کنید.',
+                    'btn-consultation': 'مشاوره رایگان دریافت کنید', 'btn-explore': 'مقصدها را کاوش کنید',
+                    // Footer
+                    'footer-brand': 'مدی ترول', 'footer-tagline': 'شریک قابل اعتماد شما برای مراقبت‌های پزشکی ایمن، مقرون به صرفه و با کیفیت بالا در سراسر جهان.',
+                    'footer-services': 'خدمات', 'footer-destinations': 'مقصدها', 'footer-support': 'پشتیبانی',
+                    'footer-copyright': '© 2024 مدی ترول. تمام حقوق محفوظ است.'
+                },
+                'om': {
+                    // Navigation
+                    'nav-home': 'Manaa', 'nav-destinations': 'Bakka deemuu', 'nav-services': 'Tajaajila', 'nav-blog': 'Boloogi', 'nav-reviews': 'Yaada dhukkubsattootaa', 'nav-contact': 'Quunnamtii',
+                    'btn-consult': 'Gorsa onlaayinii', 'btn-quote': 'Gatii bilisaa argadhu',
+                    // Blog Hero Section
+                    'blog-hero-title': 'Boloogi daldalaa fayyaa',
+                    'blog-hero-subtitle': 'Yaada ogummaa, qajeelfama bakka deemuu, seenaa dhukkubsattootaa, fi waan daldalaa fayyaa addunyaa irratti beekuu qabdu hunda.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'Barreeffamaa',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'Bakka deemuu', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'Seenaa milkaa\'ina',
+                    // Blog Filters
+                    'filter-all': 'Maxxansaa hunda', 'filter-destinations': 'Bakka deemuu', 'filter-treatments': 'Yaalaa', 'filter-tips': 'Yaadannoo imala', 'filter-success': 'Seenaa milkaa\'ina',
+                    // Blog CTA
+                    'blog-cta-title': 'Imala fayyaa kee jalqabuuf qophaa\'aa?',
+                    'blog-cta-subtitle': 'Yaada garee fi qajeelfama ogummaa fedhii daldalaa fayyaa keetif argadhu.',
+                    'btn-consultation': 'Gorsa bilisaa argadhu', 'btn-explore': 'Bakka deemuu qoradhu',
+                    // Footer
+                    'footer-brand': 'MediTravel', 'footer-tagline': 'Hiriyaa amanamaa kee kunuunsa fayyaa nageenya, gatii madaalawaa fi qulqullina olaanaa addunyaa guutuuf.',
+                    'footer-services': 'Tajaajila', 'footer-destinations': 'Bakka deemuu', 'footer-support': 'Gargaarsa',
+                    'footer-copyright': '© 2024 MediTravel. Mirga hunda eegame.'
+                },
+                'am': {
+                    // Navigation
+                    'nav-home': 'መነሻ', 'nav-destinations': 'መድረሻዎች', 'nav-services': 'አገልግሎቶች', 'nav-blog': 'ብሎግ', 'nav-reviews': 'የታካሚዎች ግምገማዎች', 'nav-contact': 'ግንኙነት',
+                    'btn-consult': 'የመስመር ላይ ምክክር', 'btn-quote': 'ነፃ ዋጋ ያግኙ',
+                    // Blog Hero Section
+                    'blog-hero-title': 'የሕክምና ቱሪዝም ብሎግ',
+                    'blog-hero-subtitle': 'የባለሙያ ግንዛቤዎች፣ የመድረሻ መመሪያዎች፣ የታካሚዎች ታሪኮች፣ እና በአለም ዙሪያ ስላለው የሕክምና ቱሪዝም ማወቅ የሚኖርቦት ሁሉ።',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'ጽሑፎች',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'መድረሻዎች', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'የስኬት ታሪኮች',
+                    // Blog Filters
+                    'filter-all': 'ሁሉም ፖስቶች', 'filter-destinations': 'መድረሻዎች', 'filter-treatments': 'ሕክምናዎች', 'filter-tips': 'የጉዞ ምክሮች', 'filter-success': 'የስኬት ታሪኮች',
+                    // Blog CTA
+                    'blog-cta-title': 'የሕክምና ጉዞዎን ለመጀመር ዝግጁ ነዎት?',
+                    'blog-cta-subtitle': 'ለሕክምና ቱሪዝም ፍላጎቶችዎ የግል ምክሮች እና የባለሙያ መመሪያ ያግኙ።',
+                    'btn-consultation': 'ነፃ ምክር ያግኙ', 'btn-explore': 'መድረሻዎችን ያስሱ',
+                    // Footer
+                    'footer-brand': 'ሜዲትራቬል', 'footer-tagline': 'በአለም ዙሪያ ለአስተማማኝ፣ ተመጣጣኝ እና ከፍተኛ ጥራት ያለው የሕክምና እንክብካቤ የሚታመን አጋርዎ።',
+                    'footer-services': 'አገልግሎቶች', 'footer-destinations': 'መድረሻዎች', 'footer-support': 'ድጋፍ',
+                    'footer-copyright': '© 2024 ሜዲትራቬል። ሁሉም መብቶች የተጠበቁ ናቸው።'
+                },
+                'mey': {
+                    // Navigation (Using Arabic script for Mahri)
+                    'nav-home': 'الصفحة الرئيسية', 'nav-destinations': 'الوجهات', 'nav-services': 'الخدمات', 'nav-blog': 'المدونة', 'nav-reviews': 'آراء المرضى', 'nav-contact': 'اتصل بنا',
+                    'btn-consult': 'استشارة عبر الإنترنت', 'btn-quote': 'احصل على عرض مجاني',
+                    // Blog Hero Section
+                    'blog-hero-title': 'مدونة السياحة الطبية',
+                    'blog-hero-subtitle': 'رؤى الخبراء، أدلة الوجهات، قصص المرضى، وكل ما تحتاج لمعرفته حول السياحة الطبية في جميع أنحاء العالم.',
+                    'blog-stat1': '50+', 'blog-stat1-text': 'مقالة',
+                    'blog-stat2': '25+', 'blog-stat2-text': 'وجهة', 
+                    'blog-stat3': '100+', 'blog-stat3-text': 'قصة نجاح',
+                    // Blog Filters
+                    'filter-all': 'جميع المشاركات', 'filter-destinations': 'الوجهات', 'filter-treatments': 'العلاجات', 'filter-tips': 'نصائح السفر', 'filter-success': 'قصص النجاح',
+                    // Blog CTA
+                    'blog-cta-title': 'هل أنت مستعد لبدء رحلتك الطبية؟',
+                    'blog-cta-subtitle': 'احصل على توصيات مخصصة وإرشادات الخبراء لاحتياجاتك في السياحة الطبية.',
+                    'btn-consultation': 'احصل على استشارة مجانية', 'btn-explore': 'استكشف الوجهات',
+                    // Footer
+                    'footer-brand': 'ميدي ترافيل', 'footer-tagline': 'شريكك الموثوق للرعاية الطبية الآمنة والميسورة التكلفة وعالية الجودة في جميع أنحاء العالم.',
+                    'footer-services': 'الخدمات', 'footer-destinations': 'الوجهات', 'footer-support': 'الدعم',
+                    'footer-copyright': '© 2024 ميدي ترافيل. جميع الحقوق محفوظة.'
+                }
+            };
+            
+            // Update content based on selected language
+            setTimeout(() => {
+                if (translations[langCode]) {
+                    const translation = translations[langCode];
+                    
+                    // Update Navigation
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    const navTexts = ['nav-home', 'nav-destinations', 'nav-services', 'nav-blog', 'nav-reviews', 'nav-contact'];
+                    navLinks.forEach((link, index) => {
+                        if (translation[navTexts[index]]) link.textContent = translation[navTexts[index]];
+                    });
+                    
+                    // Update Buttons
+                    const consultBtn = document.querySelector('.btn-secondary');
+                    const quoteBtn = document.querySelector('.btn-primary');
+                    if (consultBtn && translation['btn-consult']) consultBtn.textContent = translation['btn-consult'];
+                    if (quoteBtn && translation['btn-quote']) quoteBtn.textContent = translation['btn-quote'];
+                    
+                    // Update Blog Hero Section
+                    const blogHeroTitle = document.querySelector('.blog-hero-content h1');
+                    const blogHeroSubtitle = document.querySelector('.blog-hero-content p');
+                    
+                    if (blogHeroTitle) blogHeroTitle.textContent = translation['blog-hero-title'];
+                    if (blogHeroSubtitle) blogHeroSubtitle.textContent = translation['blog-hero-subtitle'];
+                    
+                    // Update Blog Hero Stats
+                    const blogStats = document.querySelectorAll('.blog-hero-stats .stat');
+                    blogStats.forEach((stat, index) => {
+                        const statNumber = stat.querySelector('h3');
+                        const statText = stat.querySelector('p');
+                        if (statNumber && translation[`blog-stat${index + 1}`]) {
+                            statNumber.textContent = translation[`blog-stat${index + 1}`];
+                        }
+                        if (statText && translation[`blog-stat${index + 1}-text`]) {
+                            statText.textContent = translation[`blog-stat${index + 1}-text`];
+                        }
+                    });
+                    
+                    // Update Blog Filter Buttons
+                    const filterButtons = document.querySelectorAll('.filter-btn');
+                    const filterKeys = ['filter-all', 'filter-destinations', 'filter-treatments', 'filter-tips', 'filter-success'];
+                    filterButtons.forEach((btn, index) => {
+                        if (translation[filterKeys[index]]) {
+                            btn.textContent = translation[filterKeys[index]];
+                        }
+                    });
+                    
+                    // Update Blog CTA Section
+                    const blogCtaTitle = document.querySelector('.blog-cta-content h2');
+                    const blogCtaSubtitle = document.querySelector('.blog-cta-content p');
+                    
+                    if (blogCtaTitle) blogCtaTitle.textContent = translation['blog-cta-title'];
+                    if (blogCtaSubtitle) blogCtaSubtitle.textContent = translation['blog-cta-subtitle'];
+                    
+                    // Update CTA Buttons
+                    const ctaButtons = document.querySelectorAll('.blog-cta-actions a');
+                    if (ctaButtons[0] && translation['btn-consultation']) {
+                        ctaButtons[0].textContent = translation['btn-consultation'];
+                    }
+                    if (ctaButtons[1] && translation['btn-explore']) {
+                        ctaButtons[1].textContent = translation['btn-explore'];
+                    }
+                    
+                    // Update Footer
+                    const footerBrand = document.querySelector('.footer-section h3');
+                    const footerTagline = document.querySelector('.footer-section p');
+                    const footerSections = document.querySelectorAll('.footer-section h4');
+                    const footerCopyright = document.querySelector('.footer-bottom p');
+                    
+                    if (footerBrand) footerBrand.textContent = translation['footer-brand'];
+                    if (footerTagline) footerTagline.textContent = translation['footer-tagline'];
+                    if (footerCopyright) footerCopyright.textContent = translation['footer-copyright'];
+                    
+                    const footerKeys = ['footer-services', 'footer-destinations', 'footer-support'];
+                    footerSections.forEach((section, index) => {
+                        if (translation[footerKeys[index]]) {
+                            section.textContent = translation[footerKeys[index]];
+                        }
+                    });
+                }
+                
+                // Remove loading indicator
+                document.body.style.opacity = '1';
+                
+                // Show success message
+                const languageName = document.querySelector(`option[value="${langCode}"]`).textContent;
+                console.log(`Blog language changed to: ${languageName}`);
+                
+            }, 500);
+        }
+        
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage && savedLanguage !== 'en') {
+                document.getElementById('languageSelect').value = savedLanguage;
+                changeLanguage(savedLanguage);
+            }
         });
     </script>
 </body>
