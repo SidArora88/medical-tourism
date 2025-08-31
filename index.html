@@ -134,6 +134,9 @@
         .nav-menu{display:flex;list-style:none;gap:2rem;margin:0}
         .nav-link{text-decoration:none;color:#1e293b;font-weight:500}
         .nav-actions{display:flex;gap:1rem;align-items:center}
+        .language-selector{margin-right:0.5rem}
+        .language-dropdown{padding:0.5rem;border:1px solid #e2e8f0;border-radius:6px;background:#fff;color:#1e293b;font-size:0.85rem;cursor:pointer;min-width:120px}
+        .language-dropdown:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 2px rgb(37 99 235 / 0.2)}
         .btn-primary,.btn-secondary{padding:12px 24px;border-radius:8px;font-weight:500;text-decoration:none;display:inline-block;cursor:pointer;border:2px solid transparent;font-size:14px}
         .btn-primary{background:#2563eb;color:white}
         .btn-secondary{background:#f8fafc;color:#1e293b;border:2px solid #e2e8f0}
@@ -166,6 +169,7 @@
             .nav-menu.active{left:0}
             .nav-menu li{margin:1rem 0}
             .nav-actions{display:none}
+            .language-selector{display:none}
         }
         @media (max-width:640px){.hero-title{font-size:2rem}.hero-subtitle{font-size:1.1rem}}
         .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -267,6 +271,24 @@
                     </li>
                 </ul>
                 <div class="nav-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="en">🇺🇸 English</option>
+                            <option value="bn">🇧🇩 Bengali</option>
+                            <option value="ur">🇵🇰 Urdu</option>
+                            <option value="ar">🇸🇦 Arabic</option>
+                            <option value="ku">🇮🇶 Kurdish</option>
+                            <option value="so">🇸🇴 Somali</option>
+                            <option value="bal">🇴🇲 Baluchi</option>
+                            <option value="om">🇪🇹 Oromo</option>
+                            <option value="am">🇪🇹 Amharic</option>
+                            <option value="mey">🇾🇪 Mahri</option>
+                            <option value="tk">🇹🇲 Turkmen</option>
+                            <option value="ru">🇷🇺 Russian</option>
+                            <option value="uz">🇺🇿 Uzbek</option>
+                            <option value="sw">🇰🇪 Swahili</option>
+                        </select>
+                    </div>
                     <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Consult Online</button>
                     <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Free Quote</button>
                 </div>
@@ -658,6 +680,119 @@
     </footer>
 
     <script src="/script.js" defer></script>
+    
+    <!-- Language Translation Functionality -->
+    <script>
+        function changeLanguage(langCode) {
+            // Store selected language in localStorage
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Show loading indicator
+            document.body.style.opacity = '0.7';
+            
+            // Language mappings for key medical tourism terms
+            const translations = {
+                'en': {
+                    'hero-title': 'Best Hospitals and Treatments in India: World-Class Healthcare for African & Asian Patients',
+                    'hero-subtitle': 'Get premium medical treatments in India at 70% lower costs. Connect with JCI-accredited hospitals, internationally trained surgeons, and comprehensive support from consultation to recovery.',
+                    'consultation-header': 'Get Your Free Medical Consultation',
+                    'consultation-subtitle': 'Expert guidance in 24 hours',
+                    'services-title': 'Why Choose India for Medical Tourism?',
+                    'services-subtitle': 'Comprehensive support for African and Southeast Asian patients seeking quality healthcare in India',
+                    'destinations-title': 'Top Medical Destinations',
+                    'testimonials-title': 'Patient Success Stories',
+                    'contact-title': 'Ready to Start Your Medical Journey?',
+                    'contact-subtitle': 'Get personalized treatment recommendations and cost estimates from our medical experts.'
+                },
+                'ar': {
+                    'hero-title': 'أفضل المستشفيات والعلاجات في الهند: رعاية صحية عالمية المستوى للمرضى الأفارقة والآسيويين',
+                    'hero-subtitle': 'احصل على علاجات طبية عالية الجودة في الهند بتكلفة أقل بـ 70%. تواصل مع المستشفيات المعتمدة من JCI والجراحين المدربين دولياً.',
+                    'consultation-header': 'احصل على استشارتك الطبية المجانية',
+                    'consultation-subtitle': 'إرشاد الخبراء في 24 ساعة',
+                    'services-title': 'لماذا تختار الهند للسياحة العلاجية؟',
+                    'services-subtitle': 'دعم شامل للمرضى الأفارقة وجنوب شرق آسيا الباحثين عن الرعاية الصحية الجيدة في الهند',
+                    'destinations-title': 'أفضل الوجهات الطبية',
+                    'testimonials-title': 'قصص نجاح المرضى',
+                    'contact-title': 'هل أنت مستعد لبدء رحلتك الطبية؟',
+                    'contact-subtitle': 'احصل على توصيات العلاج المخصصة وتقديرات التكلفة من خبرائنا الطبيين.'
+                },
+                'bn': {
+                    'hero-title': 'ভারতে সেরা হাসপাতাল এবং চিকিৎসা: আফ্রিকান ও এশিয়ান রোগীদের জন্য বিশ্বমানের স্বাস্থ্যসেবা',
+                    'hero-subtitle': '৭০% কম খরচে ভারতে প্রিমিয়াম চিকিৎসা সেবা পান। JCI-স্বীকৃত হাসপাতাল, আন্তর্জাতিকভাবে প্রশিক্ষিত সার্জন এবং পরামর্শ থেকে সুস্থতা পর্যন্ত ব্যাপক সহায়তার সাথে যুক্ত হন।',
+                    'consultation-header': 'আপনার বিনামূল্যে চিকিৎসা পরামর্শ নিন',
+                    'consultation-subtitle': '২৪ ঘন্টায় বিশেষজ্ঞ নির্দেশনা',
+                    'services-title': 'চিকিৎসা পর্যটনের জন্য ভারত কেন বেছে নেবেন?',
+                    'services-subtitle': 'ভারতে মানসম্পন্ন স্বাস্থ্যসেবা খোঁজা আফ্রিকান এবং দক্ষিণ-পূর্ব এশিয়ার রোগীদের জন্য ব্যাপক সহায়তা',
+                    'destinations-title': 'শীর্ষ চিকিৎসা গন্তব্য',
+                    'testimonials-title': 'রোগীদের সফলতার গল্প',
+                    'contact-title': 'আপনার চিকিৎসা যাত্রা শুরু করতে প্রস্তুত?',
+                    'contact-subtitle': 'আমাদের চিকিৎসা বিশেষজ্ঞদের কাছ থেকে ব্যক্তিগত চিকিৎসার সুপারিশ এবং খরচের অনুমান পান।'
+                },
+                'sw': {
+                    'hero-title': 'Hospitali na Matibabu Bora Zaidi India: Huduma za Afya za Kimataifa kwa Wagonjwa wa Kiafrika na Kiasia',
+                    'hero-subtitle': 'Pata matibabu ya juu ya viwango India kwa gharama za chini kwa 70%. Unganisha na hospitali zilizoidhinishwa na JCI, madaktari waliofunzwa kimataifa.',
+                    'consultation-header': 'Pata Ushauri wako wa Bure wa Kimatibabu',
+                    'consultation-subtitle': 'Mwongozo wa kitaalamu katika masaa 24',
+                    'services-title': 'Kwa Nini Uchague India kwa Utalii wa Kimatibabu?',
+                    'services-subtitle': 'Msaada mkamilifu kwa wagonjwa wa Kiafrika na Asia ya Kusini Mashariki wanaotafuta huduma za afya za ubora India',
+                    'destinations-title': 'Maeneo Makuu ya Kimatibabu',
+                    'testimonials-title': 'Hadithi za Mafanikio ya Wagonjwa',
+                    'contact-title': 'Uko Tayari Kuanza Safari Yako ya Kimatibabu?',
+                    'contact-subtitle': 'Pata mapendekezo ya matibabu binafsi na makadirio ya gharama kutoka kwa wataalamu wetu wa kimatibabu.'
+                }
+            };
+            
+            // Update content based on selected language
+            setTimeout(() => {
+                if (translations[langCode]) {
+                    const translation = translations[langCode];
+                    
+                    // Update main content
+                    const heroTitle = document.querySelector('.hero-title');
+                    const heroSubtitle = document.querySelector('.hero-subtitle');
+                    const consultationHeader = document.querySelector('.hero-form-header h3');
+                    const consultationSubtitle = document.querySelector('.hero-form-header p');
+                    
+                    if (heroTitle) heroTitle.textContent = translation['hero-title'];
+                    if (heroSubtitle) heroSubtitle.textContent = translation['hero-subtitle'];
+                    if (consultationHeader) consultationHeader.textContent = translation['consultation-header'];
+                    if (consultationSubtitle) consultationSubtitle.textContent = translation['consultation-subtitle'];
+                    
+                    // Update section headers
+                    const servicesTitle = document.querySelector('#services .section-header h2');
+                    const servicesSubtitle = document.querySelector('#services .section-header p');
+                    const destinationsTitle = document.querySelector('#destinations .section-header h2');
+                    const testimonialsTitle = document.querySelector('#testimonials .section-header h2');
+                    const contactTitle = document.querySelector('#contact h2');
+                    const contactSubtitle = document.querySelector('#contact p');
+                    
+                    if (servicesTitle) servicesTitle.textContent = translation['services-title'];
+                    if (servicesSubtitle) servicesSubtitle.textContent = translation['services-subtitle'];
+                    if (destinationsTitle) destinationsTitle.textContent = translation['destinations-title'];
+                    if (testimonialsTitle) testimonialsTitle.textContent = translation['testimonials-title'];
+                    if (contactTitle) contactTitle.textContent = translation['contact-title'];
+                    if (contactSubtitle) contactSubtitle.textContent = translation['contact-subtitle'];
+                }
+                
+                // Remove loading indicator
+                document.body.style.opacity = '1';
+                
+                // Show success message
+                const languageName = document.querySelector(`option[value="${langCode}"]`).textContent;
+                console.log(`Language changed to: ${languageName}`);
+                
+            }, 500);
+        }
+        
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage && savedLanguage !== 'en') {
+                document.getElementById('languageSelect').value = savedLanguage;
+                changeLanguage(savedLanguage);
+            }
+        });
+    </script>
     
     <!-- Performance monitoring -->
     <script>
