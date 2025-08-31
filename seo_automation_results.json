@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-08-31T11:02:50.231130",
+  "search_engine_submissions": {
+    "Bing": "\u274c Failed (410)",
+    "Yandex": "\u2705 Success"
+  },
+  "directories": [
+    {
+      "name": "DMOZ Alternative - Best of the Web",
+      "url": "https://botw.org/",
+      "category": "Health/Medicine/Medical Tourism",
+      "automated": false
+    },
+    {
+      "name": "Jayde.com",
+      "url": "https://www.jayde.com/",
+      "category": "Health & Medicine",
+      "automated": false
+    },
+    {
+      "name": "Business.com",
+      "url": "https://www.business.com/",
+      "category": "Healthcare Services",
+      "automated": false
+    }
+  ],
+  "social_posts": [
+    {
+      "blog": "blog-cardiac-surgery-india.html",
+      "procedure": "cardiac surgery",
+      "content": "\ud83c\udfe5 Considering cardiac surgery in India? Our comprehensive guide covers everything from top hospitals to cost savings. Learn more: https://afiyaindia.com/blog-cardiac-surgery-india.html #MedicalTourism #Healthcare #India",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook"
+      ]
+    },
+    {
+      "blog": "blog-cardiac-surgery-india.html",
+      "procedure": "cardiac surgery",
+      "content": "\ud83d\udca1 Did you know? Patients save up to 80% on cardiac surgery in India without compromising quality. Read real patient stories: https://afiyaindia.com/blog-cardiac-surgery-india.html #AffordableHealthcare #India",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook"
+      ]
+    },
+    {
+      "blog": "blog-cardiac-surgery-india.html",
+      "procedure": "cardiac surgery",
+      "content": "\ud83c\udf1f Why choose India for cardiac surgery? \u2705 JCI-accredited hospitals \u2705 World-class doctors \u2705 70% cost savings. Full guide: https://afiyaindia.com/blog-cardiac-surgery-india.html",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook"
+      ]
+    },
+    {
+      "blog": "blog-cardiac-surgery-india.html",
+      "procedure": "cardiac surgery",
+      "content": "\ud83d\udcd6 New blog post: Everything you need to know about cardiac surgery in India. From preparation to recovery: https://afiyaindia.com/blog-cardiac-surgery-india.html #HealthcareIndia",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook"
+      ]
+    },
+    {
+      "blog": "blog-heart-transplant-india.html",
+      "procedure": "heart transplant",
+      "content": "\ud83c\udfe5 Considering heart transplant in India? Our comprehensive guide covers everything from top hospitals to cost savings. Learn more: https://afiyaindia.com/blog-heart-transplant-india.html #MedicalTourism #Healthcare #India",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook"
+      ]
+    }
+  ],
+  "outreach_tracker": {
+    "campaign_name": "AfiyaIndia Backlink Campaign 2025-08",
+    "start_date": "2025-08-31T11:02:50.231117",
+    "targets": [
+      {
+        "website": "healthline.com",
+        "contact_email": "editorial@healthline.com",
+        "content_type": "Guest Post",
+        "proposed_topic": "Medical Tourism Safety: What International Patients Need to Know",
+        "status": "pending_outreach",
+        "notes": "Large health website, accepts expert contributions"
+      },
+      {
+        "website": "expatica.com",
+        "contact_email": "editor@expatica.com",
+        "content_type": "Expert Article",
+        "proposed_topic": "Healthcare Options for Expats: Medical Tourism in Asia",
+        "status": "pending_outreach",
+        "notes": "Targets expat community, good fit for our audience"
+      },
+      {
+        "website": "medicaltourismmagazine.com",
+        "contact_email": "editorial@medicaltourismmagazine.com",
+        "content_type": "Industry Insight",
+        "proposed_topic": "India's Rise as Top Medical Tourism Destination",
+        "status": "pending_outreach",
+        "notes": "Industry publication, high authority"
+      }
+    ],
+    "email_templates": {
+      "initial_outreach": "\nSubject: Expert Medical Tourism Content for {website}\n\nHi {contact_name},\n\nI'm reaching out from AfiyaIndia.com, where we help international patients access quality healthcare in India's top hospitals.\n\nI noticed your article about {relevant_article} and thought our expertise could add value to your readers.\n\nWould you be interested in expert content about:\n\u2022 Medical tourism safety and best practices\n\u2022 Cost comparisons: India vs Western countries  \n\u2022 Real patient success stories and outcomes\n\nOur content includes original research, verified hospital data, and 500+ patient testimonials.\n\nYou can see our content quality at: https://afiyaindia.com/blog-fixed.html\n\nWould this be valuable for your audience?\n\nBest regards,\nAfiyaIndia.com Team\ncare@afiyaindia.com\n",
+      "follow_up": "\nSubject: Re: Expert Medical Tourism Content for {website}\n\nHi {contact_name},\n\nFollowing up on my previous email about contributing expert medical tourism content to {website}.\n\nI understand you receive many pitches, but our unique perspective on India's healthcare system and real patient data could provide significant value to your readers.\n\nWould a brief 10-minute call work to discuss potential collaboration?\n\nBest regards,\nAfiyaIndia.com Team\n"
+    }
+  },
+  "blog_urls": [
+    "https://afiyaindia.com/blog-cardiac-surgery-india.html",
+    "https://afiyaindia.com/blog-heart-transplant-india.html",
+    "https://afiyaindia.com/blog-dental-implants-india.html",
+    "https://afiyaindia.com/blog-spine-surgery-india.html",
+    "https://afiyaindia.com/blog-knee-replacement-india.html",
+    "https://afiyaindia.com/blog-medical-travel-checklist.html",
+    "https://afiyaindia.com/blog-sarah-fertility-journey.html",
+    "https://afiyaindia.com/blog-hair-transplant-turkey.html"
+  ]
+}
