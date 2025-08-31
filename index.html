@@ -64,9 +64,9 @@
     <meta name="msvalidate.01" content="ABC123DEF456789-MediTravelBingVerification">
     
     <!-- Critical resource preloading -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css?v=2024083101" as="style">
+    <link rel="preload" href="script.js?v=2024083101" as="script">
+    <link rel="stylesheet" href="styles.css?v=2024083101">
     
     <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,10 +119,17 @@
         .hero-subtitle{font-size:1.25rem;margin-bottom:2rem;color:#64748b}
         .hero-form{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1)}
         .form-group{margin-bottom:1.5rem}
-        .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:1rem;transition:all 0.3s ease;background:#fff;color:#1e293b}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:8px;font-size:1rem;transition:all 0.3s ease;background:#fff;color:#1e293b;font-family:inherit}
         .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgb(37 99 235 / 0.1)}
         .form-group textarea{resize:vertical;min-height:100px}
-        .btn-full{width:100%;justify-content:center}
+        .btn-full{width:100%;justify-content:center;display:flex;align-items:center}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .section{padding:80px 0}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-header h2{font-size:2.5rem;margin-bottom:1rem;color:#1e293b}
+        .section-header p{font-size:1.1rem;color:#64748b;max-width:600px;margin:0 auto}
+        .grid{display:grid;gap:2rem}
+        .card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1);border:1px solid #e2e8f0}
         .hamburger{display:none;flex-direction:column;cursor:pointer;width:25px;height:20px}
         .hamburger .bar{width:25px;height:3px;background:#1e293b;margin:3px 0;transition:all 0.3s ease}
         @media (max-width:968px){
