@@ -63,10 +63,11 @@
     <!-- Bing Webmaster Tools -->
     <meta name="msvalidate.01" content="ABC123DEF456789-MediTravelBingVerification">
     
-    <!-- Critical resource preloading -->
-    <link rel="preload" href="styles.css?v=2024083101" as="style">
-    <link rel="preload" href="script.js?v=2024083101" as="script">
-    <link rel="stylesheet" href="styles.css?v=2024083101">
+    <!-- Critical resource preloading with fallback -->
+    <link rel="preload" href="styles.css?v=2024083102" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="script.js?v=2024083102" as="script">
+    <link rel="stylesheet" href="styles.css?v=2024083102" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link rel="stylesheet" href="styles.css?v=2024083102"></noscript>
     
     <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
