@@ -690,55 +690,329 @@
             // Show loading indicator
             document.body.style.opacity = '0.7';
             
-            // Language mappings for key medical tourism terms
+            // Comprehensive language mappings for all components
             const translations = {
                 'en': {
+                    // Navigation
+                    'nav-home': 'Home', 'nav-destinations': 'Destinations', 'nav-services': 'Services', 'nav-blog': 'Blog', 'nav-reviews': 'Patient Reviews', 'nav-contact': 'Contact',
+                    'btn-consult': 'Consult Online', 'btn-quote': 'Get Free Quote',
+                    // Hero Section
                     'hero-title': 'Best Hospitals and Treatments in India: World-Class Healthcare for African & Asian Patients',
                     'hero-subtitle': 'Get premium medical treatments in India at 70% lower costs. Connect with JCI-accredited hospitals, internationally trained surgeons, and comprehensive support from consultation to recovery.',
-                    'consultation-header': 'Get Your Free Medical Consultation',
-                    'consultation-subtitle': 'Expert guidance in 24 hours',
-                    'services-title': 'Why Choose India for Medical Tourism?',
-                    'services-subtitle': 'Comprehensive support for African and Southeast Asian patients seeking quality healthcare in India',
-                    'destinations-title': 'Top Medical Destinations',
-                    'testimonials-title': 'Patient Success Stories',
-                    'contact-title': 'Ready to Start Your Medical Journey?',
-                    'contact-subtitle': 'Get personalized treatment recommendations and cost estimates from our medical experts.'
+                    'consultation-header': 'Get Your Free Medical Consultation', 'consultation-subtitle': 'Expert guidance in 24 hours',
+                    // Form Fields
+                    'form-name': 'Full Name', 'form-email': 'Email Address', 'form-phone': 'Phone Number', 'form-treatment': 'Select Treatment Type', 'form-message': 'Tell us about your medical needs...', 'form-submit': 'Get Free Consultation',
+                    // Services
+                    'services-title': 'Why Choose India for Medical Tourism?', 'services-subtitle': 'Comprehensive support for African and Southeast Asian patients seeking quality healthcare in India',
+                    'service1-title': 'Expert Medical Consultation', 'service1-desc': 'Connect with internationally certified doctors and specialists for personalized treatment plans.',
+                    'service2-title': 'Transparent Pricing', 'service2-desc': 'Get detailed cost estimates upfront with no hidden fees. Save up to 70% on medical procedures.',
+                    'service3-title': 'Travel Assistance', 'service3-desc': 'Complete travel coordination including visa assistance, accommodation, and transportation.',
+                    'service4-title': 'Language Support', 'service4-desc': 'Professional interpretation services and medical document translation in 15+ languages.',
+                    'service5-title': 'Quality Assurance', 'service5-desc': 'All partner hospitals are internationally accredited with proven track records of excellence.',
+                    'service6-title': '24/7 Support', 'service6-desc': 'Dedicated case managers provide round-the-clock assistance throughout your medical journey.',
+                    // Destinations
+                    'destinations-title': 'Top Medical Destinations', 'testimonials-title': 'Patient Success Stories', 'contact-title': 'Ready to Start Your Medical Journey?', 'contact-subtitle': 'Get personalized treatment recommendations and cost estimates from our medical experts.',
+                    // Footer
+                    'footer-services': 'Services', 'footer-destinations': 'Destinations', 'footer-support': 'Support'
                 },
                 'ar': {
+                    // Navigation
+                    'nav-home': 'الرئيسية', 'nav-destinations': 'الوجهات', 'nav-services': 'الخدمات', 'nav-blog': 'المدونة', 'nav-reviews': 'تقييمات المرضى', 'nav-contact': 'اتصل بنا',
+                    'btn-consult': 'استشارة عبر الإنترنت', 'btn-quote': 'احصل على عرض أسعار مجاني',
+                    // Hero Section
                     'hero-title': 'أفضل المستشفيات والعلاجات في الهند: رعاية صحية عالمية المستوى للمرضى الأفارقة والآسيويين',
                     'hero-subtitle': 'احصل على علاجات طبية عالية الجودة في الهند بتكلفة أقل بـ 70%. تواصل مع المستشفيات المعتمدة من JCI والجراحين المدربين دولياً.',
-                    'consultation-header': 'احصل على استشارتك الطبية المجانية',
-                    'consultation-subtitle': 'إرشاد الخبراء في 24 ساعة',
-                    'services-title': 'لماذا تختار الهند للسياحة العلاجية؟',
-                    'services-subtitle': 'دعم شامل للمرضى الأفارقة وجنوب شرق آسيا الباحثين عن الرعاية الصحية الجيدة في الهند',
-                    'destinations-title': 'أفضل الوجهات الطبية',
-                    'testimonials-title': 'قصص نجاح المرضى',
-                    'contact-title': 'هل أنت مستعد لبدء رحلتك الطبية؟',
-                    'contact-subtitle': 'احصل على توصيات العلاج المخصصة وتقديرات التكلفة من خبرائنا الطبيين.'
+                    'consultation-header': 'احصل على استشارتك الطبية المجانية', 'consultation-subtitle': 'إرشاد الخبراء في 24 ساعة',
+                    // Form Fields
+                    'form-name': 'الاسم الكامل', 'form-email': 'عنوان البريد الإلكتروني', 'form-phone': 'رقم الهاتف', 'form-treatment': 'اختر نوع العلاج', 'form-message': 'أخبرنا عن احتياجاتك الطبية...', 'form-submit': 'احصل على استشارة مجانية',
+                    // Services
+                    'services-title': 'لماذا تختار الهند للسياحة العلاجية؟', 'services-subtitle': 'دعم شامل للمرضى الأفارقة وجنوب شرق آسيا الباحثين عن الرعاية الصحية الجيدة في الهند',
+                    'service1-title': 'استشارة طبية متخصصة', 'service1-desc': 'تواصل مع أطباء وأخصائيين معتمدين دولياً للحصول على خطط علاج مخصصة.',
+                    'service2-title': 'أسعار شفافة', 'service2-desc': 'احصل على تقديرات تكلفة مفصلة مسبقاً بدون رسوم خفية. وفر حتى 70% على الإجراءات الطبية.',
+                    'service3-title': 'مساعدة السفر', 'service3-desc': 'تنسيق كامل للسفر بما في ذلك مساعدة التأشيرة والإقامة والنقل.',
+                    'service4-title': 'دعم لغوي', 'service4-desc': 'خدمات ترجمة مهنية وترجمة المستندات الطبية بأكثر من 15 لغة.',
+                    'service5-title': 'ضمان الجودة', 'service5-desc': 'جميع المستشفيات الشريكة معتمدة دولياً مع سجلات مثبتة من التميز.',
+                    'service6-title': 'دعم 24/7', 'service6-desc': 'مديرو حالات مخصصون يقدمون المساعدة على مدار الساعة طوال رحلتك الطبية.',
+                    // Destinations
+                    'destinations-title': 'أفضل الوجهات الطبية', 'testimonials-title': 'قصص نجاح المرضى', 'contact-title': 'هل أنت مستعد لبدء رحلتك الطبية؟', 'contact-subtitle': 'احصل على توصيات العلاج المخصصة وتقديرات التكلفة من خبرائنا الطبيين.',
+                    // Footer
+                    'footer-services': 'الخدمات', 'footer-destinations': 'الوجهات', 'footer-support': 'الدعم'
                 },
                 'bn': {
+                    // Navigation
+                    'nav-home': 'হোম', 'nav-destinations': 'গন্তব্য', 'nav-services': 'সেবাসমূহ', 'nav-blog': 'ব্লগ', 'nav-reviews': 'রোগীর পর্যালোচনা', 'nav-contact': 'যোগাযোগ',
+                    'btn-consult': 'অনলাইন পরামর্শ', 'btn-quote': 'বিনামূল্যে উদ্ধৃতি পান',
+                    // Hero Section
                     'hero-title': 'ভারতে সেরা হাসপাতাল এবং চিকিৎসা: আফ্রিকান ও এশিয়ান রোগীদের জন্য বিশ্বমানের স্বাস্থ্যসেবা',
                     'hero-subtitle': '৭০% কম খরচে ভারতে প্রিমিয়াম চিকিৎসা সেবা পান। JCI-স্বীকৃত হাসপাতাল, আন্তর্জাতিকভাবে প্রশিক্ষিত সার্জন এবং পরামর্শ থেকে সুস্থতা পর্যন্ত ব্যাপক সহায়তার সাথে যুক্ত হন।',
-                    'consultation-header': 'আপনার বিনামূল্যে চিকিৎসা পরামর্শ নিন',
-                    'consultation-subtitle': '২৪ ঘন্টায় বিশেষজ্ঞ নির্দেশনা',
-                    'services-title': 'চিকিৎসা পর্যটনের জন্য ভারত কেন বেছে নেবেন?',
-                    'services-subtitle': 'ভারতে মানসম্পন্ন স্বাস্থ্যসেবা খোঁজা আফ্রিকান এবং দক্ষিণ-পূর্ব এশিয়ার রোগীদের জন্য ব্যাপক সহায়তা',
-                    'destinations-title': 'শীর্ষ চিকিৎসা গন্তব্য',
-                    'testimonials-title': 'রোগীদের সফলতার গল্প',
-                    'contact-title': 'আপনার চিকিৎসা যাত্রা শুরু করতে প্রস্তুত?',
-                    'contact-subtitle': 'আমাদের চিকিৎসা বিশেষজ্ঞদের কাছ থেকে ব্যক্তিগত চিকিৎসার সুপারিশ এবং খরচের অনুমান পান।'
+                    'consultation-header': 'আপনার বিনামূল্যে চিকিৎসা পরামর্শ নিন', 'consultation-subtitle': '২৪ ঘন্টায় বিশেষজ্ঞ নির্দেশনা',
+                    // Form Fields
+                    'form-name': 'পূর্ণ নাম', 'form-email': 'ইমেইল ঠিকানা', 'form-phone': 'ফোন নম্বর', 'form-treatment': 'চিকিৎসার ধরন নির্বাচন করুন', 'form-message': 'আপনার চিকিৎসার প্রয়োজন সম্পর্কে বলুন...', 'form-submit': 'বিনামূল্যে পরামর্শ নিন',
+                    // Services
+                    'services-title': 'চিকিৎসা পর্যটনের জন্য ভারত কেন বেছে নেবেন?', 'services-subtitle': 'ভারতে মানসম্পন্ন স্বাস্থ্যসেবা খোঁজা আফ্রিকান এবং দক্ষিণ-পূর্ব এশিয়ার রোগীদের জন্য ব্যাপক সহায়তা',
+                    'service1-title': 'বিশেষজ্ঞ চিকিৎসা পরামর্শ', 'service1-desc': 'ব্যক্তিগত চিকিৎসা পরিকল্পনার জন্য আন্তর্জাতিকভাবে প্রত্যয়িত ডাক্তার এবং বিশেষজ্ঞদের সাথে যোগাযোগ করুন।',
+                    'service2-title': 'স্বচ্ছ মূল্য', 'service2-desc': 'কোনো লুকানো ফি ছাড়াই বিস্তারিত খরচের অনুমান পান। চিকিৎসা পদ্ধতিতে ৭০% পর্যন্ত সাশ্রয় করুন।',
+                    'service3-title': 'ভ্রমণ সহায়তা', 'service3-desc': 'ভিসা সহায়তা, থাকার ব্যবস্থা এবং পরিবহন সহ সম্পূর্ণ ভ্রমণ সমন্বয়।',
+                    'service4-title': 'ভাষা সহায়তা', 'service4-desc': '১৫+ ভাষায় পেশাদার দোভাষী সেবা এবং চিকিৎসা নথি অনুবাদ।',
+                    'service5-title': 'গুণমান নিশ্চয়তা', 'service5-desc': 'সমস্ত অংশীদার হাসপাতাল আন্তর্জাতিকভাবে স্বীকৃত এবং উৎকর্ষতার প্রমাণিত ট্র্যাক রেকর্ড রয়েছে।',
+                    'service6-title': '২৪/৭ সহায়তা', 'service6-desc': 'নিবেদিত কেস ম্যানেজাররা আপনার চিকিৎসা যাত্রা জুড়ে ২৪ ঘন্টা সহায়তা প্রদান করে।',
+                    // Destinations
+                    'destinations-title': 'শীর্ষ চিকিৎসা গন্তব্য', 'testimonials-title': 'রোগীদের সফলতার গল্প', 'contact-title': 'আপনার চিকিৎসা যাত্রা শুরু করতে প্রস্তুত?', 'contact-subtitle': 'আমাদের চিকিৎসা বিশেষজ্ঞদের কাছ থেকে ব্যক্তিগত চিকিৎসার সুপারিশ এবং খরচের অনুমান পান।',
+                    // Footer
+                    'footer-services': 'সেবাসমূহ', 'footer-destinations': 'গন্তব্য', 'footer-support': 'সহায়তা'
+                },
+                'ru': {
+                    // Navigation
+                    'nav-home': 'Главная', 'nav-destinations': 'Направления', 'nav-services': 'Услуги', 'nav-blog': 'Блог', 'nav-reviews': 'Отзывы пациентов', 'nav-contact': 'Контакты',
+                    'btn-consult': 'Онлайн консультация', 'btn-quote': 'Получить бесплатное предложение',
+                    // Hero Section
+                    'hero-title': 'Лучшие больницы и лечение в Индии: Медицинская помощь мирового класса для африканских и азиатских пациентов',
+                    'hero-subtitle': 'Получите премиальное медицинское лечение в Индии на 70% дешевле. Подключитесь к аккредитованным JCI больницам, международно обученным хирургам и всесторонней поддержке от консультации до выздоровления.',
+                    'consultation-header': 'Получите бесплатную медицинскую консультацию', 'consultation-subtitle': 'Экспертное руководство за 24 часа',
+                    // Form Fields
+                    'form-name': 'Полное имя', 'form-email': 'Адрес электронной почты', 'form-phone': 'Номер телефона', 'form-treatment': 'Выберите тип лечения', 'form-message': 'Расскажите нам о ваших медицинских потребностях...', 'form-submit': 'Получить бесплатную консультацию',
+                    // Services
+                    'services-title': 'Почему выбрать Индию для медицинского туризма?', 'services-subtitle': 'Всесторонняя поддержка для африканских и юго-восточных азиатских пациентов, ищущих качественное здравоохранение в Индии',
+                    'service1-title': 'Экспертная медицинская консультация', 'service1-desc': 'Связывайтесь с международно сертифицированными врачами и специалистами для персонализированных планов лечения.',
+                    'service2-title': 'Прозрачное ценообразование', 'service2-desc': 'Получите подробные оценки стоимости заранее без скрытых платежей. Сэкономьте до 70% на медицинских процедурах.',
+                    'service3-title': 'Помощь в путешествии', 'service3-desc': 'Полная координация поездки, включая визовую помощь, размещение и транспорт.',
+                    'service4-title': 'Языковая поддержка', 'service4-desc': 'Профессиональные услуги перевода и перевод медицинских документов на 15+ языках.',
+                    'service5-title': 'Гарантия качества', 'service5-desc': 'Все больницы-партнеры международно аккредитованы с проверенными рекордами превосходства.',
+                    'service6-title': 'Поддержка 24/7', 'service6-desc': 'Выделенные менеджеры случаев обеспечивают круглосуточную помощь на протяжении вашего медицинского путешествия.',
+                    // Destinations
+                    'destinations-title': 'Топ медицинских направлений', 'testimonials-title': 'Истории успеха пациентов', 'contact-title': 'Готовы начать свое медицинское путешествие?', 'contact-subtitle': 'Получите персонализированные рекомендации по лечению и оценки стоимости от наших медицинских экспертов.',
+                    // Footer
+                    'footer-services': 'Услуги', 'footer-destinations': 'Направления', 'footer-support': 'Поддержка'
                 },
                 'sw': {
+                    // Navigation
+                    'nav-home': 'Nyumbani', 'nav-destinations': 'Maeneo', 'nav-services': 'Huduma', 'nav-blog': 'Blogu', 'nav-reviews': 'Maoni ya Wagonjwa', 'nav-contact': 'Mawasiliano',
+                    'btn-consult': 'Ushauri Mtandaoni', 'btn-quote': 'Pata Nukuu ya Bure',
+                    // Hero Section  
                     'hero-title': 'Hospitali na Matibabu Bora Zaidi India: Huduma za Afya za Kimataifa kwa Wagonjwa wa Kiafrika na Kiasia',
                     'hero-subtitle': 'Pata matibabu ya juu ya viwango India kwa gharama za chini kwa 70%. Unganisha na hospitali zilizoidhinishwa na JCI, madaktari waliofunzwa kimataifa.',
-                    'consultation-header': 'Pata Ushauri wako wa Bure wa Kimatibabu',
-                    'consultation-subtitle': 'Mwongozo wa kitaalamu katika masaa 24',
-                    'services-title': 'Kwa Nini Uchague India kwa Utalii wa Kimatibabu?',
-                    'services-subtitle': 'Msaada mkamilifu kwa wagonjwa wa Kiafrika na Asia ya Kusini Mashariki wanaotafuta huduma za afya za ubora India',
-                    'destinations-title': 'Maeneo Makuu ya Kimatibabu',
-                    'testimonials-title': 'Hadithi za Mafanikio ya Wagonjwa',
-                    'contact-title': 'Uko Tayari Kuanza Safari Yako ya Kimatibabu?',
-                    'contact-subtitle': 'Pata mapendekezo ya matibabu binafsi na makadirio ya gharama kutoka kwa wataalamu wetu wa kimatibabu.'
+                    'consultation-header': 'Pata Ushauri wako wa Bure wa Kimatibabu', 'consultation-subtitle': 'Mwongozo wa kitaalamu katika masaa 24',
+                    // Form Fields
+                    'form-name': 'Jina Kamili', 'form-email': 'Anwani ya Barua Pepe', 'form-phone': 'Nambari ya Simu', 'form-treatment': 'Chagua Aina ya Matibabu', 'form-message': 'Tuambie kuhusu mahitaji yako ya kimatibabu...', 'form-submit': 'Pata Ushauri wa Bure',
+                    // Services
+                    'services-title': 'Kwa Nini Uchague India kwa Utalii wa Kimatibabu?', 'services-subtitle': 'Msaada mkamilifu kwa wagonjwa wa Kiafrika na Asia ya Kusini Mashariki wanaotafuta huduma za afya za ubora India',
+                    'service1-title': 'Ushauri wa Kitaalamu wa Kimatibabu', 'service1-desc': 'Unganisha na madaktari na wataalamu walioidhinishwa kimataifa kwa mipango ya matibabu ya kibinafsi.',
+                    'service2-title': 'Bei Wazi', 'service2-desc': 'Pata makadirio ya kina ya gharama mapema bila ada zilizofichwa. Okoa hadi 70% kwenye taratibu za kimatibabu.',
+                    'service3-title': 'Msaada wa Usafiri', 'service3-desc': 'Uratibu kamili wa safari ikiwa ni pamoja na msaada wa visa, malazi, na usafiri.',
+                    'service4-title': 'Msaada wa Kilugha', 'service4-desc': 'Huduma za kitaalamu za utafsiri na tafsiri ya hati za kimatibabu katika lugha zaidi ya 15.',
+                    'service5-title': 'Uhakika wa Ubora', 'service5-desc': 'Hospitali zote washirika zimeidhinishwa kimataifa na kumbukumbu zilizothibitishwa za ubora.',
+                    'service6-title': 'Msaada wa 24/7', 'service6-desc': 'Wasimamizi wa kesi waliowekwa wakati hufanya kazi kwa msaada wa siku nzima katika safari yako ya kimatibabu.',
+                    // Destinations
+                    'destinations-title': 'Maeneo Makuu ya Kimatibabu', 'testimonials-title': 'Hadithi za Mafanikio ya Wagonjwa', 'contact-title': 'Uko Tayari Kuanza Safari Yako ya Kimatibabu?', 'contact-subtitle': 'Pata mapendekezo ya matibabu binafsi na makadirio ya gharama kutoka kwa wataalamu wetu wa kimatibabu.',
+                    // Footer
+                    'footer-services': 'Huduma', 'footer-destinations': 'Maeneo', 'footer-support': 'Msaada'
+                },
+                'ur': {
+                    // Navigation
+                    'nav-home': 'ہوم', 'nav-destinations': 'منزلیں', 'nav-services': 'خدمات', 'nav-blog': 'بلاگ', 'nav-reviews': 'مریضوں کے جائزے', 'nav-contact': 'رابطہ',
+                    'btn-consult': 'آن لائن مشاورت', 'btn-quote': 'مفت قیمت حاصل کریں',
+                    // Hero Section
+                    'hero-title': 'ہندوستان میں بہترین ہسپتال اور علاج: افریقی اور ایشیائی مریضوں کے لیے عالمی معیار کی صحت کی دیکھ بھال',
+                    'hero-subtitle': 'ہندوستان میں 70% کم لاگت پر پریمیم طبی علاج حاصل کریں۔ JCI سے تصدیق شدہ ہسپتالوں، بین الاقوامی طور پر تربیت یافتہ سرجنوں اور مشاورت سے بحالی تک جامع مدد کے ساتھ جڑیں۔',
+                    'consultation-header': 'اپنا مفت طبی مشورہ حاصل کریں', 'consultation-subtitle': '24 گھنٹوں میں ماہرانہ رہنمائی',
+                    // Form Fields
+                    'form-name': 'پورا نام', 'form-email': 'ای میل ایڈریس', 'form-phone': 'فون نمبر', 'form-treatment': 'علاج کی قسم منتخب کریں', 'form-message': 'ہمیں اپنی طبی ضروریات کے بارے میں بتائیں...', 'form-submit': 'مفت مشاورت حاصل کریں',
+                    // Services
+                    'services-title': 'طبی سیاحت کے لیے ہندوستان کیوں منتخب کریں؟', 'services-subtitle': 'افریقی اور جنوب مشرقی ایشیائی مریضوں کے لیے جامع مدد جو ہندوستان میں معیاری صحت کی دیکھ بھال تلاش کر رہے ہیں',
+                    'service1-title': 'ماہرانہ طبی مشاورت', 'service1-desc': 'ذاتی علاج کے منصوبوں کے لیے بین الاقوامی طور پر تصدیق شدہ ڈاکٹروں اور ماہرین سے رابطہ کریں۔',
+                    'service2-title': 'شفاف قیمتیں', 'service2-desc': 'چھپی ہوئی فیسوں کے بغیر تفصیلی لاگت کا تخمینہ پہلے سے حاصل کریں۔ طبی طریقہ کار پر 70% تک بچت کریں۔',
+                    'service3-title': 'سفری مدد', 'service3-desc': 'ویزا کی مدد، رہائش، اور نقل و حمل سمیت مکمل سفری ہم آہنگی۔',
+                    'service4-title': 'زبان کی مدد', 'service4-desc': '15+ زبانوں میں پیشہ ورانہ ترجمانی کی خدمات اور طبی دستاویز کا ترجمہ۔',
+                    'service5-title': 'کوالٹی ایشورنس', 'service5-desc': 'تمام پارٹنر ہسپتال بین الاقوامی طور پر تصدیق شدہ ہیں اور عمدگی کے ثابت شدہ ریکارڈ رکھتے ہیں۔',
+                    'service6-title': '24/7 مدد', 'service6-desc': 'مخصوص کیس منیجرز آپ کے طبی سفر کے دوران چوبیس گھنٹے مدد فراہم کرتے ہیں۔',
+                    // Destinations
+                    'destinations-title': 'اعلیٰ طبی منزلیں', 'testimonials-title': 'مریضوں کی کامیابی کی کہانیاں', 'contact-title': 'اپنا طبی سفر شروع کرنے کے لیے تیار ہیں؟', 'contact-subtitle': 'ہمارے طبی ماہرین سے ذاتی علاج کی سفارشات اور لاگت کا تخمینہ حاصل کریں۔',
+                    // Footer
+                    'footer-services': 'خدمات', 'footer-destinations': 'منزلیں', 'footer-support': 'مدد'
+                },
+                'uz': {
+                    // Navigation
+                    'nav-home': 'Bosh sahifa', 'nav-destinations': 'Yo\'nalishlar', 'nav-services': 'Xizmatlar', 'nav-blog': 'Blog', 'nav-reviews': 'Bemorlarning sharhlari', 'nav-contact': 'Aloqa',
+                    'btn-consult': 'Onlayn maslahat', 'btn-quote': 'Bepul taklif oling',
+                    // Hero Section
+                    'hero-title': 'Hindistandagi eng yaxshi kasalxonalar va davolash: Afrika va Osiyo bemorlar uchun jahon darajasidagi sog\'liqni saqlash',
+                    'hero-subtitle': 'Hindistonda 70% kam narxda premium tibbiy davolanishni oling. JCI akkreditatsiyali kasalxonalar, xalqaro darajada o\'qitilgan jarrohlar va maslahatdan tuzalishgacha keng qo\'llab-quvvatlash bilan bog\'laning.',
+                    'consultation-header': 'Bepul tibbiy maslahatni oling', 'consultation-subtitle': '24 soat ichida mutaxassis yo\'l-yo\'riqi',
+                    // Form Fields
+                    'form-name': 'To\'liq ism', 'form-email': 'Elektron pochta manzili', 'form-phone': 'Telefon raqami', 'form-treatment': 'Davolash turini tanlang', 'form-message': 'Bizga tibbiy ehtiyojlaringiz haqida ayting...', 'form-submit': 'Bepul maslahat oling',
+                    // Services
+                    'services-title': 'Tibbiy turizm uchun nima uchun Hindistonni tanlash kerak?', 'services-subtitle': 'Hindistonda sifatli sog\'liqni saqlash xizmatlarini izlayotgan Afrika va Janubi-Sharqiy Osiyo bemorlar uchun keng qo\'llab-quvvatlash',
+                    'service1-title': 'Mutaxassis tibbiy maslahat', 'service1-desc': 'Shaxsiy davolash rejalari uchun xalqaro sertifikatlangan shifokorlar va mutaxassislar bilan bog\'laning.',
+                    'service2-title': 'Shaffof narxlar', 'service2-desc': 'Yashirin to\'lovlarsiz oldindan batafsil xarajat hisob-kitoblarini oling. Tibbiy protseduralar bo\'yicha 70% gacha tejang.',
+                    'service3-title': 'Sayohat yordami', 'service3-desc': 'Viza yordami, turar joy va transport kabi to\'liq sayohat koordinatsiyasi.',
+                    'service4-title': 'Til qo\'llab-quvvatlash', 'service4-desc': '15+ tillarida professional tarjimonlik xizmatlari va tibbiy hujjatlarni tarjima qilish.',
+                    'service5-title': 'Sifat kafolati', 'service5-desc': 'Barcha hamkor kasalxonalar xalqaro akkreditatsiyaga ega va mukammallikning isbotlangan yozuvlariga ega.',
+                    'service6-title': '24/7 qo\'llab-quvvatlash', 'service6-desc': 'Maxsus ish menedjerlari tibbiy sayohatingiz davomida kechayu kunduz yordam beradi.',
+                    // Destinations
+                    'destinations-title': 'Eng yaxshi tibbiy yo\'nalishlar', 'testimonials-title': 'Bemorlarning muvaffaqiyat tarixi', 'contact-title': 'Tibbiy sayohatingizni boshlashga tayyormisiz?', 'contact-subtitle': 'Tibbiy mutaxassislarimizdan shaxsiylashtirilgan davolash tavsiyalari va xarajat hisob-kitoblarini oling.',
+                    // Footer
+                    'footer-services': 'Xizmatlar', 'footer-destinations': 'Yo\'nalishlar', 'footer-support': 'Qo\'llab-quvvatlash'
+                },
+                'tk': {
+                    // Navigation
+                    'nav-home': 'Baş sahypa', 'nav-destinations': 'Ugurlar', 'nav-services': 'Hyzmatlar', 'nav-blog': 'Blog', 'nav-reviews': 'Näsaglaryň syn-pikirleri', 'nav-contact': 'Aragatnaşyk',
+                    'btn-consult': 'Onlaýn maslahat', 'btn-quote': 'Mugt teklip alyň',
+                    // Hero Section
+                    'hero-title': 'Hindistanda iň gowy hassahanalar we bejergi: Afrika we Aziýa näsaglary üçin dünýä derejeli saglygy goramak',
+                    'hero-subtitle': 'Hindistanda 70% az bahadan premium lukmançylyk bejergisini alyň. JCI şehadat alan hassahanalar, halkara derejede öwredilen hirurglar we maslahatdan gaýtadan dikelmäge çenli giň goldaw bilen baglaşyň.',
+                    'consultation-header': 'Mugt lukmançylyk maslahatyny alyň', 'consultation-subtitle': '24 sagadyň içinde hünärmen ýol-göwneş',
+                    // Form Fields
+                    'form-name': 'Doly ady', 'form-email': 'E-poçta salgysy', 'form-phone': 'Telefon belgisi', 'form-treatment': 'Bejergi görnüşini saýlaň', 'form-message': 'Lukmançylyk zerurlyklarynyz barada aýdyň...', 'form-submit': 'Mugt maslahat alyň',
+                    // Services
+                    'services-title': 'Lukmançylyk turizmi üçin näme üçin Hindistany saýlamaly?', 'services-subtitle': 'Hindistanda hil saglygy goramak hyzmatlary gözleýän Afrika we Günorta-Gündogar Aziýa näsaglary üçin giň goldaw',
+                    'service1-title': 'Hünärmen lukmançylyk maslahat', 'service1-desc': 'Şahsy bejergi meýilnamalary üçin halkara şehadat alan lukmanlar we hünärmenler bilen baglaşyň.',
+                    'service2-title': 'Aç-açan bahalary', 'service2-desc': 'Gizlin töleglersiz öňünden jikme-jik çykdajy hasaplamalaryny alyň. Lukmançylyk proseduralarynda 70% çenli tygşytlaň.',
+                    'service3-title': 'Syýahat kömegi', 'service3-desc': 'Wiza kömegi, ýaşaýyş jaýy we transport ýaly doly syýahat utgaşdyrmak.',
+                    'service4-title': 'Dil goldaw', 'service4-desc': '15+ dillerde hünärmen terjimeman hyzmatlary we lukmançylyk resminamalaryny terjime etmek.',
+                    'service5-title': 'Hil kepilligi', 'service5-desc': 'Hemmäsi hyzmatdaş hassahanalar halkara şehadat alga we ajaýyplygyň subut edilen ýazgylary bar.',
+                    'service6-title': '24/7 goldaw', 'service6-desc': 'Ýörite iş dolandyryjylary lukmançylyk syýahatyňyzyň dowamynda gije-gündiz kömek berýär.',
+                    // Destinations
+                    'destinations-title': 'Iň gowy lukmançylyk ugurlar', 'testimonials-title': 'Näsaglaryň üstünlik hekaýalary', 'contact-title': 'Lukmançylyk syýahatyňyzy başlamaga taýynmy?', 'contact-subtitle': 'Lukmançylyk hünärmenlerimizden şahsylaşdyrylan bejergi maslahatlaryny we çykdajy hasaplamalaryny alyň.',
+                    // Footer
+                    'footer-services': 'Hyzmatlar', 'footer-destinations': 'Ugurlar', 'footer-support': 'Goldaw'
+                },
+                'ku': {
+                    // Navigation
+                    'nav-home': 'Malper', 'nav-destinations': 'Cih', 'nav-services': 'Karûbar', 'nav-blog': 'Blog', 'nav-reviews': 'Nirxandina nexweşan', 'nav-contact': 'Têkilî',
+                    'btn-consult': 'Şûreyê online', 'btn-quote': 'Pêşniyarek belaş bistîne',
+                    // Hero Section
+                    'hero-title': 'Nexweşxaneyên û dermanan herî baş li Hindistanê: Lêçûnên tenduristiyê yên cîhanî ji bo nexweşên Afrîkî û Asyayî',
+                    'hero-subtitle': 'Li Hindistanê dermana premium bi nirxên 70% kêmtir bistînin. Bi nexweşxaneyên pejirandî yên JCI, cerrahên perwerdeyî yên navneteweyî û piştgiriya berfireh ji şûreyê heta qencbûnê ve girêbidin.',
+                    'consultation-header': 'Şûreyê xwe yê belaş yê bijîjkî bistînin', 'consultation-subtitle': 'Rêberiya pispor di 24 saetiyan de',
+                    // Form Fields
+                    'form-name': 'Navê tevahî', 'form-email': 'Navnîşana e-nameyê', 'form-phone': 'Hejmara têlefonê', 'form-treatment': 'Cureyê dermanan hilbijêrin', 'form-message': 'Hewcedariyên xwe yên bijîjkî ji me re bibêjin...', 'form-submit': 'Şûreyeke belaş bistînin',
+                    // Services
+                    'services-title': 'Çima ji bo geroka bijîjkî Hindistanê hilbijêrin?', 'services-subtitle': 'Piştgiriya berfireh ji bo nexweşên Afrîkî û Asyayê Başûr-Rojhilat ku li Hindistanê lêçûnên tenduristiyê yên kalîte digerin',
+                    'service1-title': 'Şûreyê bijîjkî yê pispor', 'service1-desc': 'Ji bo plansaziyên dermana kesane bi bijîşk û pisporên pejirandî yên navneteweyî ve girêbidin.',
+                    'service2-title': 'Nirxên zelal', 'service2-desc': 'Bêyî lêçûnên veşartî berî kar xerckirinên berfireh bistînin. Li ser pêvajoyan bijîjkî heta 70% xilas bikin.',
+                    'service3-title': 'Alîkariya gerê', 'service3-desc': 'Hevahengiya gerê ya tevahî di nav de alîkariya vîzayê, cîgir û veguhestin.',
+                    'service4-title': 'Piştgiriya ziman', 'service4-desc': 'Karûbarên wergerandina pîşeyî û wergerandina belgeyên bijîjkî bi 15+ zimanan.',
+                    'service5-title': 'Misogeriya kalîteyê', 'service5-desc': 'Hemû nexweşxaneyên hevkar bi pejirandina navneteweyî û qeydan û tomarên kalîteyê yên îsbatkî ne.',
+                    'service6-title': 'Piştgiriya 24/7', 'service6-desc': 'Rêvebirên dozên taybetî di tevahiya rêwîtiya we ya bijîjkî de alîkariya şev û roj peyda dikin.',
+                    // Destinations
+                    'destinations-title': 'Cihên bijîjkî yên herî baş', 'testimonials-title': 'Çîrokên serkeftina nexweşan', 'contact-title': 'Amade ne ku rêwîtiya xwe ya bijîjkî dest pê bikin?', 'contact-subtitle': 'Ji pisporên me yên bijîjkî pêşniyar û nirxandina lêçûnên dermana kesane bistînin.',
+                    // Footer
+                    'footer-services': 'Karûbar', 'footer-destinations': 'Cih', 'footer-support': 'Piştgirî'
+                },
+                'so': {
+                    // Navigation
+                    'nav-home': 'Hore', 'nav-destinations': 'Meelaha', 'nav-services': 'Adeegyo', 'nav-blog': 'Qoraal', 'nav-reviews': 'Dib-u-eegista bukaannada', 'nav-contact': 'Xidhiidh',
+                    'btn-consult': 'La-tashi onlayn', 'btn-quote': 'Hel qiime bilaash ah',
+                    // Hero Section
+                    'hero-title': 'Isbitaalada iyo daaweynta ugu fiican ee Hindiya: Daryeelka caafimaadka heerka caalamka ah ee bukaannada Afrikaanka iyo Aasiyaanka',
+                    'hero-subtitle': 'Hel daaweyn caafimaad oo heer sare ah oo Hindiya ah oo qiimo 70% ka hooseeya. Ku xidh isbitaalada la aqoonsaday ee JCI, dhakhaatiirta caalamiga ah ee la tababaray iyo taageero dhamaystiran laga bilaabo la-tashi ilaa ka-soo-kabashada.',
+                    'consultation-header': 'Hel la-tashigaaga bilaashka ah ee caafimaadka', 'consultation-subtitle': 'Hagitaanka khibradda leh 24 saacadood gudahood',
+                    // Form Fields
+                    'form-name': 'Magaca buuxa', 'form-email': 'Cinwaanka iimaylka', 'form-phone': 'Lambarka taleefanka', 'form-treatment': 'Dooro nooca daaweynta', 'form-message': 'Noo sheeg baahiyahaaga caafimaadka...', 'form-submit': 'Hel la-tashi bilaash ah',
+                    // Services
+                    'services-title': 'Maxay tahay in Hindiya loo doorto dalxiiska caafimaadka?', 'services-subtitle': 'Taageero dhamaystiran oo loogu talagalay bukaannada Afrikaanka iyo Aasiya Koonfur-bari ee raadinaya daryeelka caafimaadka tayo leh ee Hindiya',
+                    'service1-title': 'La-tashi caafimaad oo khibrad leh', 'service1-desc': 'Kula xidh dhakhaatiirta iyo takhasuska caalamiga ah ee la aqoonsaday si aad u hesho qorshayaal daaweyn oo gaarka ah.',
+                    'service2-title': 'Qiimaha cad', 'service2-desc': 'Hel qiyaasyo kharash oo faahfaahsan oo aan lahayn lacagaha qarsoon. Kaydsashada heer 70% oo ku saabsan habdhaqannada caafimaadka.',
+                    'service3-title': 'Caawinta safarka', 'service3-desc': 'Isku-dubaridka safarka oo dhamaystiran oo ay ku jiraan caawinta fiisaha, degaanka, iyo gaadiidka.',
+                    'service4-title': 'Taageerada luqadda', 'service4-desc': 'Adeegyada turjumaadda xirfadeed iyo turjumaadda dukumentiyada caafimaadka luqado 15+ ah.',
+                    'service5-title': 'Damaanadda tayada', 'service5-desc': 'Dhammaan isbitaalada lammaanaha ah ayaa si caalami ah loo aqoonsaday oo leh diiwaanno la caddeyay oo fiican.',
+                    'service6-title': 'Taageero 24/7', 'service6-desc': 'Maamuleyaasha kiisaska gaarka ah ayaa bixiya caawimaad habeen iyo maalin ah inta lagu jiro safarkaga caafimaadka.',
+                    // Destinations
+                    'destinations-title': 'Meelaha caafimaadka ee ugu fiican', 'testimonials-title': 'Sheekooyinka guusha bukaannada', 'contact-title': 'Ma diyaar u tahay inaad bilowdo safarkaga caafimaadka?', 'contact-subtitle': 'Ka hel khibradayaasheenna caafimaadka talooyinka daaweynta gaarka ah iyo qiyaasyada kharashka.',
+                    // Footer
+                    'footer-services': 'Adeegyo', 'footer-destinations': 'Meelaha', 'footer-support': 'Taageero'
+                },
+                'bal': {
+                    // Navigation
+                    'nav-home': 'خانه', 'nav-destinations': 'مقصدها', 'nav-services': 'خدمات', 'nav-blog': 'وبلاگ', 'nav-reviews': 'نظرات بیماران', 'nav-contact': 'تماس',
+                    'btn-consult': 'مشاوره آنلاین', 'btn-quote': 'پیشنهاد رایگان دریافت کنید',
+                    // Hero Section
+                    'hero-title': 'بهترین بیمارستان‌ها و درمان‌ها در هندوستان: مراقبت‌های بهداشتی جهانی برای بیماران آفریقایی و آسیایی',
+                    'hero-subtitle': 'درمان‌های پزشکی درجه یک را در هندوستان با هزینه 70٪ کمتر دریافت کنید. با بیمارستان‌های تأیید شده JCI، جراحان آموزش دیده بین‌المللی و حمایت جامع از مشاوره تا بهبودی ارتباط برقرار کنید.',
+                    'consultation-header': 'مشاوره رایگان پزشکی خود را دریافت کنید', 'consultation-subtitle': 'راهنمایی متخصص در 24 ساعت',
+                    // Form Fields
+                    'form-name': 'نام کامل', 'form-email': 'آدرس ایمیل', 'form-phone': 'شماره تلفن', 'form-treatment': 'نوع درمان را انتخاب کنید', 'form-message': 'نیازهای پزشکی خود را به ما بگویید...', 'form-submit': 'مشاوره رایگان دریافت کنید',
+                    // Services
+                    'services-title': 'چرا هندوستان را برای گردشگری پزشکی انتخاب کنیم؟', 'services-subtitle': 'حمایت جامع برای بیماران آفریقایی و آسیای جنوب شرقی که به دنبال مراقبت‌های بهداشتی باکیفیت در هندوستان هستند',
+                    'service1-title': 'مشاوره پزشکی متخصص', 'service1-desc': 'با پزشکان و متخصصان تأیید شده بین‌المللی برای برنامه‌های درمانی شخصی ارتباط برقرار کنید.',
+                    'service2-title': 'قیمت‌گذاری شفاف', 'service2-desc': 'تخمین‌های هزینه دقیق را بدون هیچ هزینه پنهانی از قبل دریافت کنید. تا 70٪ در روش‌های پزشکی صرفه‌جویی کنید.',
+                    'service3-title': 'کمک سفر', 'service3-desc': 'هماهنگی کامل سفر شامل کمک ویزا، اقامت و حمل و نقل.',
+                    'service4-title': 'پشتیبانی زبان', 'service4-desc': 'خدمات ترجمه حرفه‌ای و ترجمه اسناد پزشکی به بیش از 15 زبان.',
+                    'service5-title': 'تضمین کیفیت', 'service5-desc': 'همه بیمارستان‌های شریک به صورت بین‌المللی تأیید شده و دارای سوابق اثبات شده تعالی هستند.',
+                    'service6-title': 'پشتیبانی 24/7', 'service6-desc': 'مدیران مورد اختصاصی در طول سفر پزشکی شما کمک شبانه‌روزی ارائه می‌دهند.',
+                    // Destinations
+                    'destinations-title': 'مقصدهای پزشکی برتر', 'testimonials-title': 'داستان‌های موفقیت بیماران', 'contact-title': 'آیا آماده شروع سفر پزشکی خود هستید؟', 'contact-subtitle': 'توصیه‌های درمانی شخصی و تخمین‌های هزینه را از متخصصان پزشکی ما دریافت کنید.',
+                    // Footer
+                    'footer-services': 'خدمات', 'footer-destinations': 'مقصدها', 'footer-support': 'پشتیبانی'
+                },
+                'om': {
+                    // Navigation
+                    'nav-home': 'Manaa', 'nav-destinations': 'Bakka deemuu', 'nav-services': 'Tajaajila', 'nav-blog': 'Boloogi', 'nav-reviews': 'Yaada dhukkubsattootaa', 'nav-contact': 'Quunnamtii',
+                    'btn-consult': 'Gorsa onlaayinii', 'btn-quote': 'Gatii bilisaa argadhu',
+                    // Hero Section
+                    'hero-title': 'Hospitaala fi yaala Hindii keessatti hundarra gaarii: Kunuunsa fayyaa addunyaa sadarkaa dhukkubsattoota Afrikaa fi Eeshiyaatiif',
+                    'hero-subtitle': 'Yaalaan fayyaa premium Hindiitti gatii %70 xiqqaadhaan argadhu. Hospitaala JCI mirkaneeffame, hakiimota addunyaa sadarkaa leenjifaman fi gargaarsa guutuu mariitii jalqabaatii hanga fayyinatti qabaadhuu.',
+                    'consultation-header': 'Gorsa fayyaa kee bilisaa argadhu', 'consultation-subtitle': 'Qajeelfama ogummaa saatii 24 keessatti',
+                    // Form Fields
+                    'form-name': 'Maqaa guutuu', 'form-email': 'Teessoo iimeelii', 'form-phone': 'Lakkoofsa bilbilaa', 'form-treatment': 'Gosa yaalaa filachuu', 'form-message': 'Fedhii fayyaa kee nuuf himadhu...', 'form-submit': 'Gorsa bilisaa argadhu',
+                    // Services
+                    'services-title': 'Daldalaa fayyaatiif maaliif Hindii filachuu?', 'services-subtitle': 'Gargaarsa guutuu dhukkubsattoota Afrikaa fi Eeshiyaa Kibbaa-Bahaatiif Hindiitti tajaajiila fayyaa gaarii barbaadan',
+                    'service1-title': 'Gorsa fayyaa ogummaa', 'service1-desc': 'Karoora yaalaa dhuunfaatiif hakiimotaa fi ogeeyyii addunyaa sadarkaa ragaa qaban waliin walqunnamuu.',
+                    'service2-title': 'Gatii ifa', 'service2-desc': 'Tilmaama baasii bal\'aa kaffalti dhokfamee malee dursanii argadhaa. Adeemsa fayyaa irratti hanga %70 qusachuu.',
+                    'service3-title': 'Gargaarsa imala', 'service3-desc': 'Qindoomina imala guutuu gargaarsa viizaa, mana jireenyaa fi geejjibaa dabalatee.',
+                    'service4-title': 'Gargaarsa afaanii', 'service4-desc': 'Tajaajila hiikkaa ogummaa fi hiikkaa galmee fayyaa afaan 15+ keessatti.',
+                    'service5-title': 'Mirkaneessa qulqullina', 'service5-desc': 'Hospitaaloonni hiriyaa hundi addunyaa sadarkaadhaan ragaa qabaatanii fi seenaa gaarii mirkaneeffame qabu.',
+                    'service6-title': 'Gargaarsa 24/7', 'service6-desc': 'Bulchitoonni muudannoo addaa imala fayyaa kee keessatti gargaarsa halkanii fi guyyaa kennu.',
+                    // Destinations
+                    'destinations-title': 'Bakka fayyaa hundarra gaarii', 'testimonials-title': 'Seenaa milkaa\'ina dhukkubsattootaa', 'contact-title': 'Imala fayyaa kee jalqabuuf qophaa\'aa?', 'contact-subtitle': 'Ogeeyyii fayyaa keenya irraa yaada yaalaa dhuunfaa fi tilmaama baasii argadhaa.',
+                    // Footer
+                    'footer-services': 'Tajaajila', 'footer-destinations': 'Bakka deemuu', 'footer-support': 'Gargaarsa'
+                },
+                'am': {
+                    // Navigation
+                    'nav-home': 'መነሻ', 'nav-destinations': 'መድረሻዎች', 'nav-services': 'አገልግሎቶች', 'nav-blog': 'ብሎግ', 'nav-reviews': 'የታካሚዎች ግምገማዎች', 'nav-contact': 'ግንኙነት',
+                    'btn-consult': 'የመስመር ላይ ምክክር', 'btn-quote': 'ነፃ ዋጋ ያግኙ',
+                    // Hero Section
+                    'hero-title': 'በሕንድ ውስጥ ምርጥ ሆስፒታሎች እና ሕክምናዎች፡ ለአፍሪካውያን እና አሲያውያን ታካሚዎች የዓለም ደረጃ የጤና እንክብካቤ',
+                    'hero-subtitle': 'በሕንድ ውስጥ በ70% ያነሰ ወጪ ከፍተኛ የሕክምና ሕክምና ያግኙ። ከJCI የተረጋገጡ ሆስፒታሎች፣ በአለም አቀፍ ደረጃ የሰለጠኑ ሐኪሞች እና ከምክር እስከ ማገገሚያ ሰፊ ድጋፍ ጋር ይገናኙ።',
+                    'consultation-header': 'ነፃ የሕክምና ምክርዎን ያግኙ', 'consultation-subtitle': 'በ24 ሰአት ውስጥ የባለሙያ መመሪያ',
+                    // Form Fields
+                    'form-name': 'ሙሉ ስም', 'form-email': 'የኢሜል አድራሻ', 'form-phone': 'የስልክ ቁጥር', 'form-treatment': 'የሕክምና አይነት ይምረጡ', 'form-message': 'የሕክምና ፍላጎቶችዎን ይንገሩን...', 'form-submit': 'ነፃ ምክር ያግኙ',
+                    // Services
+                    'services-title': 'ለሕክምና ቱሪዝም ሕንድን ለምን መምረጥ?', 'services-subtitle': 'በሕንድ ውስጥ ጥራት ያለው የጤና እንክብካቤ ለሚፈልጉ የአፍሪካ እና የደቡብ ምስራቅ አሲያ ታካሚዎች ሰፊ ድጋፍ',
+                    'service1-title': 'የባለሙያ የሕክምና ምክር', 'service1-desc': 'ለተለየ የሕክምና እቅዶች በአለም አቀፍ ደረጃ የተረጋገጡ ሐኪሞች እና ባለሙያዎች ጋር ይገናኙ።',
+                    'service2-title': 'ግልጽ የዋጋ አወጣጥ', 'service2-desc': 'ያለ ተደበቀ ክፍያ ዝርዝር የወጪ ግምቶችን በቅድሚያ ያግኙ። በሕክምና ሂደቶች ላይ እስከ 70% ይቆጥቡ።',
+                    'service3-title': 'የጉዞ እርዳታ', 'service3-desc': 'የቪዛ እርዳታ፣ መኖሪያ እና መጓጓዣን ጨምሮ ሙሉ የጉዞ ቅንጅት።',
+                    'service4-title': 'የቋንቋ ድጋፍ', 'service4-desc': 'በ15+ ቋንቋዎች ውስጥ ሙያዊ የትርጉም አገልግሎቶች እና የሕክምና ሰነዶች ትርጉም።',
+                    'service5-title': 'የጥራት ዋስትና', 'service5-desc': 'ሁሉም የአጋር ሆስፒታሎች በአለም አቀፍ ደረጃ የተረጋገጡ እና የተረጋገጡ የእጅግ ጥሩነት መዝገቦች አሏቸው።',
+                    'service6-title': '24/7 ድጋፍ', 'service6-desc': 'ልዩ የጉዳይ ባለሙያዎች በሕክምና ጉዞዎ ሁሉ ዙሪያ የሌሊት እና የቀን እርዳታ ይሰጣሉ።',
+                    // Destinations
+                    'destinations-title': 'ከፍተኛ የሕክምና መድረሻዎች', 'testimonials-title': 'የታካሚዎች የስኬት ታሪኮች', 'contact-title': 'የሕክምና ጉዞዎን ለመጀመር ዝግጁ ነዎት?', 'contact-subtitle': 'ከሕክምና ባለሙያዎቻችን ግላዊ የሕክምና ምክሮች እና የወጪ ግምቶች ያግኙ።',
+                    // Footer
+                    'footer-services': 'አገልግሎቶች', 'footer-destinations': 'መድረሻዎች', 'footer-support': 'ድጋፍ'
+                },
+                'mey': {
+                    // Navigation (Using Arabic script for Mahri as it's written in Arabic)
+                    'nav-home': 'الصفحة الرئيسية', 'nav-destinations': 'الوجهات', 'nav-services': 'الخدمات', 'nav-blog': 'المدونة', 'nav-reviews': 'آراء المرضى', 'nav-contact': 'اتصل بنا',
+                    'btn-consult': 'استشارة عبر الإنترنت', 'btn-quote': 'احصل على عرض مجاني',
+                    // Hero Section
+                    'hero-title': 'أفضل المستشفيات والعلاجات في الهند: رعاية صحية عالمية للمرضى الأفارقة والآسيويين',
+                    'hero-subtitle': 'احصل على علاج طبي متميز في الهند بتكلفة أقل بنسبة 70%. اتصل بالمستشفيات المعتمدة من JCI والجراحين المدربين دولياً والدعم الشامل من الاستشارة إلى التعافي.',
+                    'consultation-header': 'احصل على استشارتك الطبية المجانية', 'consultation-subtitle': 'إرشاد خبير في 24 ساعة',
+                    // Form Fields
+                    'form-name': 'الاسم الكامل', 'form-email': 'عنوان البريد الإلكتروني', 'form-phone': 'رقم الهاتف', 'form-treatment': 'اختر نوع العلاج', 'form-message': 'أخبرنا عن احتياجاتك الطبية...', 'form-submit': 'احصل على استشارة مجانية',
+                    // Services
+                    'services-title': 'لماذا تختار الهند للسياحة العلاجية؟', 'services-subtitle': 'دعم شامل للمرضى الأفارقة وجنوب شرق آسيا الذين يبحثون عن رعاية صحية جيدة في الهند',
+                    'service1-title': 'استشارة طبية متخصصة', 'service1-desc': 'تواصل مع أطباء ومتخصصين معتمدين دولياً لخطط علاج شخصية.',
+                    'service2-title': 'تسعير شفاف', 'service2-desc': 'احصل على تقديرات تكلفة مفصلة مقدماً بدون رسوم مخفية. وفر حتى 70% على الإجراءات الطبية.',
+                    'service3-title': 'مساعدة السفر', 'service3-desc': 'تنسيق سفر كامل بما في ذلك مساعدة التأشيرة والإقامة والنقل.',
+                    'service4-title': 'دعم لغوي', 'service4-desc': 'خدمات ترجمة مهنية وترجمة الوثائق الطبية بأكثر من 15 لغة.',
+                    'service5-title': 'ضمان الجودة', 'service5-desc': 'جميع المستشفيات الشريكة معتمدة دولياً مع سجلات مثبتة من التميز.',
+                    'service6-title': 'دعم 24/7', 'service6-desc': 'مديرو حالة مخصصون يقدمون المساعدة على مدار الساعة طوال رحلتك الطبية.',
+                    // Destinations
+                    'destinations-title': 'أهم الوجهات الطبية', 'testimonials-title': 'قصص نجاح المرضى', 'contact-title': 'هل أنت مستعد لبدء رحلتك الطبية؟', 'contact-subtitle': 'احصل على توصيات علاج شخصية وتقديرات تكلفة من خبرائنا الطبيين.',
+                    // Footer
+                    'footer-services': 'الخدمات', 'footer-destinations': 'الوجهات', 'footer-support': 'الدعم'
                 }
             };
             
@@ -747,7 +1021,20 @@
                 if (translations[langCode]) {
                     const translation = translations[langCode];
                     
-                    // Update main content
+                    // Update Navigation
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    const navTexts = ['nav-home', 'nav-destinations', 'nav-services', 'nav-blog', 'nav-reviews', 'nav-contact'];
+                    navLinks.forEach((link, index) => {
+                        if (translation[navTexts[index]]) link.textContent = translation[navTexts[index]];
+                    });
+                    
+                    // Update Buttons
+                    const consultBtn = document.querySelector('.btn-secondary');
+                    const quoteBtn = document.querySelector('.btn-primary');
+                    if (consultBtn && translation['btn-consult']) consultBtn.textContent = translation['btn-consult'];
+                    if (quoteBtn && translation['btn-quote']) quoteBtn.textContent = translation['btn-quote'];
+                    
+                    // Update Hero Section
                     const heroTitle = document.querySelector('.hero-title');
                     const heroSubtitle = document.querySelector('.hero-subtitle');
                     const consultationHeader = document.querySelector('.hero-form-header h3');
@@ -758,20 +1045,68 @@
                     if (consultationHeader) consultationHeader.textContent = translation['consultation-header'];
                     if (consultationSubtitle) consultationSubtitle.textContent = translation['consultation-subtitle'];
                     
-                    // Update section headers
+                    // Update Form Fields
+                    const formFields = [
+                        { selector: 'input[name="name"]', attr: 'placeholder', key: 'form-name' },
+                        { selector: 'input[name="email"]', attr: 'placeholder', key: 'form-email' },
+                        { selector: 'input[name="phone"]', attr: 'placeholder', key: 'form-phone' },
+                        { selector: 'select[name="treatment"] option[value=""]', attr: 'textContent', key: 'form-treatment' },
+                        { selector: 'textarea[name="message"]', attr: 'placeholder', key: 'form-message' },
+                        { selector: 'button[type="submit"]', attr: 'textContent', key: 'form-submit' }
+                    ];
+                    
+                    formFields.forEach(field => {
+                        const elements = document.querySelectorAll(field.selector);
+                        elements.forEach(element => {
+                            if (translation[field.key]) {
+                                if (field.attr === 'placeholder') {
+                                    element.placeholder = translation[field.key];
+                                } else if (field.attr === 'textContent') {
+                                    element.textContent = translation[field.key];
+                                }
+                            }
+                        });
+                    });
+                    
+                    // Update Services Section
                     const servicesTitle = document.querySelector('#services .section-header h2');
                     const servicesSubtitle = document.querySelector('#services .section-header p');
+                    if (servicesTitle) servicesTitle.textContent = translation['services-title'];
+                    if (servicesSubtitle) servicesSubtitle.textContent = translation['services-subtitle'];
+                    
+                    // Update Service Cards
+                    const serviceCards = document.querySelectorAll('.service-card');
+                    const serviceKeys = ['service1', 'service2', 'service3', 'service4', 'service5', 'service6'];
+                    serviceCards.forEach((card, index) => {
+                        const titleEl = card.querySelector('h3');
+                        const descEl = card.querySelector('p');
+                        if (titleEl && translation[serviceKeys[index] + '-title']) {
+                            titleEl.textContent = translation[serviceKeys[index] + '-title'];
+                        }
+                        if (descEl && translation[serviceKeys[index] + '-desc']) {
+                            descEl.textContent = translation[serviceKeys[index] + '-desc'];
+                        }
+                    });
+                    
+                    // Update Section Headers
                     const destinationsTitle = document.querySelector('#destinations .section-header h2');
                     const testimonialsTitle = document.querySelector('#testimonials .section-header h2');
                     const contactTitle = document.querySelector('#contact h2');
                     const contactSubtitle = document.querySelector('#contact p');
                     
-                    if (servicesTitle) servicesTitle.textContent = translation['services-title'];
-                    if (servicesSubtitle) servicesSubtitle.textContent = translation['services-subtitle'];
                     if (destinationsTitle) destinationsTitle.textContent = translation['destinations-title'];
                     if (testimonialsTitle) testimonialsTitle.textContent = translation['testimonials-title'];
                     if (contactTitle) contactTitle.textContent = translation['contact-title'];
                     if (contactSubtitle) contactSubtitle.textContent = translation['contact-subtitle'];
+                    
+                    // Update Footer
+                    const footerSections = document.querySelectorAll('.footer-section h4');
+                    const footerKeys = ['footer-services', 'footer-destinations', 'footer-support'];
+                    footerSections.forEach((section, index) => {
+                        if (translation[footerKeys[index]]) {
+                            section.textContent = translation[footerKeys[index]];
+                        }
+                    });
                 }
                 
                 // Remove loading indicator
