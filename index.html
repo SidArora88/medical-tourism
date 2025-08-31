@@ -63,11 +63,34 @@
     <!-- Bing Webmaster Tools -->
     <meta name="msvalidate.01" content="ABC123DEF456789-MediTravelBingVerification">
     
-    <!-- Critical resource preloading with fallback -->
-    <link rel="preload" href="styles.css?v=2024083102" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="script.js?v=2024083102" as="script">
-    <link rel="stylesheet" href="styles.css?v=2024083102" media="print" onload="this.media='all';this.onload=null;">
-    <noscript><link rel="stylesheet" href="styles.css?v=2024083102"></noscript>
+    <!-- Direct CSS loading for maximum compatibility -->
+    <link rel="stylesheet" href="styles.css?v=2024083103" id="main-styles">
+    <link rel="preload" href="script.js?v=2024083103" as="script">
+    
+    <!-- CSS loading verification and fallback -->
+    <script>
+        // Verify CSS loaded properly and add fallback
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var testElement = document.createElement('div');
+                testElement.style.display = 'none';
+                testElement.className = 'services';
+                document.body.appendChild(testElement);
+                
+                var computedStyle = window.getComputedStyle(testElement);
+                var hasStyles = computedStyle.background !== 'rgba(0, 0, 0, 0)' && computedStyle.background !== 'transparent';
+                
+                if (!hasStyles) {
+                    // Force reload CSS if not loading
+                    var link = document.getElementById('main-styles');
+                    if (link) {
+                        link.href = link.href.split('?')[0] + '?v=' + Date.now();
+                    }
+                }
+                document.body.removeChild(testElement);
+            }, 1000);
+        });
+    </script>
     
     <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
