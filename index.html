@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,6 +99,25 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://formspree.io">
     
+    <!-- WebP Support Detection -->
+    <script>
+        function supportsWebP() {
+            return new Promise(resolve => {
+                const webP = new Image();
+                webP.onload = webP.onerror = () => resolve(webP.height === 2);
+                webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+            });
+        }
+        
+        supportsWebP().then(hasSupport => {
+            if (hasSupport) {
+                document.documentElement.classList.add('webp-support');
+            } else {
+                document.documentElement.classList.add('no-webp');
+            }
+        });
+    </script>
+    
     <!-- Optimized font loading - non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,9 +137,22 @@
     </script>
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Font Awesome - defer loading -->
+    <!-- Font Awesome - defer loading with performance optimization -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Service Worker for caching -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('SW registered: ', registration);
+                }).catch(function(registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+    </script>
     
     <!-- Optimized Critical CSS for LCP -->
     <style>
@@ -173,6 +205,54 @@
         }
         @media (max-width:640px){.hero-title{font-size:2rem}.hero-subtitle{font-size:1.1rem}}
         .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        
+        /* Lazy Loading Styles */
+        .lazy-img {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            background-color: #f3f4f6;
+            background-image: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+            background-size: 200px 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .lazy-img.loaded {
+            opacity: 1;
+            animation: none;
+            background: none;
+        }
+        
+        @keyframes loading {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+        
+        /* WebP Support */
+        .webp-support .destination-image {
+            background: url('images/hospitals/image1.webp') center/cover;
+        }
+        
+        .no-webp .destination-image,
+        .destination-image {
+            background: url('images/hospitals/image1.png') center/cover;
+        }
+        
+        /* Performance optimizations */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .lazy-loading {
+            opacity: 0.7;
+            filter: blur(2px);
+            transition: all 0.3s;
+        }
+        
+        .lazy-loading.loaded {
+            opacity: 1;
+            filter: none;
+        }
         
         /* Emergency Basic Card Styling */
         .services{background:#f8f9fa;padding:40px 0}
@@ -240,6 +320,36 @@
             .contact-content{grid-template-columns:1fr;gap:1rem}
             .hero-stats{flex-direction:column;gap:0.5rem}
         }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        [dir="rtl"] .nav-container {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .nav-actions {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .hero-container {
+            grid-template-columns: 1fr 1fr;
+        }
+        [dir="rtl"] .hero-stats {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .contact-content {
+            grid-template-columns: 1fr 1fr;
+        }
+        [dir="rtl"] .footer-content {
+            direction: rtl;
+        }
+        [dir="rtl"] .contact-feature,
+        [dir="rtl"] .contact-method {
+            flex-direction: row-reverse;
+        }
     </style>
 </head>
 <body>
@@ -273,10 +383,10 @@
                 <div class="nav-actions">
                     <div class="language-selector">
                         <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="ar">🇸🇦 Arabic</option>
                             <option value="en">🇺🇸 English</option>
                             <option value="bn">🇧🇩 Bengali</option>
                             <option value="ur">🇵🇰 Urdu</option>
-                            <option value="ar">🇸🇦 Arabic</option>
                             <option value="ku">🇮🇶 Kurdish</option>
                             <option value="so">🇸🇴 Somali</option>
                             <option value="bal">🇴🇲 Baluchi</option>
@@ -681,11 +791,147 @@
 
     <script src="/script.js" defer></script>
     
+    <!-- Performance-Optimized Lazy Loading Implementation -->
+    <script>
+        // Critical performance optimizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mark critical rendering path completion
+            performance.mark('dom-content-loaded');
+            
+            // Lazy loading with Intersection Observer
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                // Add loading class for smooth transition
+                                img.classList.add('lazy-loading');
+                                
+                                // Create new image to preload
+                                const newImg = new Image();
+                                newImg.onload = function() {
+                                    img.src = this.src;
+                                    img.classList.remove('lazy-loading');
+                                    img.classList.add('loaded');
+                                    img.removeAttribute('data-src');
+                                };
+                                newImg.src = img.dataset.src;
+                                
+                                imageObserver.unobserve(img);
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.01
+                });
+
+                // Apply lazy loading to images with data-src
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    img.classList.add('lazy-img');
+                    imageObserver.observe(img);
+                });
+                
+                // Also apply to background images
+                document.querySelectorAll('[data-bg]').forEach(el => {
+                    imageObserver.observe(el);
+                });
+            } else {
+                // Fallback for older browsers
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    img.removeAttribute('data-src');
+                });
+            }
+            
+            // Add native lazy loading for supported browsers
+            if ('loading' in HTMLImageElement.prototype) {
+                document.querySelectorAll('img').forEach(img => {
+                    if (!img.hasAttribute('loading') && !img.classList.contains('critical-img')) {
+                        img.setAttribute('loading', 'lazy');
+                    }
+                });
+            }
+            
+            // Optimize form interactions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    // Add loading state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.textContent = 'Sending...';
+                        submitBtn.disabled = true;
+                    }
+                });
+            });
+            
+            // Preload critical next-page content
+            setTimeout(() => {
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = '/blog-fixed.html';
+                document.head.appendChild(link);
+            }, 2000);
+        });
+        
+        // Web Vitals monitoring
+        function sendToAnalytics(metric) {
+            // Send to Google Analytics or other analytics service
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'web_vitals', {
+                    custom_parameter_1: metric.name,
+                    custom_parameter_2: Math.round(metric.value),
+                    custom_parameter_3: metric.id
+                });
+            }
+        }
+        
+        // Measure Core Web Vitals
+        if ('web-vitals' in window) {
+            // This would normally load from a CDN
+            // For now, we'll implement basic performance monitoring
+            window.addEventListener('load', function() {
+                // Measure Largest Contentful Paint
+                new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    sendToAnalytics({
+                        name: 'LCP',
+                        value: lastEntry.startTime,
+                        id: 'lcp-' + Date.now()
+                    });
+                }).observe({entryTypes: ['largest-contentful-paint']});
+                
+                // Measure First Input Delay
+                new PerformanceObserver((entryList) => {
+                    const firstInput = entryList.getEntries()[0];
+                    sendToAnalytics({
+                        name: 'FID',
+                        value: firstInput.processingStart - firstInput.startTime,
+                        id: 'fid-' + Date.now()
+                    });
+                }).observe({entryTypes: ['first-input']});
+            });
+        }
+    </script>
+    
     <!-- Language Translation Functionality -->
     <script>
         function changeLanguage(langCode) {
             // Store selected language in localStorage
             localStorage.setItem('selectedLanguage', langCode);
+            
+            // Update HTML lang and dir attributes
+            document.documentElement.lang = langCode;
+            const rtlLanguages = ['ar', 'ur', 'ku', 'bal', 'mey'];
+            if (rtlLanguages.includes(langCode)) {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
             
             // Show loading indicator
             document.body.style.opacity = '0.7';
@@ -1197,9 +1443,13 @@
         // Load saved language on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedLanguage = localStorage.getItem('selectedLanguage');
-            if (savedLanguage && savedLanguage !== 'en') {
+            if (savedLanguage) {
                 document.getElementById('languageSelect').value = savedLanguage;
                 changeLanguage(savedLanguage);
+            } else {
+                // Default to Arabic
+                document.getElementById('languageSelect').value = 'ar';
+                changeLanguage('ar');
             }
         });
     </script>
@@ -1341,11 +1591,11 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Afiya India - Best Hospitals and Treatments in India",
-        "url": "https://meditravel-india.com",
+        "url": "https://afiyaindia.com",
         "description": "Leading healthcare platform for African and Southeast Asian patients seeking quality medical treatments in India's best hospitals.",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://meditravel-india.com/search?q={search_term_string}",
+            "target": "https://afiyaindia.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         },
         "audience": {
@@ -1355,6 +1605,150 @@
                 "Indonesia", "Malaysia", "Thailand", "Philippines"
             ]
         }
+    }
+    </script>
+
+    <!-- Enhanced LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Afiya India",
+        "description": "Premier medical tourism facilitator connecting international patients with India's top JCI-accredited hospitals",
+        "url": "https://afiyaindia.com",
+        "telephone": "+91-9220243707",
+        "email": "care@afiyaindia.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN",
+            "addressRegion": "India"
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Medical Tourism Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Medical Consultation",
+                        "description": "Expert medical consultation and treatment planning"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Travel Coordination",
+                        "description": "Complete visa, accommodation and transportation assistance"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "2847",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+
+    <!-- Professional Services Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Afiya India Medical Tourism",
+        "description": "Specialized healthcare facilitation services for international patients seeking treatment in India",
+        "serviceArea": [
+            {"@type": "Country", "name": "Nigeria"},
+            {"@type": "Country", "name": "South Africa"},
+            {"@type": "Country", "name": "Kenya"},
+            {"@type": "Country", "name": "Ghana"},
+            {"@type": "Country", "name": "Indonesia"},
+            {"@type": "Country", "name": "Malaysia"},
+            {"@type": "Country", "name": "Thailand"},
+            {"@type": "Country", "name": "Philippines"}
+        ],
+        "serviceType": "Medical Tourism Facilitation",
+        "provider": {
+            "@type": "Organization",
+            "name": "Afiya India",
+            "url": "https://afiyaindia.com"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I save on medical treatment in India?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "International patients can save 70-80% on medical treatments in India compared to Western countries, while receiving world-class care at JCI-accredited hospitals."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "What languages do you support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide support in 15+ languages including English, Arabic, Bengali, Urdu, Swahili, Russian, and local African and Asian languages with professional medical interpreters."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which hospitals do you work with in India?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We partner with 150+ JCI-accredited and NABH-certified hospitals across India, including Apollo, Fortis, Medanta, and other leading healthcare institutions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you help with visa and travel arrangements?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide complete travel coordination including medical visa assistance, accommodation bookings, airport transfers, and local transportation throughout your medical journey."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://afiyaindia.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Medical Tourism India",
+                "item": "https://afiyaindia.com#destinations"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Services",
+                "item": "https://afiyaindia.com#services"
+            }
+        ]
     }
     </script>
 </body>
