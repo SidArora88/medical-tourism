@@ -321,10 +321,12 @@
             .hero-stats{flex-direction:column;gap:0.5rem}
         }
         
-        /* RTL Support */
+        /* Enhanced RTL Support */
         [dir="rtl"] {
             text-align: right;
         }
+        
+        /* Navigation RTL */
         [dir="rtl"] .nav-container {
             flex-direction: row-reverse;
         }
@@ -333,22 +335,159 @@
         }
         [dir="rtl"] .nav-actions {
             flex-direction: row-reverse;
+            gap: 1rem;
         }
+        [dir="rtl"] .language-selector {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+        
+        /* Hero Section RTL */
         [dir="rtl"] .hero-container {
             grid-template-columns: 1fr 1fr;
         }
         [dir="rtl"] .hero-stats {
             flex-direction: row-reverse;
         }
+        [dir="rtl"] .hero-content {
+            text-align: right;
+        }
+        [dir="rtl"] .hero-title {
+            text-align: right;
+        }
+        [dir="rtl"] .hero-subtitle {
+            text-align: right;
+        }
+        
+        /* Form RTL */
+        [dir="rtl"] .hero-form {
+            text-align: right;
+        }
+        [dir="rtl"] .hero-form-header {
+            text-align: right;
+        }
+        [dir="rtl"] .form-group input,
+        [dir="rtl"] .form-group select,
+        [dir="rtl"] .form-group textarea {
+            text-align: right;
+            direction: rtl;
+        }
+        
+        /* Services Grid RTL */
+        [dir="rtl"] .services-grid {
+            direction: rtl;
+        }
+        [dir="rtl"] .service-card {
+            text-align: right;
+        }
+        [dir="rtl"] .service-icon {
+            text-align: right;
+        }
+        
+        /* Destinations RTL */
+        [dir="rtl"] .destinations-grid {
+            direction: rtl;
+        }
+        [dir="rtl"] .destination-card {
+            text-align: right;
+        }
+        [dir="rtl"] .destination-content {
+            text-align: right;
+        }
+        [dir="rtl"] .destination-specialties {
+            text-align: right;
+        }
+        [dir="rtl"] .specialty {
+            margin-left: 0.3rem;
+            margin-right: 0;
+        }
+        
+        /* Testimonials RTL */
+        [dir="rtl"] .testimonials-grid {
+            direction: rtl;
+        }
+        [dir="rtl"] .testimonial-card {
+            text-align: right;
+        }
+        [dir="rtl"] .testimonial-author {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .author-info {
+            text-align: right;
+        }
+        
+        /* Contact Section RTL */
         [dir="rtl"] .contact-content {
             grid-template-columns: 1fr 1fr;
-        }
-        [dir="rtl"] .footer-content {
             direction: rtl;
+        }
+        [dir="rtl"] .contact-info {
+            text-align: right;
         }
         [dir="rtl"] .contact-feature,
         [dir="rtl"] .contact-method {
             flex-direction: row-reverse;
+            text-align: right;
+        }
+        [dir="rtl"] .contact-feature i,
+        [dir="rtl"] .contact-method i {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+        [dir="rtl"] .contact-form {
+            text-align: right;
+        }
+        
+        /* Footer RTL */
+        [dir="rtl"] .footer-content {
+            direction: rtl;
+            text-align: right;
+        }
+        [dir="rtl"] .footer-section {
+            text-align: right;
+        }
+        [dir="rtl"] .social-links {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .footer-bottom {
+            text-align: right;
+        }
+        
+        /* Section Headers RTL */
+        [dir="rtl"] .section-header {
+            text-align: right;
+        }
+        [dir="rtl"] .section-header h2 {
+            text-align: right;
+        }
+        [dir="rtl"] .section-header p {
+            text-align: right;
+        }
+        
+        /* Mobile RTL Responsive */
+        @media (max-width:968px) {
+            [dir="rtl"] .hero-container {
+                grid-template-columns: 1fr;
+                text-align: right;
+            }
+            [dir="rtl"] .nav-menu {
+                text-align: right;
+            }
+            [dir="rtl"] .nav-menu.active {
+                right: 0;
+                left: auto;
+            }
+        }
+        
+        @media (max-width:768px) {
+            [dir="rtl"] .contact-content {
+                grid-template-columns: 1fr;
+                direction: rtl;
+            }
+            [dir="rtl"] .hero-stats {
+                flex-direction: column;
+                text-align: right;
+            }
         }
     </style>
 </head>
@@ -383,7 +522,7 @@
                 <div class="nav-actions">
                     <div class="language-selector">
                         <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
-                            <option value="ar">🇸🇦 Arabic</option>
+                            <option value="ar" selected>🇸🇦 Arabic</option>
                             <option value="en">🇺🇸 English</option>
                             <option value="bn">🇧🇩 Bengali</option>
                             <option value="ur">🇵🇰 Urdu</option>
@@ -1472,12 +1611,12 @@
         "@type": "MedicalOrganization",
         "name": "Afiya India",
         "description": "Leading healthcare facilitator connecting international patients with India's best hospitals for cardiac surgery, cancer treatment, and world-class medical procedures.",
-        "url": "https://meditravel-india.com",
-        "logo": "https://meditravel-india.com/images/meditravel-logo.png",
+        "url": "https://afiyaindia.com",
+        "logo": "https://afiyaindia.com/images/afiya-logo.png",
         "sameAs": [
-            "https://facebook.com/meditravel",
-            "https://twitter.com/meditravel",
-            "https://linkedin.com/company/meditravel"
+            "https://facebook.com/afiyaindia",
+            "https://twitter.com/afiyaindia",
+            "https://linkedin.com/company/afiyaindia"
         ],
         "address": {
             "@type": "PostalAddress",
