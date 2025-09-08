@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coronary Bypass Surgery in India: World-Class Heart Care at Affordable Costs | MediTravel</title>
-    <meta name="description" content="Complete guide to coronary bypass surgery in India. Learn about CABG procedures, top cardiac hospitals, expert surgeons, costs, and recovery for international patients.">
+    <title>جراحة المجاز التاجي في الهند: رعاية قلب عالمية المستوى بتكاليف معقولة | أفيا إنديا</title>
+    <meta name="description" content="دليل شامل لجراحة المجاز التاجي في الهند. تعرف على إجراءات CABG وأفضل مستشفيات القلب والجراحين الخبراء والتكاليف والتعافي للمرضى الدوليين.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -353,6 +353,56 @@
             text-align: center;
             color: #94a3b8;
         }
+        
+        /* Language Selector */
+        .language-selector {
+            margin-right: 0.5rem;
+        }
+        
+        .language-dropdown {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #1e293b;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+        
+        .language-dropdown:hover {
+            border-color: #2563eb;
+        }
+        
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .nav-container {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-actions {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .language-selector {
+            margin-right: 0;
+            margin-left: 0.5rem;
+        }
 
         @media (max-width: 968px) {
             .nav-menu {
@@ -381,27 +431,44 @@
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-key="nav_home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                        <a href="index.html#destinations" class="nav-link" data-key="nav_destinations">الوجهات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#services" class="nav-link">Services</a>
+                        <a href="index.html#services" class="nav-link" data-key="nav_services">الخدمات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                        <a href="blog-fixed.html" class="nav-link" data-key="nav_blog">المدونة</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                        <a href="index.html#testimonials" class="nav-link" data-key="nav_testimonials">الشهادات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#contact" class="nav-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link" data-key="nav_contact">اتصل بنا</a>
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
-                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="es">🇪🇸 Español</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="de">🇩🇪 Deutsch</option>
+                            <option value="it">🇮🇹 Italiano</option>
+                            <option value="pt">🇵🇹 Português</option>
+                            <option value="ru">🇷🇺 Русский</option>
+                            <option value="tr">🇹🇷 Türkçe</option>
+                            <option value="zh">🇨🇳 中文</option>
+                            <option value="ja">🇯🇵 日本語</option>
+                            <option value="ko">🇰🇷 한국어</option>
+                            <option value="hi">🇮🇳 हिंदी</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'" data-key="btn_consult">استشارة أونلاين</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'" data-key="btn_quote">احصل على عرض مجاني</button>
                 </div>
             </div>
         </nav>
@@ -423,8 +490,8 @@
                     Heart Treatments
                 </span>
             </div>
-            <h1 class="article-title">Coronary Bypass Surgery in India</h1>
-            <p class="article-excerpt">Complete guide to coronary bypass surgery in India. Learn about CABG procedures, top cardiac hospitals, expert surgeons, costs, and recovery for international patients.</p>
+            <h1 class="article-title" data-key="page_title">جراحة المجاز التاجي في الهند</h1>
+            <p class="article-excerpt" data-key="page_summary">دليل شامل لجراحة المجاز التاجي في الهند. تعرف على إجراءات CABG وأفضل مستشفيات القلب والجراحين الخبراء والتكاليف والتعافي للمرضى الدوليين.</p>
         </div>
     </section>
 
@@ -786,5 +853,91 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Complete Translation System
+        const translations = {
+            ar: {
+                // Navigation
+                nav_home: 'الرئيسية',
+                nav_destinations: 'الوجهات',
+                nav_services: 'الخدمات',
+                nav_blog: 'المدونة',
+                nav_testimonials: 'الشهادات',
+                nav_contact: 'اتصل بنا',
+                btn_consult: 'استشارة أونلاين',
+                btn_quote: 'احصل على عرض مجاني',
+                
+                // Page content
+                page_title: 'جراحة المجاز التاجي في الهند',
+                page_summary: 'دليل شامل لجراحة المجاز التاجي في الهند. تعرف على إجراءات CABG وأفضل مستشفيات القلب.'
+            },
+            en: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Testimonials',
+                nav_contact: 'Contact',
+                btn_consult: 'Consult Online',
+                btn_quote: 'Get Free Quote',
+                
+                // Page content
+                page_title: 'Coronary Bypass Surgery in India',
+                page_summary: 'Complete guide to coronary bypass surgery in India. Learn about CABG procedures, top cardiac hospitals, expert surgeons, costs, and recovery for international patients.'
+            }
+        };
+
+        function changeLanguage(langCode) {
+            // Store the selected language
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Update HTML direction and language
+            const rtlLanguages = ['ar', 'ur', 'ku', 'bal', 'mey'];
+            if (rtlLanguages.includes(langCode)) {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = langCode;
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Apply translations if available
+            if (translations[langCode]) {
+                applyTranslations(langCode);
+            }
+            
+            // Update the dropdown selection
+            const selector = document.getElementById('languageSelect');
+            if (selector) {
+                selector.value = langCode;
+            }
+        }
+
+        function applyTranslations(langCode) {
+            const trans = translations[langCode];
+            if (!trans) return;
+            
+            // Apply all translations
+            Object.keys(trans).forEach(key => {
+                const elements = document.querySelectorAll(`[data-key="${key}"]`);
+                elements.forEach(element => {
+                    element.textContent = trans[key];
+                });
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get saved language or default to Arabic
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+            changeLanguage(savedLanguage);
+        });
+
+        // Auto-load Arabic as default
+        window.addEventListener('load', function() {
+            changeLanguage('ar');
+        });
+    </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 15 Private Hospitals in India | Best Medical Tourism Destinations 2024</title>
-    <meta name="description" content="Discover India's top 15 private hospitals for medical tourism. JCI-accredited facilities offering world-class cardiac surgery, cancer treatment, and organ transplants at affordable costs for international patients.">
+    <title>أفضل 15 مستشفى خاص في الهند | أفضل وجهات السياحة الطبية 2024</title>
+    <meta name="description" content="اكتشف أفضل 15 مستشفى خاص في الهند للسياحة الطبية. مرافق معتمدة من JCI تقدم جراحة القلب عالمية المستوى وعلاج السرطان وزراعة الأعضاء بتكاليف ميسورة للمرضى الدوليين.">
     <meta name="keywords" content="top private hospitals India, best hospitals India medical tourism, JCI accredited hospitals India, cardiac surgery India, cancer treatment India, organ transplant India">
     
     <!-- Open Graph Meta Tags -->
@@ -443,6 +443,74 @@
             color: #94a3b8;
         }
 
+        /* Language Selector */
+        .language-selector {
+            margin-right: 0.5rem;
+        }
+        
+        .language-dropdown {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #1e293b;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+        
+        .language-dropdown:hover {
+            border-color: #2563eb;
+        }
+        
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .nav-container {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-actions {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .language-selector {
+            margin-right: 0;
+            margin-left: 0.5rem;
+        }
+        
+        [dir="rtl"] .article-meta {
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .hospital-info-grid {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .cta-buttons {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] ul, [dir="rtl"] ol {
+            padding-right: 2rem;
+            padding-left: 0;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 968px) {
             .nav-menu {
@@ -457,6 +525,10 @@
             .hospital-header {
                 flex-direction: column;
                 text-align: center;
+            }
+            .language-dropdown {
+                min-width: 120px;
+                font-size: 12px;
             }
         }
 
@@ -481,27 +553,45 @@
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-key="nav_home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                        <a href="index.html#destinations" class="nav-link" data-key="nav_destinations">الوجهات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#services" class="nav-link">Services</a>
+                        <a href="index.html#services" class="nav-link" data-key="nav_services">الخدمات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                        <a href="blog-fixed.html" class="nav-link" data-key="nav_blog">المدونة</a>
                     </li>
                     <li class="nav-item">
-                        <a href="patient-reviews-light.html" class="nav-link">Patient Reviews</a>
+                        <a href="patient-reviews-light.html" class="nav-link" data-key="nav_reviews">تقييمات المرضى</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#contact" class="nav-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link" data-key="nav_contact">اتصل بنا</a>
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
-                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="es">🇪🇸 Español</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="de">🇩🇪 Deutsch</option>
+                            <option value="it">🇮🇹 Italiano</option>
+                            <option value="pt">🇵🇹 Português</option>
+                            <option value="ru">🇷🇺 Русский</option>
+                            <option value="tr">🇹🇷 Türkçe</option>
+                            <option value="zh">🇨🇳 中文</option>
+                            <option value="ja">🇯🇵 日本語</option>
+                            <option value="ko">🇰🇷 한국어</option>
+                            <option value="hi">🇮🇳 हिंदी</option>
+                            <option value="th">🇹🇭 ไทย</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'" data-key="btn_consult">استشارة أونلاين</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'" data-key="btn_quote">احصل على عرض مجاني</button>
                 </div>
             </div>
         </nav>
@@ -510,16 +600,14 @@
     <!-- Article Header -->
     <section class="article-header">
         <div class="container">
-            <h1>Top 15 Private Hospitals in India for Medical Tourism</h1>
+            <h1 data-key="page_title">أفضل 15 مستشفى خاص في الهند للسياحة الطبية</h1>
             <div class="article-meta">
-                <span><i class="fas fa-calendar"></i> August 30, 2024</span>
-                <span><i class="fas fa-clock"></i> 12 min read</span>
-                <span><i class="fas fa-user"></i> Medical Tourism Expert</span>
+                <span><i class="fas fa-calendar"></i> <span data-key="meta_date">30 أغسطس 2024</span></span>
+                <span><i class="fas fa-clock"></i> <span data-key="meta_read_time">12 دقيقة قراءة</span></span>
+                <span><i class="fas fa-user"></i> <span data-key="meta_author">خبير السياحة الطبية</span></span>
             </div>
-            <p class="article-intro">
-                Discover India's premier private hospitals that attract thousands of international patients annually. 
-                These JCI-accredited facilities offer world-class medical treatments at a fraction of Western costs, 
-                making India the #1 destination for medical tourism globally.
+            <p class="article-intro" data-key="page_summary">
+                اكتشف أفضل المستشفيات الخاصة في الهند التي تجذب آلاف المرضى الدوليين سنوياً. هذه المرافق المعتمدة من JCI تقدم علاجات طبية عالمية المستوى بجزء بسيط من تكاليف الغرب، مما يجعل الهند الوجهة رقم 1 للسياحة الطبية عالمياً.
             </p>
         </div>
     </section>
@@ -527,17 +615,13 @@
     <!-- Article Content -->
     <main class="article-content">
         <div class="container">
-            <h2>Why Choose India's Private Hospitals for Medical Tourism?</h2>
-            <p>
-                India has emerged as the world's leading medical tourism destination, attracting over 500,000 international 
-                patients annually. The country's private hospitals combine cutting-edge technology, internationally trained 
-                medical professionals, and significantly lower costs compared to Western countries. With savings of up to 
-                80% on medical procedures, patients can receive the same quality of care they would expect in the US or UK.
+            <h2 data-key="why_choose_title">لماذا تختار المستشفيات الخاصة في الهند للسياحة الطبية؟</h2>
+            <p data-key="why_choose_desc">
+                برزت الهند كوجهة رائدة عالمياً للسياحة الطبية، حيث تجذب أكثر من 500,000 مريض دولي سنوياً. تجمع المستشفيات الخاصة في البلاد بين التكنولوجيا المتطورة والمهنيين الطبيين المدربين دولياً والتكاليف المنخفضة بشكل كبير مقارنة بالدول الغربية. مع توفيرات تصل إلى 80% في الإجراءات الطبية، يمكن للمرضى الحصول على نفس جودة الرعاية التي يتوقعونها في الولايات المتحدة أو المملكة المتحدة.
             </p>
 
-            <p>
-                The following hospitals represent the pinnacle of private healthcare in India, each offering specialized 
-                services and maintaining international accreditation standards that ensure the highest quality of patient care.
+            <p data-key="hospitals_intro">
+                تمثل المستشفيات التالية قمة الرعاية الصحية الخاصة في الهند، حيث يقدم كل منها خدمات متخصصة ويحافظ على معايير الاعتماد الدولية التي تضمن أعلى جودة في رعاية المرضى.
             </p>
 
             <div class="hospitals-table">
@@ -1067,31 +1151,26 @@
                 </div>
             </div>
 
-            <h2>Key Advantages of India's Private Hospitals</h2>
-            <p>
-                These top private hospitals in India offer several compelling advantages for international patients:
+            <h2 data-key="advantages_title">المزايا الرئيسية للمستشفيات الخاصة في الهند</h2>
+            <p data-key="advantages_intro">
+                تقدم هذه المستشفيات الخاصة الرائدة في الهند عدة مزايا مقنعة للمرضى الدوليين:
             </p>
-            <ul style="margin: 1.5rem 0; padding-left: 2rem;">
-                <li><strong>Cost Savings:</strong> Up to 80% lower costs compared to similar treatments in the US, UK, or Australia</li>
-                <li><strong>International Accreditation:</strong> JCI and NABH accreditation ensuring global quality standards</li>
-                <li><strong>English-Speaking Staff:</strong> No language barriers with doctors and nurses fluent in English</li>
-                <li><strong>Advanced Technology:</strong> Latest medical equipment and innovative treatment methods</li>
-                <li><strong>Minimal Wait Times:</strong> Quick scheduling and treatment without long waiting periods</li>
-                <li><strong>Comprehensive Care:</strong> End-to-end medical tourism support services</li>
+            <ul style="margin: 1.5rem 0; padding-left: 2rem;" data-key="advantages_list">
+                <li><strong>توفير في التكاليف:</strong> توفير يصل إلى 80% مقارنة بالعلاجات المماثلة في الولايات المتحدة أو المملكة المتحدة أو أستراليا</li>
+                <li><strong>الاعتماد الدولي:</strong> اعتماد JCI وNABH يضمن معايير الجودة العالمية</li>
+                <li><strong>طاقم يتحدث الإنجليزية:</strong> لا حواجز لغوية مع أطباء وممرضات يتقنون الإنجليزية</li>
+                <li><strong>تكنولوجيا متقدمة:</strong> أحدث المعدات الطبية وطرق العلاج المبتكرة</li>
+                <li><strong>أوقات انتظار قصيرة:</strong> جدولة وعلاج سريع دون فترات انتظار طويلة</li>
+                <li><strong>رعاية شاملة:</strong> خدمات دعم السياحة الطبية من البداية إلى النهاية</li>
             </ul>
 
-            <h2>Planning Your Medical Journey to India</h2>
-            <p>
-                When considering treatment at these premier Indian hospitals, it's essential to work with experienced 
-                medical tourism facilitators who can help you navigate the process. From initial consultations and 
-                medical visa assistance to hospital selection and post-treatment care, professional guidance ensures 
-                a smooth and successful medical journey.
+            <h2 data-key="planning_title">تخطيط رحلتك الطبية إلى الهند</h2>
+            <p data-key="planning_desc1">
+                عند النظر في العلاج في هذه المستشفيات الهندية الرائدة، من الضروري العمل مع ميسري السياحة الطبية ذوي الخبرة الذين يمكنهم مساعدتك في التنقل عبر العملية. من الاستشارات الأولية ومساعدة الحصول على التأشيرة الطبية إلى اختيار المستشفى والرعاية ما بعد العلاج، يضمن التوجيه المهني رحلة طبية سلسة وناجحة.
             </p>
 
-            <p>
-                Each of these hospitals has dedicated international patient departments that provide services in 
-                multiple languages, assistance with travel arrangements, and coordination with your home country 
-                physicians for seamless continuity of care.
+            <p data-key="planning_desc2">
+                يحتوي كل من هذه المستشفيات على أقسام مخصصة للمرضى الدوليين تقدم خدمات بعدة لغات، ومساعدة في ترتيبات السفر، والتنسيق مع أطباء بلدك الأصلي لضمان استمرارية سلسة في الرعاية.
             </p>
         </div>
     </main>
@@ -1099,11 +1178,11 @@
     <!-- CTA Section -->
     <section class="article-cta">
         <div class="container">
-            <h2>Ready to Explore Treatment Options in India?</h2>
-            <p>Connect with our medical experts to get personalized recommendations and cost estimates from India's top hospitals.</p>
+            <h2 data-key="cta_title">هل أنت مستعد لاستكشاف خيارات العلاج في الهند؟</h2>
+            <p data-key="cta_description">تواصل مع خبرائنا الطبيين للحصول على توصيات شخصية وتقديرات تكلفة من أفضل مستشفيات الهند.</p>
             <div class="cta-buttons">
-                <a href="index.html#contact" class="btn-primary btn-large">Get Free Consultation</a>
-                <a href="blog-fixed.html" class="btn-outline btn-large">Read More Articles</a>
+                <a href="index.html#contact" class="btn-primary btn-large" data-key="cta_consultation">احصل على استشارة مجانية</a>
+                <a href="blog-fixed.html" class="btn-outline btn-large" data-key="cta_articles">اقرأ المزيد من المقالات</a>
             </div>
         </div>
     </section>
@@ -1150,14 +1229,404 @@
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Complete Translation System
+        const translations = {
+            ar: {
+                // Navigation
+                nav_home: 'الرئيسية',
+                nav_destinations: 'الوجهات',
+                nav_services: 'الخدمات',
+                nav_blog: 'المدونة',
+                nav_reviews: 'تقييمات المرضى',
+                nav_contact: 'اتصل بنا',
+                btn_consult: 'استشارة أونلاين',
+                btn_quote: 'احصل على عرض مجاني',
+                
+                // Page content
+                page_title: 'أفضل 15 مستشفى خاص في الهند للسياحة الطبية',
+                page_summary: 'اكتشف أفضل المستشفيات الخاصة في الهند التي تجذب آلاف المرضى الدوليين سنوياً. هذه المرافق المعتمدة من JCI تقدم علاجات طبية عالمية المستوى بجزء بسيط من تكاليف الغرب، مما يجعل الهند الوجهة رقم 1 للسياحة الطبية عالمياً.',
+                meta_date: '30 أغسطس 2024',
+                meta_read_time: '12 دقيقة قراءة',
+                meta_author: 'خبير السياحة الطبية',
+                
+                // CTA Section
+                cta_title: 'هل أنت مستعد لاستكشاف خيارات العلاج في الهند؟',
+                cta_description: 'تواصل مع خبرائنا الطبيين للحصول على توصيات شخصية وتقديرات تكلفة من أفضل مستشفيات الهند.',
+                cta_consultation: 'احصل على استشارة مجانية',
+                cta_articles: 'اقرأ المزيد من المقالات',
+                
+                // Content sections
+                why_choose_title: 'لماذا تختار المستشفيات الخاصة في الهند للسياحة الطبية؟',
+                why_choose_desc: 'برزت الهند كوجهة رائدة عالمياً للسياحة الطبية، حيث تجذب أكثر من 500,000 مريض دولي سنوياً. تجمع المستشفيات الخاصة في البلاد بين التكنولوجيا المتطورة والمهنيين الطبيين المدربين دولياً والتكاليف المنخفضة بشكل كبير مقارنة بالدول الغربية.',
+                hospitals_intro: 'تمثل المستشفيات التالية قمة الرعاية الصحية الخاصة في الهند، حيث يقدم كل منها خدمات متخصصة ويحافظ على معايير الاعتماد الدولية.',
+                advantages_title: 'المزايا الرئيسية للمستشفيات الخاصة في الهند',
+                advantages_intro: 'تقدم هذه المستشفيات الخاصة الرائدة في الهند عدة مزايا مقنعة للمرضى الدوليين:',
+                planning_title: 'تخطيط رحلتك الطبية إلى الهند',
+                planning_desc1: 'عند النظر في العلاج في هذه المستشفيات الهندية الرائدة، من الضروري العمل مع ميسري السياحة الطبية ذوي الخبرة.',
+                planning_desc2: 'يحتوي كل من هذه المستشفيات على أقسام مخصصة للمرضى الدوليين تقدم خدمات بعدة لغات.'
+            },
+            en: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_reviews: 'Patient Reviews',
+                nav_contact: 'Contact',
+                btn_consult: 'Consult Online',
+                btn_quote: 'Get Free Quote',
+                
+                // Page content
+                page_title: 'Top 15 Private Hospitals in India for Medical Tourism',
+                page_summary: 'Discover India\'s premier private hospitals that attract thousands of international patients annually. These JCI-accredited facilities offer world-class medical treatments at a fraction of Western costs, making India the #1 destination for medical tourism globally.',
+                meta_date: 'August 30, 2024',
+                meta_read_time: '12 min read',
+                meta_author: 'Medical Tourism Expert',
+                
+                // CTA Section
+                cta_title: 'Ready to Explore Treatment Options in India?',
+                cta_description: 'Connect with our medical experts to get personalized recommendations and cost estimates from India\'s top hospitals.',
+                cta_consultation: 'Get Free Consultation',
+                cta_articles: 'Read More Articles',
+                
+                // Content sections
+                why_choose_title: 'Why Choose India\'s Private Hospitals for Medical Tourism?',
+                why_choose_desc: 'India has emerged as the world\'s leading medical tourism destination, attracting over 500,000 international patients annually. The country\'s private hospitals combine cutting-edge technology, internationally trained medical professionals, and significantly lower costs compared to Western countries.',
+                hospitals_intro: 'The following hospitals represent the pinnacle of private healthcare in India, each offering specialized services and maintaining international accreditation standards that ensure the highest quality of patient care.',
+                advantages_title: 'Key Advantages of India\'s Private Hospitals',
+                advantages_intro: 'These top private hospitals in India offer several compelling advantages for international patients:',
+                planning_title: 'Planning Your Medical Journey to India',
+                planning_desc1: 'When considering treatment at these premier Indian hospitals, it\'s essential to work with experienced medical tourism facilitators who can help you navigate the process.',
+                planning_desc2: 'Each of these hospitals has dedicated international patient departments that provide services in multiple languages, assistance with travel arrangements, and coordination with your home country physicians.'
+            },
+            es: {
+                // Navigation
+                nav_home: 'Inicio',
+                nav_destinations: 'Destinos',
+                nav_services: 'Servicios',
+                nav_blog: 'Blog',
+                nav_reviews: 'Reseñas de Pacientes',
+                nav_contact: 'Contacto',
+                btn_consult: 'Consultar Online',
+                btn_quote: 'Obtener Cotización Gratis',
+                
+                // Page content
+                page_title: 'Los 15 Mejores Hospitales Privados en India para Turismo Médico',
+                page_summary: 'Descubre los principales hospitales privados de India que atraen a miles de pacientes internacionales anualmente. Estas instalaciones acreditadas por JCI ofrecen tratamientos médicos de clase mundial a una fracción de los costos occidentales, convirtiendo a India en el destino #1 para turismo médico globalmente.',
+                meta_date: '30 de Agosto 2024',
+                meta_read_time: '12 min de lectura',
+                meta_author: 'Experto en Turismo Médico',
+                
+                // CTA Section
+                cta_title: '¿Listo para Explorar Opciones de Tratamiento en India?',
+                cta_description: 'Conecta con nuestros expertos médicos para obtener recomendaciones personalizadas y estimaciones de costo de los mejores hospitales de India.',
+                cta_consultation: 'Obtener Consulta Gratis',
+                cta_articles: 'Leer Más Artículos'
+            },
+            fr: {
+                // Navigation
+                nav_home: 'Accueil',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_reviews: 'Avis Patients',
+                nav_contact: 'Contact',
+                btn_consult: 'Consulter en ligne',
+                btn_quote: 'Devis gratuit',
+                
+                // Page content
+                page_title: 'Top 15 des Hôpitaux Privés en Inde pour le Tourisme Médical',
+                page_summary: 'Découvrez les principaux hôpitaux privés de l\'Inde qui attirent des milliers de patients internationaux chaque année. Ces établissements accrédités JCI offrent des traitements médicaux de classe mondiale à une fraction des coûts occidentaux, faisant de l\'Inde la destination n°1 pour le tourisme médical mondial.',
+                meta_date: '30 Août 2024',
+                meta_read_time: '12 min de lecture',
+                meta_author: 'Expert en Tourisme Médical',
+                
+                // CTA Section
+                cta_title: 'Prêt à explorer les options de traitement en Inde?',
+                cta_description: 'Connectez-vous avec nos experts médicaux pour obtenir des recommandations personnalisées et des estimations de coûts des meilleurs hôpitaux d\'Inde.',
+                cta_consultation: 'Consultation gratuite',
+                cta_articles: 'Lire plus d\'articles'
+            },
+            de: {
+                // Navigation
+                nav_home: 'Startseite',
+                nav_destinations: 'Reiseziele',
+                nav_services: 'Dienstleistungen',
+                nav_blog: 'Blog',
+                nav_reviews: 'Patientenbewertungen',
+                nav_contact: 'Kontakt',
+                btn_consult: 'Online konsultieren',
+                btn_quote: 'Kostenloses Angebot',
+                
+                // Page content
+                page_title: 'Top 15 Privatkliniken in Indien für Medizintourismus',
+                page_summary: 'Entdecken Sie Indiens führende Privatkliniken, die jährlich Tausende internationale Patienten anziehen. Diese JCI-akkreditierten Einrichtungen bieten medizinische Behandlungen von Weltklasse zu einem Bruchteil der westlichen Kosten und machen Indien zum #1-Ziel für Medizintourismus weltweit.',
+                meta_date: '30. August 2024',
+                meta_read_time: '12 Min. Lesezeit',
+                meta_author: 'Medizintourismus-Experte',
+                
+                // CTA Section
+                cta_title: 'Bereit, Behandlungsoptionen in Indien zu erkunden?',
+                cta_description: 'Verbinden Sie sich mit unseren medizinischen Experten, um personalisierte Empfehlungen und Kostenschätzungen von Indiens Top-Kliniken zu erhalten.',
+                cta_consultation: 'Kostenlose Beratung',
+                cta_articles: 'Weitere Artikel lesen'
+            },
+            ru: {
+                // Navigation
+                nav_home: 'Главная',
+                nav_destinations: 'Направления',
+                nav_services: 'Услуги',
+                nav_blog: 'Блог',
+                nav_reviews: 'Отзывы пациентов',
+                nav_contact: 'Контакты',
+                btn_consult: 'Онлайн консультация',
+                btn_quote: 'Бесплатная оценка',
+                
+                // Page content
+                page_title: 'Топ 15 частных больниц Индии для медицинского туризма',
+                page_summary: 'Откройте для себя ведущие частные больницы Индии, которые ежегодно привлекают тысячи международных пациентов. Эти аккредитованные JCI учреждения предлагают медицинские услуги мирового класса за долю от западных цен, делая Индию направлением №1 для медицинского туризма в мире.',
+                meta_date: '30 августа 2024',
+                meta_read_time: '12 мин чтения',
+                meta_author: 'Эксперт по медицинскому туризму',
+                
+                // CTA Section
+                cta_title: 'Готовы изучить варианты лечения в Индии?',
+                cta_description: 'Свяжитесь с нашими медицинскими экспертами для получения персональных рекомендаций и оценки стоимости от лучших больниц Индии.',
+                cta_consultation: 'Бесплатная консультация',
+                cta_articles: 'Читать больше статей'
+            },
+            tr: {
+                // Navigation
+                nav_home: 'Ana Sayfa',
+                nav_destinations: 'Destinasyonlar',
+                nav_services: 'Hizmetler',
+                nav_blog: 'Blog',
+                nav_reviews: 'Hasta Yorumları',
+                nav_contact: 'İletişim',
+                btn_consult: 'Online Danışmanlık',
+                btn_quote: 'Ücretsiz Teklif',
+                
+                // Page content
+                page_title: 'Medikal Turizm için Hindistan\'ın En İyi 15 Özel Hastanesi',
+                page_summary: 'Her yıl binlerce uluslararası hastayı çeken Hindistan\'ın önde gelen özel hastanelerini keşfedin. Bu JCI akrediteli tesisler, Batı maliyetlerinin çok altında dünya standartlarında tıbbi tedaviler sunarak Hindistan\'ı küresel medikal turizmin 1 numaralı destinasyonu haline getiriyor.',
+                meta_date: '30 Ağustos 2024',
+                meta_read_time: '12 dakika okuma',
+                meta_author: 'Medikal Turizm Uzmanı',
+                
+                // CTA Section
+                cta_title: 'Hindistan\'da tedavi seçeneklerini keşfetmeye hazır mısınız?',
+                cta_description: 'Hindistan\'ın en iyi hastanelerinden kişiselleştirilmiş öneriler ve maliyet tahminleri almak için tıbbi uzmanlarımızla bağlantı kurun.',
+                cta_consultation: 'Ücretsiz Danışmanlık',
+                cta_articles: 'Daha Fazla Makale Oku'
+            },
+            it: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinazioni',
+                nav_services: 'Servizi',
+                nav_blog: 'Blog',
+                nav_reviews: 'Recensioni Pazienti',
+                nav_contact: 'Contatti',
+                btn_consult: 'Consulta Online',
+                btn_quote: 'Preventivo Gratuito',
+                
+                // Page content
+                page_title: 'Top 15 Ospedali Privati in India per Turismo Medico',
+                page_summary: 'Scopri i principali ospedali privati dell\'India che attirano migliaia di pazienti internazionali ogni anno. Queste strutture accreditate JCI offrono trattamenti medici di livello mondiale a una frazione dei costi occidentali, rendendo l\'India la destinazione #1 per il turismo medico a livello globale.',
+                meta_date: '30 Agosto 2024',
+                meta_read_time: '12 min di lettura',
+                meta_author: 'Esperto di Turismo Medico',
+                
+                // CTA Section
+                cta_title: 'Pronto a esplorare le opzioni di trattamento in India?',
+                cta_description: 'Connettiti con i nostri esperti medici per ottenere raccomandazioni personalizzate e stime dei costi dai migliori ospedali dell\'India.',
+                cta_consultation: 'Consultazione Gratuita',
+                cta_articles: 'Leggi Altri Articoli'
+            },
+            pt: {
+                // Navigation
+                nav_home: 'Início',
+                nav_destinations: 'Destinos',
+                nav_services: 'Serviços',
+                nav_blog: 'Blog',
+                nav_reviews: 'Avaliações Pacientes',
+                nav_contact: 'Contato',
+                btn_consult: 'Consulta Online',
+                btn_quote: 'Orçamento Grátis',
+                
+                // Page content
+                page_title: 'Top 15 Hospitais Privados na Índia para Turismo Médico',
+                page_summary: 'Descubra os principais hospitais privados da Índia que atraem milhares de pacientes internacionais anualmente. Essas instalações credenciadas pela JCI oferecem tratamentos médicos de padrão mundial a uma fração dos custos ocidentais, tornando a Índia o destino nº1 para turismo médico globalmente.',
+                meta_date: '30 de Agosto 2024',
+                meta_read_time: '12 min de leitura',
+                meta_author: 'Especialista em Turismo Médico',
+                
+                // CTA Section
+                cta_title: 'Pronto para explorar opções de tratamento na Índia?',
+                cta_description: 'Conecte-se com nossos especialistas médicos para obter recomendações personalizadas e estimativas de custos dos melhores hospitais da Índia.',
+                cta_consultation: 'Consulta Gratuita',
+                cta_articles: 'Ler Mais Artigos'
+            },
+            zh: {
+                // Navigation
+                nav_home: '首页',
+                nav_destinations: '目的地',
+                nav_services: '服务',
+                nav_blog: '博客',
+                nav_reviews: '患者评价',
+                nav_contact: '联系我们',
+                btn_consult: '在线咨询',
+                btn_quote: '免费报价',
+                
+                // Page content
+                page_title: '印度医疗旅游十五佳私立医院',
+                page_summary: '探索印度顶级私立医院，每年吸引数千名国际患者。这些JCI认证的医疗机构以西方成本的一小部分提供世界级医疗服务，使印度成为全球医疗旅游的首选目的地。',
+                meta_date: '2024年8月30日',
+                meta_read_time: '12分钟阅读',
+                meta_author: '医疗旅游专家',
+                
+                // CTA Section
+                cta_title: '准备好探索印度的治疗选择了吗？',
+                cta_description: '联系我们的医疗专家，获得来自印度顶级医院的个性化建议和费用估算。',
+                cta_consultation: '免费咨询',
+                cta_articles: '阅读更多文章'
+            },
+            hi: {
+                // Navigation
+                nav_home: 'होम',
+                nav_destinations: 'गंतव्य',
+                nav_services: 'सेवाएं',
+                nav_blog: 'ब्लॉग',
+                nav_reviews: 'मरीज़ समीक्षाएं',
+                nav_contact: 'संपर्क',
+                btn_consult: 'ऑनलाइन सलाह',
+                btn_quote: 'मुफ्त कोटेशन',
+                
+                // Page content
+                page_title: 'चिकित्सा पर्यटन के लिए भारत के शीर्ष 15 निजी अस्पताल',
+                page_summary: 'भारत के प्रमुख निजी अस्पतालों की खोज करें जो प्रतिवर्ष हजारों अंतर्राष्ट्रीय मरीजों को आकर्षित करते हैं। ये JCI मान्यता प्राप्त सुविधाएं पश्चिमी लागत के एक अंश पर विश्व स्तरीय चिकित्सा उपचार प्रदान करती हैं, जो भारत को वैश्विक चिकित्सा पर्यटन के लिए #1 गंतव्य बनाती हैं।',
+                meta_date: '30 अगस्त 2024',
+                meta_read_time: '12 मिनट पढ़ने का समय',
+                meta_author: 'चिकित्सा पर्यटन विशेषज्ञ',
+                
+                // CTA Section
+                cta_title: 'भारत में उपचार विकल्पों का पता लगाने के लिए तैयार हैं?',
+                cta_description: 'भारत के शीर्ष अस्पतालों से व्यक्तिगत सिफारिशें और लागत अनुमान प्राप्त करने के लिए हमारे चिकित्सा विशेषज्ञों से जुड़ें।',
+                cta_consultation: 'मुफ्त परामर्श',
+                cta_articles: 'और लेख पढ़ें'
+            },
+            ja: {
+                // Navigation
+                nav_home: 'ホーム',
+                nav_destinations: '目的地',
+                nav_services: 'サービス',
+                nav_blog: 'ブログ',
+                nav_reviews: '患者レビュー',
+                nav_contact: 'お問い合わせ',
+                btn_consult: 'オンライン相談',
+                btn_quote: '無料見積もり',
+                
+                // Page content
+                page_title: 'メディカルツーリズムのためのインドトップ15私立病院',
+                page_summary: '毎年何千人もの国際患者を引き付けるインドの一流私立病院を発見してください。これらのJCI認定施設は、西洋のコストのわずかな割合で世界クラスの医療を提供し、インドを世界的なメディカルツーリズムの＃1の目的地にしています。',
+                meta_date: '2024年8月30日',
+                meta_read_time: '12分で読める',
+                meta_author: 'メディカルツーリズム専門家',
+                
+                // CTA Section
+                cta_title: 'インドでの治療選択肢を探索する準備はできていますか？',
+                cta_description: 'インドのトップ病院から個別の推奨事項と費用見積もりを取得するために、医療専門家と連絡を取ってください。',
+                cta_consultation: '無料相談',
+                cta_articles: 'より多くの記事を読む'
+            },
+            ko: {
+                // Navigation
+                nav_home: '홈',
+                nav_destinations: '목적지',
+                nav_services: '서비스',
+                nav_blog: '블로그',
+                nav_reviews: '환자 리뷰',
+                nav_contact: '연락처',
+                btn_consult: '온라인 상담',
+                btn_quote: '무료 견적',
+                
+                // Page content
+                page_title: '의료관광을 위한 인도 상위 15개 사립병원',
+                page_summary: '매년 수천 명의 국제 환자를 유치하는 인도의 주요 사립병원들을 발견하세요. 이러한 JCI 인증 시설들은 서구 비용의 일부로 세계 수준의 의료 서비스를 제공하여 인도를 전 세계 의료관광의 1번 목적지로 만들고 있습니다.',
+                meta_date: '2024년 8월 30일',
+                meta_read_time: '12분 읽기',
+                meta_author: '의료관광 전문가',
+                
+                // CTA Section
+                cta_title: '인도에서 치료 옵션을 탐색할 준비가 되셨나요?',
+                cta_description: '인도 최고 병원들로부터 개인맞춤 추천과 비용 견적을 받기 위해 의료 전문가들과 연결하세요.',
+                cta_consultation: '무료 상담',
+                cta_articles: '더 많은 기사 읽기'
+            }
+        };
+
+        function changeLanguage(langCode) {
+            // Store the selected language
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Update HTML direction and language
+            const rtlLanguages = ['ar', 'ur', 'ku', 'bal', 'mey'];
+            if (rtlLanguages.includes(langCode)) {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = langCode;
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Apply translations if available
+            if (translations[langCode]) {
+                applyTranslations(langCode);
+            }
+            
+            // Update the dropdown selection
+            const selector = document.getElementById('languageSelect');
+            if (selector) {
+                selector.value = langCode;
+            }
+        }
+
+        function applyTranslations(langCode) {
+            const trans = translations[langCode];
+            if (!trans) return;
+            
+            // Apply all translations
+            Object.keys(trans).forEach(key => {
+                const elements = document.querySelectorAll(`[data-key="${key}"]`);
+                elements.forEach(element => {
+                    element.textContent = trans[key];
                 });
             });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get saved language or default to Arabic
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+            changeLanguage(savedLanguage);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Auto-load Arabic as default
+        window.addEventListener('load', function() {
+            changeLanguage('ar');
         });
     </script>
 </body>

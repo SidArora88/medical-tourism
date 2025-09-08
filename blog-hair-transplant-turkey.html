@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hair Transplant in Turkey: Complete Guide 2024 | MediTravel Blog</title>
-    <meta name="description" content="Everything you need to know about hair transplant procedures in Turkey, including the latest FUE techniques, recovery process, and what to expect during your medical journey.">
+    <title>زراعة الشعر في تركيا: الدليل الشامل 2024 | مدونة أفيا إنديا</title>
+    <meta name="description" content="كل ما تحتاج لمعرفته حول عمليات زراعة الشعر في تركيا، بما في ذلك أحدث تقنيات FUE وعملية الشفاء وما يمكن توقعه أثناء رحلتك الطبية.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -317,6 +317,76 @@
             color: #94a3b8;
         }
 
+        /* Language Selector */
+        .language-selector {
+            margin-right: 0.5rem;
+        }
+        
+        .language-dropdown {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #1e293b;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+        
+        .language-dropdown:hover {
+            border-color: #2563eb;
+        }
+        
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .nav-container {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-actions {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .language-selector {
+            margin-right: 0;
+            margin-left: 0.5rem;
+        }
+        
+        [dir="rtl"] .article-meta {
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .stats-grid {
+            direction: rtl;
+        }
+        
+        [dir="rtl"] ul, [dir="rtl"] ol {
+            padding-right: 2rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .highlight-box {
+            border-left: none;
+            border-right: 4px solid #2563eb;
+            border-radius: 8px 0 0 8px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 968px) {
             .nav-menu {
@@ -333,6 +403,10 @@
                 gap: 1rem;
                 align-items: center;
             }
+            .language-dropdown {
+                min-width: 120px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -342,31 +416,49 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h1><a href="index.html">MediTravel</a></h1>
+                    <h1><a href="index.html">أفيا إنديا</a></h1>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-key="nav_home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                        <a href="index.html#destinations" class="nav-link" data-key="nav_destinations">الوجهات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#services" class="nav-link">Services</a>
+                        <a href="index.html#services" class="nav-link" data-key="nav_services">الخدمات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                        <a href="blog-fixed.html" class="nav-link" data-key="nav_blog">المدونة</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                        <a href="index.html#testimonials" class="nav-link" data-key="nav_testimonials">الشهادات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#contact" class="nav-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link" data-key="nav_contact">اتصل بنا</a>
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
-                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="es">🇪🇸 Español</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="de">🇩🇪 Deutsch</option>
+                            <option value="it">🇮🇹 Italiano</option>
+                            <option value="pt">🇵🇹 Português</option>
+                            <option value="ru">🇷🇺 Русский</option>
+                            <option value="tr">🇹🇷 Türkçe</option>
+                            <option value="zh">🇨🇳 中文</option>
+                            <option value="ja">🇯🇵 日本語</option>
+                            <option value="ko">🇰🇷 한국어</option>
+                            <option value="hi">🇮🇳 हिंदी</option>
+                            <option value="th">🇹🇭 ไทย</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'" data-key="btn_consult">استشارة أونلاين</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'" data-key="btn_quote">احصل على عرض مجاني</button>
                 </div>
             </div>
         </nav>
@@ -378,19 +470,19 @@
             <div class="article-meta">
                 <span>
                     <i class="fas fa-calendar"></i>
-                    March 12, 2024
+                    <span data-key="meta_date">12 مارس 2024</span>
                 </span>
                 <span>
                     <i class="fas fa-clock"></i>
-                    7 min read
+                    <span data-key="meta_read_time">7 دقائق قراءة</span>
                 </span>
                 <span>
                     <i class="fas fa-tag"></i>
-                    Treatments
+                    <span data-key="meta_category">العلاجات</span>
                 </span>
             </div>
-            <h1 class="article-title">Hair Transplant in Turkey: Complete Guide 2024</h1>
-            <p class="article-excerpt">Everything you need to know about hair transplant procedures in Turkey, including the latest FUE techniques, recovery process, and what to expect during your medical journey.</p>
+            <h1 class="article-title" data-key="page_title">زراعة الشعر في تركيا: الدليل الشامل 2024</h1>
+            <p class="article-excerpt" data-key="page_summary">كل ما تحتاج لمعرفته حول عمليات زراعة الشعر في تركيا، بما في ذلك أحدث تقنيات FUE وعملية الشفاء وما يمكن توقعه أثناء رحلتك الطبية.</p>
         </div>
     </section>
 
@@ -398,38 +490,38 @@
     <section class="article-content">
         <div class="container">
             <div class="article-body">
-                <p>Turkey has become the global capital of hair transplantation, attracting over 600,000 international patients annually. With world-class clinics, experienced surgeons, and significant cost savings, Turkey offers an unmatched combination of quality and affordability for hair restoration procedures.</p>
+                <p data-key="intro_paragraph">أصبحت تركيا عاصمة زراعة الشعر العالمية، حيث تجذب أكثر من 600,000 مريض دولي سنوياً. مع عيادات عالمية المستوى وجراحين ذوي خبرة وتوفيرات كبيرة في التكاليف، تقدم تركيا مزيجاً فريداً من الجودة والقدرة على التحمل لإجراءات استعادة الشعر.</p>
 
-                <h2>Why Turkey for Hair Transplants?</h2>
+                <h2 data-key="why_turkey_title">لماذا تركيا لزراعة الشعر؟</h2>
                 
-                <p>Turkey's dominance in the hair transplant industry isn't accidental. The country has invested heavily in medical infrastructure, surgeon training, and cutting-edge technology. Turkish hair transplant surgeons perform more procedures annually than their counterparts in any other country, giving them unparalleled expertise.</p>
+                <p data-key="why_turkey_desc">هيمنة تركيا على صناعة زراعة الشعر ليست عرضية. لقد استثمرت البلاد بشكل كبير في البنية التحتية الطبية وتدريب الجراحين والتكنولوجيا المتطورة. يؤدي جراحو زراعة الشعر الأتراك إجراءات أكثر سنوياً من نظرائهم في أي بلد آخر، مما يمنحهم خبرة لا مثيل لها.</p>
 
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h4>600K+</h4>
-                        <p>Hair transplants performed annually</p>
+                        <p data-key="stat_annual">عمليات زرع الشعر سنوياً</p>
                     </div>
                     <div class="stat-card">
                         <h4>70%</h4>
-                        <p>Cost savings vs Western countries</p>
+                        <p data-key="stat_savings">توفير مقارنة بالدول الغربية</p>
                     </div>
                     <div class="stat-card">
                         <h4>98%</h4>
-                        <p>Patient satisfaction rate</p>
+                        <p data-key="stat_satisfaction">معدل رضا المرضى</p>
                     </div>
                     <div class="stat-card">
                         <h4>5000+</h4>
-                        <p>Grafts transplanted per session</p>
+                        <p data-key="stat_grafts">بصيلات مزروعة في الجلسة</p>
                     </div>
                 </div>
 
-                <h2>Hair Transplant Techniques in Turkey</h2>
+                <h2 data-key="techniques_title">تقنيات زراعة الشعر في تركيا</h2>
                 
-                <p>Turkish clinics specialize in the most advanced hair transplant techniques, ensuring natural-looking results with minimal downtime.</p>
+                <p data-key="techniques_desc">تتخصص العيادات التركية في أحدث تقنيات زراعة الشعر، مما يضمن نتائج طبيعية المظهر مع أقل فترة تعطل.</p>
 
-                <h3>FUE (Follicular Unit Extraction)</h3>
+                <h3 data-key="fue_title">FUE (استخراج الوحدة الجريبية)</h3>
                 
-                <p>FUE is the gold standard for hair transplants in Turkey. This minimally invasive technique involves extracting individual hair follicles from the donor area and transplanting them to the recipient area. Benefits include:</p>
+                <p data-key="fue_desc">FUE هي المعيار الذهبي لزراعة الشعر في تركيا. تتضمن هذه التقنية طفيفة التوغل استخراج بصيلات شعر فردية من المنطقة المانحة وزرعها في المنطقة المستقبلة. تشمل الفوائد:</p>
                 
                 <ul>
                     <li>No linear scarring</li>
@@ -438,9 +530,9 @@
                     <li>Ability to wear hair short</li>
                 </ul>
 
-                <h3>DHI (Direct Hair Implantation)</h3>
+                <h3 data-key="dhi_title">DHI (زرع الشعر المباشر)</h3>
                 
-                <p>DHI is an advanced version of FUE that uses a specialized pen-like tool called a Choi implanter. This technique offers:</p>
+                <p data-key="dhi_desc">DHI هي نسخة متطورة من FUE تستخدم أداة متخصصة تشبه القلم تسمى زارع تشوي. تقدم هذه التقنية:</p>
                 
                 <ul>
                     <li>More precise placement of hair follicles</li>
@@ -449,9 +541,9 @@
                     <li>Denser hair packing</li>
                 </ul>
 
-                <h3>Sapphire FUE</h3>
+                <h3 data-key="sapphire_title">FUE بالياقوت الزرقاء</h3>
                 
-                <p>This advanced technique uses sapphire blades instead of steel, providing:</p>
+                <p data-key="sapphire_desc">تستخدم هذه التقنية المتقدمة شفرات الياقوت بدلاً من الفولاذ، مما يوفر:</p>
                 
                 <ul>
                     <li>Smaller incisions</li>
@@ -667,5 +759,330 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Complete Translation System
+        const translations = {
+            ar: {
+                // Navigation
+                nav_home: 'الرئيسية',
+                nav_destinations: 'الوجهات',
+                nav_services: 'الخدمات',
+                nav_blog: 'المدونة',
+                nav_testimonials: 'الشهادات',
+                nav_contact: 'اتصل بنا',
+                btn_consult: 'استشارة أونلاين',
+                btn_quote: 'احصل على عرض مجاني',
+                
+                // Page content
+                page_title: 'زراعة الشعر في تركيا: الدليل الشامل 2024',
+                page_summary: 'كل ما تحتاج لمعرفته حول عمليات زراعة الشعر في تركيا، بما في ذلك أحدث تقنيات FUE وعملية الشفاء وما يمكن توقعه أثناء رحلتك الطبية.',
+                meta_date: '12 مارس 2024',
+                meta_read_time: '7 دقائق قراءة',
+                meta_category: 'العلاجات',
+                
+                // Content sections
+                intro_paragraph: 'أصبحت تركيا عاصمة زراعة الشعر العالمية، حيث تجذب أكثر من 600,000 مريض دولي سنوياً.',
+                why_turkey_title: 'لماذا تركيا لزراعة الشعر؟',
+                why_turkey_desc: 'هيمنة تركيا على صناعة زراعة الشعر ليست عرضية.',
+                stat_annual: 'عمليات زرع الشعر سنوياً',
+                stat_savings: 'توفير مقارنة بالدول الغربية',
+                stat_satisfaction: 'معدل رضا المرضى',
+                stat_grafts: 'بصيلات مزروعة في الجلسة',
+                techniques_title: 'تقنيات زراعة الشعر في تركيا',
+                techniques_desc: 'تتخصص العيادات التركية في أحدث تقنيات زراعة الشعر.',
+                fue_title: 'FUE (استخراج الوحدة الجريبية)',
+                fue_desc: 'FUE هي المعيار الذهبي لزراعة الشعر في تركيا.',
+                dhi_title: 'DHI (زرع الشعر المباشر)',
+                dhi_desc: 'DHI هي نسخة متطورة من FUE تستخدم أداة متخصصة.',
+                sapphire_title: 'FUE بالياقوت الزرقاء',
+                sapphire_desc: 'تستخدم هذه التقنية المتقدمة شفرات الياقوت.'
+            },
+            en: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Testimonials',
+                nav_contact: 'Contact',
+                btn_consult: 'Consult Online',
+                btn_quote: 'Get Free Quote',
+                
+                // Page content
+                page_title: 'Hair Transplant in Turkey: Complete Guide 2024',
+                page_summary: 'Everything you need to know about hair transplant procedures in Turkey, including the latest FUE techniques, recovery process, and what to expect during your medical journey.',
+                meta_date: 'March 12, 2024',
+                meta_read_time: '7 min read',
+                meta_category: 'Treatments',
+                
+                // Content sections
+                intro_paragraph: 'Turkey has become the global capital of hair transplantation, attracting over 600,000 international patients annually.',
+                why_turkey_title: 'Why Turkey for Hair Transplants?',
+                why_turkey_desc: 'Turkey\'s dominance in the hair transplant industry isn\'t accidental. The country has invested heavily in medical infrastructure.',
+                stat_annual: 'Hair transplants performed annually',
+                stat_savings: 'Cost savings vs Western countries',
+                stat_satisfaction: 'Patient satisfaction rate',
+                stat_grafts: 'Grafts transplanted per session',
+                techniques_title: 'Hair Transplant Techniques in Turkey',
+                techniques_desc: 'Turkish clinics specialize in the most advanced hair transplant techniques.',
+                fue_title: 'FUE (Follicular Unit Extraction)',
+                fue_desc: 'FUE is the gold standard for hair transplants in Turkey.',
+                dhi_title: 'DHI (Direct Hair Implantation)',
+                dhi_desc: 'DHI is an advanced version of FUE that uses a specialized pen-like tool.',
+                sapphire_title: 'Sapphire FUE',
+                sapphire_desc: 'This advanced technique uses sapphire blades instead of steel.'
+            },
+            tr: {
+                // Navigation
+                nav_home: 'Ana Sayfa',
+                nav_destinations: 'Destinasyonlar',
+                nav_services: 'Hizmetler',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Yorumlar',
+                nav_contact: 'İletişim',
+                btn_consult: 'Online Danışmanlık',
+                btn_quote: 'Ücretsiz Teklif Al',
+                
+                // Page content
+                page_title: 'Türkiye\'de Saç Ekimi: Kapsamlı Rehber 2024',
+                page_summary: 'En son FUE teknikleri, iyileşme süreci ve tıbbi yolculuğunuz sırasında neler bekleyeceğiniz dahil olmak üzere Türkiye\'deki saç ekimi prosedürleri hakkında bilmeniz gereken her şey.',
+                meta_date: '12 Mart 2024',
+                meta_read_time: '7 dakika okuma',
+                meta_category: 'Tedaviler'
+            },
+            es: {
+                // Navigation
+                nav_home: 'Inicio',
+                nav_destinations: 'Destinos',
+                nav_services: 'Servicios',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Testimonios',
+                nav_contact: 'Contacto',
+                btn_consult: 'Consultar Online',
+                btn_quote: 'Obtener Cotización Gratis',
+                
+                // Page content
+                page_title: 'Trasplante de Cabello en Turquía: Guía Completa 2024',
+                page_summary: 'Todo lo que necesitas saber sobre los procedimientos de trasplante de cabello en Turquía, incluyendo las últimas técnicas FUE, proceso de recuperación y qué esperar durante tu viaje médico.',
+                meta_date: '12 de Marzo 2024',
+                meta_read_time: '7 min de lectura',
+                meta_category: 'Tratamientos'
+            },
+            fr: {
+                // Navigation
+                nav_home: 'Accueil',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Témoignages',
+                nav_contact: 'Contact',
+                btn_consult: 'Consulter en ligne',
+                btn_quote: 'Devis gratuit',
+                
+                // Page content
+                page_title: 'Greffe de Cheveux en Turquie: Guide Complet 2024',
+                page_summary: 'Tout ce que vous devez savoir sur les procédures de greffe de cheveux en Turquie, y compris les dernières techniques FUE, le processus de récupération et ce à quoi s\'attendre pendant votre voyage médical.',
+                meta_date: '12 Mars 2024',
+                meta_read_time: '7 min de lecture',
+                meta_category: 'Traitements'
+            },
+            de: {
+                // Navigation
+                nav_home: 'Startseite',
+                nav_destinations: 'Reiseziele',
+                nav_services: 'Dienstleistungen',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Erfahrungsberichte',
+                nav_contact: 'Kontakt',
+                btn_consult: 'Online konsultieren',
+                btn_quote: 'Kostenloses Angebot',
+                
+                // Page content
+                page_title: 'Haartransplantation in der Türkei: Vollständiger Leitfaden 2024',
+                page_summary: 'Alles was Sie über Haartransplantationsverfahren in der Türkei wissen müssen, einschließlich der neuesten FUE-Techniken, Heilungsprozess und was Sie während Ihrer medizinischen Reise erwarten können.',
+                meta_date: '12. März 2024',
+                meta_read_time: '7 Min. Lesezeit',
+                meta_category: 'Behandlungen'
+            },
+            ru: {
+                // Navigation
+                nav_home: 'Главная',
+                nav_destinations: 'Направления',
+                nav_services: 'Услуги',
+                nav_blog: 'Блог',
+                nav_testimonials: 'Отзывы',
+                nav_contact: 'Контакты',
+                btn_consult: 'Онлайн консультация',
+                btn_quote: 'Бесплатная оценка',
+                
+                // Page content
+                page_title: 'Пересадка волос в Турции: Полное руководство 2024',
+                page_summary: 'Все, что вам нужно знать о процедурах пересадки волос в Турции, включая новейшие методы FUE, процесс восстановления и чего ожидать во время вашего медицинского путешествия.',
+                meta_date: '12 марта 2024',
+                meta_read_time: '7 мин чтения',
+                meta_category: 'Лечение'
+            },
+            it: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinazioni',
+                nav_services: 'Servizi',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Testimonianze',
+                nav_contact: 'Contatti',
+                btn_consult: 'Consulta Online',
+                btn_quote: 'Preventivo Gratuito',
+                
+                // Page content
+                page_title: 'Trapianto di Capelli in Turchia: Guida Completa 2024',
+                page_summary: 'Tutto quello che devi sapere sulle procedure di trapianto di capelli in Turchia, incluse le ultime tecniche FUE, il processo di guarigione e cosa aspettarsi durante il tuo viaggio medico.',
+                meta_date: '12 Marzo 2024',
+                meta_read_time: '7 min di lettura',
+                meta_category: 'Trattamenti'
+            },
+            pt: {
+                // Navigation
+                nav_home: 'Início',
+                nav_destinations: 'Destinos',
+                nav_services: 'Serviços',
+                nav_blog: 'Blog',
+                nav_testimonials: 'Depoimentos',
+                nav_contact: 'Contato',
+                btn_consult: 'Consulta Online',
+                btn_quote: 'Orçamento Grátis',
+                
+                // Page content
+                page_title: 'Transplante de Cabelo na Turquia: Guia Completo 2024',
+                page_summary: 'Tudo o que você precisa saber sobre procedimentos de transplante de cabelo na Turquia, incluindo as mais recentes técnicas FUE, processo de recuperação e o que esperar durante sua jornada médica.',
+                meta_date: '12 de Março 2024',
+                meta_read_time: '7 min de leitura',
+                meta_category: 'Tratamentos'
+            },
+            zh: {
+                // Navigation
+                nav_home: '首页',
+                nav_destinations: '目的地',
+                nav_services: '服务',
+                nav_blog: '博客',
+                nav_testimonials: '患者证言',
+                nav_contact: '联系我们',
+                btn_consult: '在线咨询',
+                btn_quote: '免费报价',
+                
+                // Page content
+                page_title: '土耳其植发：2024年完整指南',
+                page_summary: '关于土耳其植发手术您需要了解的一切，包括最新的FUE技术、恢复过程以及在医疗旅程中的期望。',
+                meta_date: '2024年3月12日',
+                meta_read_time: '7分钟阅读',
+                meta_category: '治疗'
+            },
+            hi: {
+                // Navigation
+                nav_home: 'होम',
+                nav_destinations: 'गंतव्य',
+                nav_services: 'सेवाएं',
+                nav_blog: 'ब्लॉग',
+                nav_testimonials: 'प्रशंसापत्र',
+                nav_contact: 'संपर्क',
+                btn_consult: 'ऑनलाइन सलाह',
+                btn_quote: 'मुफ्त कोटेशन',
+                
+                // Page content
+                page_title: 'तुर्की में हेयर ट्रांसप्लांट: संपूर्ण गाइड 2024',
+                page_summary: 'तुर्की में हेयर ट्रांसप्लांट प्रक्रियाओं के बारे में आपको जो कुछ जानना चाहिए, जिसमें नवीनतम FUE तकनीक, रिकवरी प्रक्रिया और आपकी चिकित्सा यात्रा के दौरान क्या उम्मीद करनी चाहिए।',
+                meta_date: '12 मार्च 2024',
+                meta_read_time: '7 मिनट पढ़ने का समय',
+                meta_category: 'उपचार'
+            },
+            ja: {
+                // Navigation
+                nav_home: 'ホーム',
+                nav_destinations: '目的地',
+                nav_services: 'サービス',
+                nav_blog: 'ブログ',
+                nav_testimonials: '体験談',
+                nav_contact: 'お問い合わせ',
+                btn_consult: 'オンライン相談',
+                btn_quote: '無料見積もり',
+                
+                // Page content
+                page_title: 'トルコでの植毛：2024年完全ガイド',
+                page_summary: '最新のFUE技術、回復プロセス、医療旅行中に期待できることを含む、トルコでの植毛手術について知っておくべきすべて。',
+                meta_date: '2024年3月12日',
+                meta_read_time: '7分で読める',
+                meta_category: '治療'
+            },
+            ko: {
+                // Navigation
+                nav_home: '홈',
+                nav_destinations: '목적지',
+                nav_services: '서비스',
+                nav_blog: '블로그',
+                nav_testimonials: '후기',
+                nav_contact: '연락처',
+                btn_consult: '온라인 상담',
+                btn_quote: '무료 견적',
+                
+                // Page content
+                page_title: '터키 모발이식: 2024년 완전 가이드',
+                page_summary: '최신 FUE 기술, 회복 과정, 의료 여행 중 기대할 수 있는 것들을 포함하여 터키에서의 모발이식 시술에 대해 알아야 할 모든 것.',
+                meta_date: '2024년 3월 12일',
+                meta_read_time: '7분 읽기',
+                meta_category: '치료'
+            }
+        };
+
+        function changeLanguage(langCode) {
+            // Store the selected language
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Update HTML direction and language
+            const rtlLanguages = ['ar', 'ur', 'ku', 'bal', 'mey'];
+            if (rtlLanguages.includes(langCode)) {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = langCode;
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Apply translations if available
+            if (translations[langCode]) {
+                applyTranslations(langCode);
+            }
+            
+            // Update the dropdown selection
+            const selector = document.getElementById('languageSelect');
+            if (selector) {
+                selector.value = langCode;
+            }
+        }
+
+        function applyTranslations(langCode) {
+            const trans = translations[langCode];
+            if (!trans) return;
+            
+            // Apply all translations
+            Object.keys(trans).forEach(key => {
+                const elements = document.querySelectorAll(`[data-key="${key}"]`);
+                elements.forEach(element => {
+                    element.textContent = trans[key];
+                });
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get saved language or default to Arabic
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+            changeLanguage(savedLanguage);
+        });
+
+        // Auto-load Arabic as default
+        window.addEventListener('load', function() {
+            changeLanguage('ar');
+        });
+    </script>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Heart Surgery Costs in India 2024: Complete Pricing Guide | Afiya India</title>
-    <meta name="description" content="Comprehensive guide to heart surgery costs in India. Get detailed pricing for bypass surgery, valve replacement, angioplasty, and more. Save up to 80% on cardiac procedures with world-class care.">
+    <title>تكاليف جراحة القلب في الهند 2024: دليل الأسعار الشامل | أفيا إنديا</title>
+    <meta name="description" content="دليل شامل لتكاليف جراحة القلب في الهند. احصل على تفاصيل الأسعار لجراحة المجاز واستبدال الصمامات وقسطرة البالون والمزيد. وفر حتى 80% على إجراءات القلب مع الرعاية عالية الجودة.">
     <meta name="keywords" content="heart surgery cost India, cardiac surgery price India, bypass surgery cost, valve replacement cost India, angioplasty cost India, heart surgery affordable India">
     
     <!-- Open Graph Meta Tags -->
@@ -395,6 +395,80 @@
             color: #1e40af;
         }
 
+        /* Language Selector */
+        .language-selector {
+            margin-right: 0.5rem;
+        }
+        
+        .language-dropdown {
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #1e293b;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+        
+        .language-dropdown:hover {
+            border-color: #2563eb;
+        }
+        
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .nav-container {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .nav-actions {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .language-selector {
+            margin-right: 0;
+            margin-left: 0.5rem;
+        }
+        
+        [dir="rtl"] .article-meta {
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .stats-grid {
+            direction: rtl;
+        }
+        
+        [dir="rtl"] .cta-actions {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] ul, [dir="rtl"] ol {
+            padding-right: 2rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .highlight-box {
+            border-left: none;
+            border-right: 4px solid #059669;
+            border-radius: 8px 0 0 8px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .article-title {
@@ -427,27 +501,45 @@
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-key="nav_home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#destinations" class="nav-link">Destinations</a>
+                        <a href="index.html#destinations" class="nav-link" data-key="nav_destinations">الوجهات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#services" class="nav-link">Services</a>
+                        <a href="index.html#services" class="nav-link" data-key="nav_services">الخدمات</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog-fixed.html" class="nav-link">Blog</a>
+                        <a href="blog-fixed.html" class="nav-link" data-key="nav_blog">المدونة</a>
                     </li>
                     <li class="nav-item">
-                        <a href="patient-reviews-light.html" class="nav-link">Patient Reviews</a>
+                        <a href="patient-reviews-light.html" class="nav-link" data-key="nav_reviews">تقييمات المرضى</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#contact" class="nav-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link" data-key="nav_contact">اتصل بنا</a>
                     </li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
-                    <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="es">🇪🇸 Español</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="de">🇩🇪 Deutsch</option>
+                            <option value="it">🇮🇹 Italiano</option>
+                            <option value="pt">🇵🇹 Português</option>
+                            <option value="ru">🇷🇺 Русский</option>
+                            <option value="tr">🇹🇷 Türkçe</option>
+                            <option value="zh">🇨🇳 中文</option>
+                            <option value="ja">🇯🇵 日本語</option>
+                            <option value="ko">🇰🇷 한국어</option>
+                            <option value="hi">🇮🇳 हिंदी</option>
+                            <option value="th">🇹🇭 ไทย</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary" onclick="window.location.href='index.html#contact'" data-key="btn_consult">استشارة أونلاين</button>
+                    <button class="btn-primary" onclick="window.location.href='index.html#contact'" data-key="btn_quote">احصل على عرض مجاني</button>
                 </div>
             </div>
         </nav>
@@ -458,94 +550,94 @@
         <div class="container">
             <div class="article-header">
                 <div class="article-category">💰 Heart Surgery Costs 2024</div>
-                <h1 class="article-title">Heart Surgery Costs in India: Complete 2024 Pricing Guide</h1>
+                <h1 class="article-title" data-key="page_title">تكاليف جراحة القلب في الهند: دليل الأسعار الشامل 2024</h1>
                 <div class="article-meta">
-                    <span><i class="fas fa-calendar"></i> Updated December 2024</span>
-                    <span><i class="fas fa-clock"></i> 12 min read</span>
-                    <span><i class="fas fa-calculator"></i> 37 Procedures Listed</span>
+                    <span><i class="fas fa-calendar"></i> <span data-key="meta_updated">محدث ديسمبر 2024</span></span>
+                    <span><i class="fas fa-clock"></i> <span data-key="meta_read_time">12 دقائق قراءة</span></span>
+                    <span><i class="fas fa-calculator"></i> <span data-key="meta_procedures">37 إجراء مدرج</span></span>
                 </div>
-                <p class="article-summary">
-                    Comprehensive cost breakdown for all heart surgeries in India. Compare pricing for bypass surgery, valve replacement, angioplasty, and advanced cardiac procedures. Save 60-80% with world-class medical care.
+                <p class="article-summary" data-key="page_summary">
+                    تحليل شامل للتكاليف لجميع جراحات القلب في الهند. قارن أسعار جراحة المجاز واستبدال الصمامات وقسطرة البالون والإجراءات القلبية المتقدمة. وفر 60-80% مع الرعاية الطبية عالمية المستوى.
                 </p>
             </div>
 
             <div class="article-content">
                 <div class="highlight-box">
-                    <h3>💡 Why Heart Surgery Costs Are Lower in India</h3>
-                    <p>India offers the same quality procedures as Western countries at 60-80% lower costs, with JCI-accredited hospitals, internationally trained surgeons, and state-of-the-art technology.</p>
+                    <h3 data-key="highlight_title">💡 لماذا تكاليف جراحة القلب أقل في الهند</h3>
+                    <p data-key="highlight_desc">تقدم الهند نفس الإجراءات عالية الجودة مثل الدول الغربية بتكاليف أقل بنسبة 60-80%، مع مستشفيات معتمدة من JCI وجراحين مدربين دولياً وتكنولوجيا متطورة.</p>
                 </div>
 
                 <div class="currency-note">
-                    <strong>💱 Currency Information:</strong> All costs are India rates converted to USD (Exchange rate: 1 USD = ₹83). These are actual costs charged by Indian hospitals. Final costs may vary based on hospital, surgeon, and patient condition.
+                    <strong data-key="currency_title">💱 معلومات العملة:</strong> <span data-key="currency_desc">جميع التكاليف هي أسعار الهند محولة إلى الدولار الأمريكي (سعر الصرف: 1 دولار أمريكي = 83 روبية). هذه هي التكاليف الفعلية التي تفرضها المستشفيات الهندية. التكاليف النهائية قد تختلف حسب المستشفى والجراح وحالة المريض.</span>
                 </div>
 
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">37</div>
-                        <div class="stat-label">Procedures Listed</div>
+                        <div class="stat-label" data-key="stat_procedures">إجراءات مدرجة</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">75%</div>
-                        <div class="stat-label">Average Savings</div>
+                        <div class="stat-label" data-key="stat_savings">متوسط التوفير</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">200+</div>
-                        <div class="stat-label">Partner Hospitals</div>
+                        <div class="stat-label" data-key="stat_hospitals">مستشفيات شريكة</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">99%</div>
-                        <div class="stat-label">Success Rate</div>
+                        <div class="stat-label" data-key="stat_success">معدل النجاح</div>
                     </div>
                 </div>
 
                 <!-- Complete Cost Tables -->
                 <div class="cost-section">
-                    <h2>💰 Complete Heart Surgery Cost Breakdown</h2>
+                    <h2 data-key="cost_breakdown_title">💰 تفصيل شامل لتكاليف جراحة القلب</h2>
                     
                     <!-- Major Cardiac Procedures -->
                     <div class="procedure-category">
                         <div class="category-header">
-                            <h3><i class="fas fa-heart"></i> Major Cardiac Procedures</h3>
+                            <h3 data-key="major_procedures"><i class="fas fa-heart"></i> الإجراءات القلبية الرئيسية</h3>
                         </div>
                         <div class="cost-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Procedure</th>
-                                        <th>Cost in India (USD)</th>
-                                        <th>Savings vs USA</th>
+                                        <th data-key="table_procedure">الإجراء</th>
+                                        <th data-key="table_cost">التكلفة في الهند (دولار أمريكي)</th>
+                                        <th data-key="table_savings">التوفير مقارنة بالولايات المتحدة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="procedure-name">Heart Bypass Surgery (CABG)</td>
+                                        <td class="procedure-name" data-key="proc_cabg">جراحة المجاز القلبي (CABG)</td>
                                         <td class="cost-usd">$2,150 - $2,865</td>
-                                        <td class="savings">85% savings</td>
+                                        <td class="savings" data-key="saving_85">توفير 85%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Minimally Invasive CABG</td>
+                                        <td class="procedure-name" data-key="proc_mini_cabg">CABG طفيفة التوغل</td>
                                         <td class="cost-usd">$2,144 - $2,858</td>
-                                        <td class="savings">83% savings</td>
+                                        <td class="savings" data-key="saving_83">توفير 83%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Heart Transplant</td>
+                                        <td class="procedure-name" data-key="proc_heart_transplant">زراعة القلب</td>
                                         <td class="cost-usd">$27,223 - $36,297</td>
-                                        <td class="savings">70% savings</td>
+                                        <td class="savings" data-key="saving_70">توفير 70%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Heart Double Valve Replacement</td>
+                                        <td class="procedure-name" data-key="proc_double_valve">استبدال الصمام المضاعف للقلب</td>
                                         <td class="cost-usd">$4,284 - $5,712</td>
-                                        <td class="savings">80% savings</td>
+                                        <td class="savings" data-key="saving_80">توفير 80%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Aortic Valve Replacement</td>
+                                        <td class="procedure-name" data-key="proc_aortic_valve">استبدال الصمام الأورطي</td>
                                         <td class="cost-usd">$3,939 - $5,252</td>
-                                        <td class="savings">78% savings</td>
+                                        <td class="savings" data-key="saving_78">توفير 78%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Mitral Valve Replacement</td>
+                                        <td class="procedure-name" data-key="proc_mitral_valve">استبدال الصمام التاجي</td>
                                         <td class="cost-usd">$3,307 - $4,409</td>
-                                        <td class="savings">76% savings</td>
+                                        <td class="savings" data-key="saving_76">توفير 76%</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -555,47 +647,47 @@
                     <!-- Minimally Invasive Procedures -->
                     <div class="procedure-category">
                         <div class="category-header">
-                            <h3><i class="fas fa-stethoscope"></i> Minimally Invasive Procedures</h3>
+                            <h3 data-key="minimally_invasive"><i class="fas fa-stethoscope"></i> الإجراءات طفيفة التوغل</h3>
                         </div>
                         <div class="cost-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Procedure</th>
-                                        <th>Cost in India (USD)</th>
-                                        <th>Savings vs USA</th>
+                                        <th data-key="table_procedure">الإجراء</th>
+                                        <th data-key="table_cost">التكلفة في الهند (دولار أمريكي)</th>
+                                        <th data-key="table_savings">التوفير مقارنة بالولايات المتحدة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="procedure-name">Angioplasty and Stent Placement</td>
+                                        <td class="procedure-name" data-key="proc_angioplasty">قسطرة البالون وزرع الدعامة</td>
                                         <td class="cost-usd">$1,974 - $2,632</td>
-                                        <td class="savings">75% savings</td>
+                                        <td class="savings" data-key="saving_75">توفير 75%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Coronary Angiogram</td>
+                                        <td class="procedure-name" data-key="proc_angiogram">تصوير الشرايين التاجية</td>
                                         <td class="cost-usd">$95 - $126</td>
-                                        <td class="savings">90% savings</td>
+                                        <td class="savings" data-key="saving_90">توفير 90%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Angiography</td>
+                                        <td class="procedure-name" data-key="proc_angiography">تصوير الأوعية الدموية</td>
                                         <td class="cost-usd">$161 - $214</td>
-                                        <td class="savings">88% savings</td>
+                                        <td class="savings" data-key="saving_88">توفير 88%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Balloon Valvuloplasty - Aortic</td>
+                                        <td class="procedure-name" data-key="proc_balloon_valvuloplasty">توسيع الصمام بالبالون - أورطي</td>
                                         <td class="cost-usd">$2,168 - $2,891</td>
-                                        <td class="savings">82% savings</td>
+                                        <td class="savings" data-key="saving_82">توفير 82%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">PTMC - Percutaneous Transvenous Mitral Commissurotomy</td>
+                                        <td class="procedure-name" data-key="proc_ptmc">بضع الصمام التاجي عبر الوريد</td>
                                         <td class="cost-usd">$1,855 - $2,473</td>
-                                        <td class="savings">79% savings</td>
+                                        <td class="savings" data-key="saving_79">توفير 79%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Balloon Septostomy</td>
+                                        <td class="procedure-name" data-key="proc_balloon_septostomy">بضع الحاجز بالبالون</td>
                                         <td class="cost-usd">$787 - $1,049</td>
-                                        <td class="savings">85% savings</td>
+                                        <td class="savings" data-key="saving_85_2">توفير 85%</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -605,37 +697,37 @@
                     <!-- Congenital Heart Procedures -->
                     <div class="procedure-category">
                         <div class="category-header">
-                            <h3><i class="fas fa-baby"></i> Congenital Heart Procedures</h3>
+                            <h3 data-key="congenital_procedures"><i class="fas fa-baby"></i> إجراءات القلب الخلقية</h3>
                         </div>
                         <div class="cost-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Procedure</th>
-                                        <th>Cost in India (USD)</th>
-                                        <th>Savings vs USA</th>
+                                        <th data-key="table_procedure">الإجراء</th>
+                                        <th data-key="table_cost">التكلفة في الهند (دولار أمريكي)</th>
+                                        <th data-key="table_savings">التوفير مقارنة بالولايات المتحدة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="procedure-name">Congenital Heart Disorder (CHD)</td>
+                                        <td class="procedure-name" data-key="proc_chd">عيوب القلب الخلقية</td>
                                         <td class="cost-usd">$2,174 - $2,898</td>
-                                        <td class="savings">80% savings</td>
+                                        <td class="savings" data-key="saving_80_2">توفير 80%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">ASD (Atrial Septal Defect) Closure</td>
+                                        <td class="procedure-name" data-key="proc_asd">إغلاق عيب الحاجز الأذيني</td>
                                         <td class="cost-usd">$2,578 - $3,438</td>
-                                        <td class="savings">82% savings</td>
+                                        <td class="savings" data-key="saving_82_2">توفير 82%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">VSD Closure (Adult) Surgery</td>
+                                        <td class="procedure-name" data-key="proc_vsd_adult">إغلاق عيب الحاجز البطيني (بالغين)</td>
                                         <td class="cost-usd">$2,633 - $3,511</td>
-                                        <td class="savings">81% savings</td>
+                                        <td class="savings" data-key="saving_81">توفير 81%</td>
                                     </tr>
                                     <tr>
-                                        <td class="procedure-name">Ventricular Septal Defect (VSD) Treatment</td>
+                                        <td class="procedure-name" data-key="proc_vsd_treatment">علاج عيب الحاجز البطيني</td>
                                         <td class="cost-usd">$1,364 - $1,819</td>
-                                        <td class="savings">84% savings</td>
+                                        <td class="savings" data-key="saving_84">توفير 84%</td>
                                     </tr>
                                     <tr>
                                         <td class="procedure-name">Device Closure - ASD VSD</td>
@@ -675,15 +767,15 @@
                     <!-- Pacemaker & Device Implants -->
                     <div class="procedure-category">
                         <div class="category-header">
-                            <h3><i class="fas fa-heartbeat"></i> Pacemaker & Device Implants</h3>
+                            <h3 data-key="pacemaker_implants"><i class="fas fa-heartbeat"></i> زراعة أجهزة تنظيم ضربات القلب</h3>
                         </div>
                         <div class="cost-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Procedure</th>
-                                        <th>Cost in India (USD)</th>
-                                        <th>Savings vs USA</th>
+                                        <th data-key="table_procedure">الإجراء</th>
+                                        <th data-key="table_cost">التكلفة في الهند (دولار أمريكي)</th>
+                                        <th data-key="table_savings">التوفير مقارنة بالولايات المتحدة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -725,15 +817,15 @@
                     <!-- Specialized Procedures -->
                     <div class="procedure-category">
                         <div class="category-header">
-                            <h3><i class="fas fa-user-md"></i> Specialized Procedures</h3>
+                            <h3 data-key="specialized_procedures"><i class="fas fa-user-md"></i> الإجراءات المتخصصة</h3>
                         </div>
                         <div class="cost-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Procedure</th>
-                                        <th>Cost in India (USD)</th>
-                                        <th>Savings vs USA</th>
+                                        <th data-key="table_procedure">الإجراء</th>
+                                        <th data-key="table_cost">التكلفة في الهند (دولار أمريكي)</th>
+                                        <th data-key="table_savings">التوفير مقارنة بالولايات المتحدة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -770,15 +862,15 @@
                     <!-- Diagnostic Procedures -->
                     <div class="procedure-category">
                         <div class="category-header">
-                            <h3><i class="fas fa-search"></i> Diagnostic & Minor Procedures</h3>
+                            <h3 data-key="diagnostic_procedures"><i class="fas fa-search"></i> الإجراءات التشخيصية والطفيفة</h3>
                         </div>
                         <div class="cost-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Procedure</th>
-                                        <th>Cost in India (USD)</th>
-                                        <th>Savings vs USA</th>
+                                        <th data-key="table_procedure">الإجراء</th>
+                                        <th data-key="table_cost">التكلفة في الهند (دولار أمريكي)</th>
+                                        <th data-key="table_savings">التوفير مقارنة بالولايات المتحدة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -798,138 +890,138 @@
                     </div>
                 </div>
 
-                <h2>Why Choose India for Heart Surgery?</h2>
-                <p>India has established itself as the world's leading destination for cardiac care, offering several compelling advantages:</p>
+                <h2 data-key="why_india_title">لماذا تختار الهند لجراحة القلب؟</h2>
+                <p data-key="why_india_intro">لقد أسست الهند نفسها كوجهة رائدة عالمياً لرعاية القلب، وتقدم عدة مزايا مقنعة:</p>
 
-                <h3>1. Significant Cost Savings</h3>
-                <p>As demonstrated in our comprehensive cost breakdown above, patients can save 60-85% on heart surgery costs compared to Western countries. For example:</p>
-                <ul>
-                    <li><strong>Heart Bypass Surgery:</strong> $2,150-$2,865 in India vs $15,000-$30,000 in the USA</li>
-                    <li><strong>Valve Replacement:</strong> $3,307-$5,252 in India vs $25,000-$50,000 in the USA</li>
-                    <li><strong>Angioplasty:</strong> $1,974-$2,632 in India vs $12,000-$25,000 in the USA</li>
+                <h3 data-key="cost_savings_title">1. توفير كبير في التكاليف</h3>
+                <p data-key="cost_savings_desc">كما هو موضح في تفصيل التكاليف الشامل أعلاه، يمكن للمرضى توفير 60-85% من تكاليف جراحة القلب مقارنة بالدول الغربية. على سبيل المثال:</p>
+                <ul data-key="cost_examples">
+                    <li><strong>جراحة مجاز القلب:</strong> 2,150-2,865 دولار في الهند مقابل 15,000-30,000 دولار في الولايات المتحدة</li>
+                    <li><strong>استبدال الصمام:</strong> 3,307-5,252 دولار في الهند مقابل 25,000-50,000 دولار في الولايات المتحدة</li>
+                    <li><strong>قسطرة البالون:</strong> 1,974-2,632 دولار في الهند مقابل 12,000-25,000 دولار في الولايات المتحدة</li>
                 </ul>
 
-                <h3>2. World-Class Medical Infrastructure</h3>
-                <p>India boasts over 200 JCI-accredited hospitals with state-of-the-art cardiac facilities, including:</p>
-                <ul>
-                    <li>Advanced cardiac catheterization labs</li>
-                    <li>Robotic-assisted surgery systems</li>
-                    <li>24/7 cardiac intensive care units</li>
-                    <li>Heart transplant programs</li>
-                    <li>Pediatric cardiac surgery units</li>
+                <h3 data-key="infrastructure_title">2. بنية تحتية طبية عالمية المستوى</h3>
+                <p data-key="infrastructure_desc">تفتخر الهند بأكثر من 200 مستشفى معتمد من JCI مع مرافق قلبية متطورة، تشمل:</p>
+                <ul data-key="infrastructure_list">
+                    <li>مختبرات قسطرة القلب المتقدمة</li>
+                    <li>أنظمة الجراحة بمساعدة الروبوت</li>
+                    <li>وحدات العناية المركزة للقلب على مدار 24/7</li>
+                    <li>برامج زراعة القلب</li>
+                    <li>وحدات جراحة القلب للأطفال</li>
                 </ul>
 
-                <h3>3. Internationally Trained Surgeons</h3>
-                <p>Indian cardiac surgeons are among the world's most experienced, with many trained at prestigious institutions in the USA, UK, and Europe. They perform thousands of procedures annually, ensuring exceptional expertise.</p>
+                <h3 data-key="surgeons_title">3. جراحون مدربون دولياً</h3>
+                <p data-key="surgeons_desc">جراحو القلب الهنود من بين الأكثر خبرة في العالم، حيث تدرب العديد منهم في مؤسسات مرموقة في الولايات المتحدة والمملكة المتحدة وأوروبا. يؤدون الآلاف من الإجراءات سنوياً، مما يضمن خبرة استثنائية.</p>
 
-                <h3>4. No Waiting Lists</h3>
-                <p>Unlike many Western healthcare systems, India offers immediate access to cardiac procedures without long waiting periods.</p>
+                <h3 data-key="no_waiting_title">4. لا توجد قوائم انتظار</h3>
+                <p data-key="no_waiting_desc">على عكس العديد من أنظمة الرعاية الصحية الغربية، تقدم الهند وصولاً فورياً للإجراءات القلبية دون فترات انتظار طويلة.</p>
 
                 <div class="highlight-box">
-                    <h3>💼 All-Inclusive Packages Available</h3>
-                    <p>Most hospitals offer comprehensive packages including surgery, hospital stay, medications, and follow-up care. Additional services like accommodation, transportation, and interpreter services are also available.</p>
+                    <h3 data-key="packages_title">💼 حزم شاملة متاحة</h3>
+                    <p data-key="packages_desc">تقدم معظم المستشفيات حزماً شاملة تتضمن الجراحة والإقامة في المستشفى والأدوية والرعاية اللاحقة. الخدمات الإضافية مثل الإقامة والنقل وخدمات الترجمة متاحة أيضاً.</p>
                 </div>
 
-                <h2>What's Included in the Cost?</h2>
-                <p>The prices listed above typically include:</p>
-                <ul>
-                    <li>Pre-operative consultations and diagnostics</li>
-                    <li>Surgical procedure and surgeon fees</li>
-                    <li>Anesthesia and operating room charges</li>
-                    <li>Hospital stay (ICU and general ward)</li>
-                    <li>Basic medications during hospital stay</li>
-                    <li>Initial follow-up consultations</li>
+                <h2 data-key="whats_included_title">ما المشمول في التكلفة؟</h2>
+                <p data-key="whats_included_desc">الأسعار المذكورة أعلاه تشمل عادة:</p>
+                <ul data-key="included_list">
+                    <li>الاستشارات والتشخيصات قبل العملية</li>
+                    <li>الإجراء الجراحي وأتعاب الجراح</li>
+                    <li>التخدير ورسوم غرفة العمليات</li>
+                    <li>الإقامة في المستشفى (العناية المركزة والجناح العام)</li>
+                    <li>الأدوية الأساسية أثناء الإقامة في المستشفى</li>
+                    <li>استشارات المتابعة الأولية</li>
                 </ul>
 
-                <h3>Additional Costs to Consider:</h3>
-                <ul>
-                    <li>Extended hospital stay due to complications</li>
-                    <li>Premium room accommodations</li>
-                    <li>Advanced diagnostic tests if required</li>
-                    <li>Long-term medications</li>
-                    <li>Travel and accommodation for family</li>
+                <h3 data-key="additional_costs_title">تكاليف إضافية يجب مراعاتها:</h3>
+                <ul data-key="additional_costs_list">
+                    <li>الإقامة المطولة في المستشفى بسبب المضاعفات</li>
+                    <li>إقامة الغرف المميزة</li>
+                    <li>الفحوصات التشخيصية المتقدمة إذا لزم الأمر</li>
+                    <li>الأدوية طويلة المدى</li>
+                    <li>السفر والإقامة للعائلة</li>
                 </ul>
 
-                <h2>Factors Affecting Heart Surgery Costs</h2>
-                <p>Several factors can influence the final cost of your heart surgery:</p>
+                <h2 data-key="factors_title">العوامل المؤثرة على تكاليف جراحة القلب</h2>
+                <p data-key="factors_desc">عدة عوامل يمكن أن تؤثر على التكلفة النهائية لجراحة القلب:</p>
 
-                <h3>1. Hospital Category</h3>
-                <ul>
-                    <li><strong>Premium Private Hospitals:</strong> Higher costs but luxury amenities</li>
-                    <li><strong>Standard Private Hospitals:</strong> Excellent care at moderate costs</li>
-                    <li><strong>Government Hospitals:</strong> Most affordable with quality care</li>
+                <h3 data-key="hospital_category_title">1. فئة المستشفى</h3>
+                <ul data-key="hospital_category_list">
+                    <li><strong>المستشفيات الخاصة المميزة:</strong> تكاليف أعلى لكن مع وسائل راحة فاخرة</li>
+                    <li><strong>المستشفيات الخاصة العادية:</strong> رعاية ممتازة بتكاليف معتدلة</li>
+                    <li><strong>المستشفيات الحكومية:</strong> الأكثر اقتصادية مع رعاية جيدة</li>
                 </ul>
 
-                <h3>2. Surgeon Experience</h3>
-                <ul>
-                    <li>Senior consultants with international training may charge higher fees</li>
-                    <li>Specialized procedures may require specific expertise</li>
+                <h3 data-key="surgeon_experience_title">2. خبرة الجراح</h3>
+                <ul data-key="surgeon_experience_list">
+                    <li>الاستشاريون الكبار ذوو التدريب الدولي قد يفرضون رسوماً أعلى</li>
+                    <li>الإجراءات المتخصصة قد تتطلب خبرة محددة</li>
                 </ul>
 
-                <h3>3. Complexity of the Procedure</h3>
-                <ul>
-                    <li>Emergency surgeries may cost more</li>
-                    <li>Combined procedures increase overall costs</li>
-                    <li>Revision surgeries are typically more expensive</li>
+                <h3 data-key="complexity_title">3. تعقيد الإجراء</h3>
+                <ul data-key="complexity_list">
+                    <li>العمليات الطارئة قد تكلف أكثر</li>
+                    <li>الإجراءات المدمجة تزيد من التكاليف الإجمالية</li>
+                    <li>عمليات المراجعة عادة ما تكون أكثر تكلفة</li>
                 </ul>
 
-                <h3>4. Location</h3>
-                <ul>
-                    <li><strong>Metro Cities (Delhi, Mumbai, Bangalore):</strong> Higher costs but more options</li>
-                    <li><strong>Tier-2 Cities (Pune, Hyderabad, Chennai):</strong> Lower costs with quality care</li>
+                <h3 data-key="location_title">4. الموقع</h3>
+                <ul data-key="location_list">
+                    <li><strong>المدن الكبرى (دلهي، مومباي، بنغالور):</strong> تكاليف أعلى لكن خيارات أكثر</li>
+                    <li><strong>مدن الدرجة الثانية (بونه، حيدر أباد، تشيناي):</strong> تكاليف أقل مع رعاية جيدة</li>
                 </ul>
 
-                <h2>How to Get Accurate Cost Estimates</h2>
-                <p>To receive personalized cost estimates for your specific condition:</p>
-                <ol>
-                    <li><strong>Medical Evaluation:</strong> Share your medical records and current condition</li>
-                    <li><strong>Procedure Recommendation:</strong> Get expert opinion on the best treatment approach</li>
-                    <li><strong>Hospital Selection:</strong> Choose from multiple options based on your budget and preferences</li>
-                    <li><strong>Detailed Quote:</strong> Receive comprehensive cost breakdown with no hidden fees</li>
+                <h2 data-key="cost_estimates_title">كيفية الحصول على تقديرات دقيقة للتكلفة</h2>
+                <p data-key="cost_estimates_desc">لتلقي تقديرات مخصصة للتكلفة لحالتك المحددة:</p>
+                <ol data-key="cost_estimates_steps">
+                    <li><strong>التقييم الطبي:</strong> شارك سجلاتك الطبية وحالتك الحالية</li>
+                    <li><strong>توصية الإجراء:</strong> احصل على رأي متخصص حول أفضل طريقة علاج</li>
+                    <li><strong>اختيار المستشفى:</strong> اختر من خيارات متعددة بناءً على ميزانيتك وتفضيلاتك</li>
+                    <li><strong>عرض سعر مفصل:</strong> احصل على تفصيل شامل للتكلفة بدون رسوم مخفية</li>
                 </ol>
 
                 <div class="highlight-box">
-                    <h3>🎯 Get Your Personalized Quote</h3>
-                    <p>Every patient's case is unique. Contact our medical experts for a detailed cost estimate tailored to your specific condition and requirements.</p>
+                    <h3 data-key="personalized_quote_title">🎯 احصل على عرض السعر المخصص لك</h3>
+                    <p data-key="personalized_quote_desc">كل حالة مريض فريدة. اتصل بخبرائنا الطبيين للحصول على تقدير مفصل للتكلفة مصمم خصيصاً لحالتك ومتطلباتك.</p>
                 </div>
 
-                <h2>Financing and Payment Options</h2>
-                <p>To make treatment more accessible, many hospitals offer:</p>
-                <ul>
-                    <li><strong>Medical Loans:</strong> Low-interest financing options</li>
-                    <li><strong>Payment Plans:</strong> Installment-based payments</li>
-                    <li><strong>Insurance Support:</strong> Assistance with international insurance claims</li>
-                    <li><strong>Corporate Packages:</strong> Special rates for companies</li>
-                    <li><strong>Medical Tourism Packages:</strong> All-inclusive deals</li>
+                <h2 data-key="financing_title">خيارات التمويل والدفع</h2>
+                <p data-key="financing_desc">لجعل العلاج أكثر إمكانية، تقدم العديد من المستشفيات:</p>
+                <ul data-key="financing_list">
+                    <li><strong>قروض طبية:</strong> خيارات تمويل بفوائد منخفضة</li>
+                    <li><strong>خطط الدفع:</strong> مدفوعات على أقساط</li>
+                    <li><strong>دعم التأمين:</strong> مساعدة في مطالبات التأمين الدولية</li>
+                    <li><strong>حزم الشركات:</strong> أسعار خاصة للشركات</li>
+                    <li><strong>حزم السياحة الطبية:</strong> عروض شاملة</li>
                 </ul>
 
-                <h2>Quality Assurance</h2>
-                <p>Despite the lower costs, quality is never compromised:</p>
-                <ul>
-                    <li><strong>JCI Accreditation:</strong> International quality standards</li>
-                    <li><strong>NABH Certification:</strong> National quality recognition</li>
-                    <li><strong>ISO Compliance:</strong> International organization standards</li>
-                    <li><strong>Regular Audits:</strong> Continuous quality monitoring</li>
+                <h2 data-key="quality_title">ضمان الجودة</h2>
+                <p data-key="quality_desc">على الرغم من انخفاض التكاليف، فإن الجودة لا يتم التنازل عنها أبداً:</p>
+                <ul data-key="quality_list">
+                    <li><strong>اعتماد JCI:</strong> معايير الجودة الدولية</li>
+                    <li><strong>شهادة NABH:</strong> اعتراف وطني بالجودة</li>
+                    <li><strong>امتثال ISO:</strong> معايير المنظمة الدولية</li>
+                    <li><strong>عمليات تدقيق منتظمة:</strong> مراقبة جودة مستمرة</li>
                 </ul>
 
-                <h2>Success Rates</h2>
-                <p>Indian cardiac surgery outcomes are comparable to international standards:</p>
+                <h2 data-key="success_rates_title">معدلات النجاح</h2>
+                <p data-key="success_rates_desc">نتائج جراحة القلب الهندية مماثلة للمعايير الدولية:</p>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">99.2%</div>
-                        <div class="stat-label">Bypass Surgery Success</div>
+                        <div class="stat-label" data-key="bypass_success">نجاح جراحة المجاز</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">98.8%</div>
-                        <div class="stat-label">Valve Surgery Success</div>
+                        <div class="stat-label" data-key="valve_success">نجاح جراحة الصمام</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">97.5%</div>
-                        <div class="stat-label">Heart Transplant Success</div>
+                        <div class="stat-label" data-key="transplant_success">نجاح زراعة القلب</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">99.5%</div>
-                        <div class="stat-label">Angioplasty Success</div>
+                        <div class="stat-label" data-key="angioplasty_success">نجاح قسطرة البالون</div>
                     </div>
                 </div>
             </div>
@@ -940,19 +1032,570 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Save on Your Heart Surgery?</h2>
-                <p>Get personalized cost estimates and treatment recommendations from our cardiac specialists. No hidden fees, transparent pricing.</p>
+                <h2 data-key="cta_title">هل أنت مستعد للتوفير في جراحة القلب؟</h2>
+                <p data-key="cta_description">احصل على تقديرات تكلفة شخصية وتوصيات علاج من أخصائيي القلب لدينا. لا توجد رسوم مخفية، أسعار شفافة.</p>
                 <div class="cta-actions">
-                    <a href="index.html#contact" class="btn-primary btn-large">Get Free Cost Estimate</a>
-                    <a href="index.html#contact" class="btn-secondary btn-large">Consult Cardiac Specialist</a>
+                    <a href="index.html#contact" class="btn-primary btn-large" data-key="cta_estimate">احصل على تقدير مجاني للتكلفة</a>
+                    <a href="index.html#contact" class="btn-secondary btn-large" data-key="cta_consult">استشر أخصائي القلب</a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Add interactive elements
+        // Complete Translation System
+        const translations = {
+            ar: {
+                // Navigation
+                nav_home: 'الرئيسية',
+                nav_destinations: 'الوجهات',
+                nav_services: 'الخدمات',
+                nav_blog: 'المدونة',
+                nav_reviews: 'تقييمات المرضى',
+                nav_contact: 'اتصل بنا',
+                btn_consult: 'استشارة أونلاين',
+                btn_quote: 'احصل على عرض مجاني',
+                
+                // Page content
+                page_title: 'تكاليف جراحة القلب في الهند: دليل الأسعار الشامل 2024',
+                page_summary: 'تحليل شامل للتكاليف لجميع جراحات القلب في الهند. قارن أسعار جراحة المجاز واستبدال الصمامات وقسطرة البالون والإجراءات القلبية المتقدمة. وفر 60-80% مع الرعاية الطبية عالمية المستوى.',
+                meta_updated: 'محدث ديسمبر 2024',
+                meta_read_time: '12 دقائق قراءة',
+                meta_procedures: '37 إجراء مدرج',
+                
+                // CTA Section
+                cta_title: 'هل أنت مستعد للتوفير في جراحة القلب؟',
+                cta_description: 'احصل على تقديرات تكلفة شخصية وتوصيات علاج من أخصائيي القلب لدينا. لا توجد رسوم مخفية، أسعار شفافة.',
+                cta_estimate: 'احصل على تقدير مجاني للتكلفة',
+                cta_consult: 'استشر أخصائي القلب',
+                
+                // Article content
+                highlight_title: '💡 لماذا تكاليف جراحة القلب أقل في الهند',
+                highlight_desc: 'تقدم الهند نفس الإجراءات عالية الجودة مثل الدول الغربية بتكاليف أقل بنسبة 60-80%، مع مستشفيات معتمدة من JCI وجراحين مدربين دولياً وتكنولوجيا متطورة.',
+                currency_title: '💱 معلومات العملة:',
+                currency_desc: 'جميع التكاليف هي أسعار الهند محولة إلى الدولار الأمريكي (سعر الصرف: 1 دولار أمريكي = 83 روبية). هذه هي التكاليف الفعلية التي تفرضها المستشفيات الهندية. التكاليف النهائية قد تختلف حسب المستشفى والجراح وحالة المريض.',
+                stat_procedures: 'إجراءات مدرجة',
+                stat_savings: 'متوسط التوفير',
+                stat_hospitals: 'مستشفيات شريكة',
+                stat_success: 'معدل النجاح',
+                cost_breakdown_title: '💰 تفصيل شامل لتكاليف جراحة القلب',
+                major_procedures: 'الإجراءات القلبية الرئيسية',
+                table_procedure: 'الإجراء',
+                table_cost: 'التكلفة في الهند (دولار أمريكي)',
+                table_savings: 'التوفير مقارنة بالولايات المتحدة',
+                minimally_invasive: 'الإجراءات طفيفة التوغل',
+                congenital_procedures: 'إجراءات القلب الخلقية',
+                pacemaker_implants: 'زراعة أجهزة تنظيم ضربات القلب',
+                specialized_procedures: 'الإجراءات المتخصصة',
+                diagnostic_procedures: 'الإجراءات التشخيصية والطفيفة',
+                why_india_title: 'لماذا تختار الهند لجراحة القلب؟',
+                why_india_intro: 'لقد أسست الهند نفسها كوجهة رائدة عالمياً لرعاية القلب، وتقدم عدة مزايا مقنعة:',
+                cost_savings_title: '1. توفير كبير في التكاليف',
+                cost_savings_desc: 'كما هو موضح في تفصيل التكاليف الشامل أعلاه، يمكن للمرضى توفير 60-85% من تكاليف جراحة القلب مقارنة بالدول الغربية. على سبيل المثال:',
+                cost_examples: '<li><strong>جراحة مجاز القلب:</strong> 2,150-2,865 دولار في الهند مقابل 15,000-30,000 دولار في الولايات المتحدة</li><li><strong>استبدال الصمام:</strong> 3,307-5,252 دولار في الهند مقابل 25,000-50,000 دولار في الولايات المتحدة</li><li><strong>قسطرة البالون:</strong> 1,974-2,632 دولار في الهند مقابل 12,000-25,000 دولار في الولايات المتحدة</li>',
+                infrastructure_title: '2. بنية تحتية طبية عالمية المستوى',
+                infrastructure_desc: 'تفتخر الهند بأكثر من 200 مستشفى معتمد من JCI مع مرافق قلبية متطورة، تشمل:',
+                infrastructure_list: '<li>مختبرات قسطرة القلب المتقدمة</li><li>أنظمة الجراحة بمساعدة الروبوت</li><li>وحدات العناية المركزة للقلب على مدار 24/7</li><li>برامج زراعة القلب</li><li>وحدات جراحة القلب للأطفال</li>',
+                surgeons_title: '3. جراحون مدربون دولياً',
+                surgeons_desc: 'جراحو القلب الهنود من بين الأكثر خبرة في العالم، حيث تدرب العديد منهم في مؤسسات مرموقة في الولايات المتحدة والمملكة المتحدة وأوروبا. يؤدون الآلاف من الإجراءات سنوياً، مما يضمن خبرة استثنائية.',
+                no_waiting_title: '4. لا توجد قوائم انتظار',
+                no_waiting_desc: 'على عكس العديد من أنظمة الرعاية الصحية الغربية، تقدم الهند وصولاً فورياً للإجراءات القلبية دون فترات انتظار طويلة.',
+                packages_title: '💼 حزم شاملة متاحة',
+                packages_desc: 'تقدم معظم المستشفيات حزماً شاملة تتضمن الجراحة والإقامة في المستشفى والأدوية والرعاية اللاحقة. الخدمات الإضافية مثل الإقامة والنقل وخدمات الترجمة متاحة أيضاً.',
+                whats_included_title: 'ما المشمول في التكلفة؟',
+                whats_included_desc: 'الأسعار المذكورة أعلاه تشمل عادة:',
+                included_list: '<li>الاستشارات والتشخيصات قبل العملية</li><li>الإجراء الجراحي وأتعاب الجراح</li><li>التخدير ورسوم غرفة العمليات</li><li>الإقامة في المستشفى (العناية المركزة والجناح العام)</li><li>الأدوية الأساسية أثناء الإقامة في المستشفى</li><li>استشارات المتابعة الأولية</li>',
+                additional_costs_title: 'تكاليف إضافية يجب مراعاتها:',
+                additional_costs_list: '<li>الإقامة المطولة في المستشفى بسبب المضاعفات</li><li>إقامة الغرف المميزة</li><li>الفحوصات التشخيصية المتقدمة إذا لزم الأمر</li><li>الأدوية طويلة المدى</li><li>السفر والإقامة للعائلة</li>',
+                factors_title: 'العوامل المؤثرة على تكاليف جراحة القلب',
+                factors_desc: 'عدة عوامل يمكن أن تؤثر على التكلفة النهائية لجراحة القلب:',
+                hospital_category_title: '1. فئة المستشفى',
+                hospital_category_list: '<li><strong>المستشفيات الخاصة المميزة:</strong> تكاليف أعلى لكن مع وسائل راحة فاخرة</li><li><strong>المستشفيات الخاصة العادية:</strong> رعاية ممتازة بتكاليف معتدلة</li><li><strong>المستشفيات الحكومية:</strong> الأكثر اقتصادية مع رعاية جيدة</li>',
+                surgeon_experience_title: '2. خبرة الجراح',
+                surgeon_experience_list: '<li>الاستشاريون الكبار ذوو التدريب الدولي قد يفرضون رسوماً أعلى</li><li>الإجراءات المتخصصة قد تتطلب خبرة محددة</li>',
+                complexity_title: '3. تعقيد الإجراء',
+                complexity_list: '<li>العمليات الطارئة قد تكلف أكثر</li><li>الإجراءات المدمجة تزيد من التكاليف الإجمالية</li><li>عمليات المراجعة عادة ما تكون أكثر تكلفة</li>',
+                location_title: '4. الموقع',
+                location_list: '<li><strong>المدن الكبرى (دلهي، مومباي، بنغالور):</strong> تكاليف أعلى لكن خيارات أكثر</li><li><strong>مدن الدرجة الثانية (بونه، حيدر أباد، تشيناي):</strong> تكاليف أقل مع رعاية جيدة</li>',
+                cost_estimates_title: 'كيفية الحصول على تقديرات دقيقة للتكلفة',
+                cost_estimates_desc: 'لتلقي تقديرات مخصصة للتكلفة لحالتك المحددة:',
+                cost_estimates_steps: '<li><strong>التقييم الطبي:</strong> شارك سجلاتك الطبية وحالتك الحالية</li><li><strong>توصية الإجراء:</strong> احصل على رأي متخصص حول أفضل طريقة علاج</li><li><strong>اختيار المستشفى:</strong> اختر من خيارات متعددة بناءً على ميزانيتك وتفضيلاتك</li><li><strong>عرض سعر مفصل:</strong> احصل على تفصيل شامل للتكلفة بدون رسوم مخفية</li>',
+                personalized_quote_title: '🎯 احصل على عرض السعر المخصص لك',
+                personalized_quote_desc: 'كل حالة مريض فريدة. اتصل بخبرائنا الطبيين للحصول على تقدير مفصل للتكلفة مصمم خصيصاً لحالتك ومتطلباتك.',
+                financing_title: 'خيارات التمويل والدفع',
+                financing_desc: 'لجعل العلاج أكثر إمكانية، تقدم العديد من المستشفيات:',
+                financing_list: '<li><strong>قروض طبية:</strong> خيارات تمويل بفوائد منخفضة</li><li><strong>خطط الدفع:</strong> مدفوعات على أقساط</li><li><strong>دعم التأمين:</strong> مساعدة في مطالبات التأمين الدولية</li><li><strong>حزم الشركات:</strong> أسعار خاصة للشركات</li><li><strong>حزم السياحة الطبية:</strong> عروض شاملة</li>',
+                quality_title: 'ضمان الجودة',
+                quality_desc: 'على الرغم من انخفاض التكاليف، فإن الجودة لا يتم التنازل عنها أبداً:',
+                quality_list: '<li><strong>اعتماد JCI:</strong> معايير الجودة الدولية</li><li><strong>شهادة NABH:</strong> اعتراف وطني بالجودة</li><li><strong>امتثال ISO:</strong> معايير المنظمة الدولية</li><li><strong>عمليات تدقيق منتظمة:</strong> مراقبة جودة مستمرة</li>',
+                success_rates_title: 'معدلات النجاح',
+                success_rates_desc: 'نتائج جراحة القلب الهندية مماثلة للمعايير الدولية:',
+                bypass_success: 'نجاح جراحة المجاز',
+                valve_success: 'نجاح جراحة الصمام',
+                transplant_success: 'نجاح زراعة القلب',
+                angioplasty_success: 'نجاح قسطرة البالون',
+                // Additional procedure translations
+                proc_mini_cabg: 'CABG طفيفة التوغل',
+                proc_heart_transplant: 'زراعة القلب',
+                proc_double_valve: 'استبدال الصمام المضاعف للقلب',
+                proc_aortic_valve: 'استبدال الصمام الأورطي',
+                proc_mitral_valve: 'استبدال الصمام التاجي',
+                proc_angioplasty: 'قسطرة البالون وزرع الدعامة',
+                proc_angiogram: 'تصوير الشرايين التاجية',
+                proc_angiography: 'تصوير الأوعية الدموية',
+                proc_balloon_valvuloplasty: 'توسيع الصمام بالبالون - أورطي',
+                proc_ptmc: 'بضع الصمام التاجي عبر الوريد',
+                proc_balloon_septostomy: 'بضع الحاجز بالبالون',
+                proc_chd: 'عيوب القلب الخلقية',
+                proc_asd: 'إغلاق عيب الحاجز الأذيني',
+                proc_vsd_adult: 'إغلاق عيب الحاجز البطيني (بالغين)',
+                proc_vsd_treatment: 'علاج عيب الحاجز البطيني',
+                saving_83: 'توفير 83%',
+                saving_70: 'توفير 70%',
+                saving_78: 'توفير 78%',
+                saving_76: 'توفير 76%',
+                saving_75: 'توفير 75%',
+                saving_90: 'توفير 90%',
+                saving_88: 'توفير 88%',
+                saving_82: 'توفير 82%',
+                saving_79: 'توفير 79%',
+                saving_85_2: 'توفير 85%',
+                saving_80_2: 'توفير 80%',
+                saving_82_2: 'توفير 82%',
+                saving_81: 'توفير 81%',
+                saving_84: 'توفير 84%'
+            },
+            en: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_reviews: 'Patient Reviews',
+                nav_contact: 'Contact',
+                btn_consult: 'Consult Online',
+                btn_quote: 'Get Free Quote',
+                
+                // Page content
+                page_title: 'Heart Surgery Costs in India: Complete 2024 Pricing Guide',
+                page_summary: 'Comprehensive cost breakdown for all heart surgeries in India. Compare pricing for bypass surgery, valve replacement, angioplasty, and advanced cardiac procedures. Save 60-80% with world-class medical care.',
+                meta_updated: 'Updated December 2024',
+                meta_read_time: '12 min read',
+                meta_procedures: '37 Procedures Listed',
+                
+                // CTA Section
+                cta_title: 'Ready to Save on Your Heart Surgery?',
+                cta_description: 'Get personalized cost estimates and treatment recommendations from our cardiac specialists. No hidden fees, transparent pricing.',
+                cta_estimate: 'Get Free Cost Estimate',
+                cta_consult: 'Consult Cardiac Specialist',
+                
+                // Article content
+                highlight_title: '💡 Why Heart Surgery Costs Are Lower in India',
+                highlight_desc: 'India offers the same quality procedures as Western countries at 60-80% lower costs, with JCI-accredited hospitals, internationally trained surgeons, and state-of-the-art technology.',
+                currency_title: '💱 Currency Information:',
+                currency_desc: 'All costs are India rates converted to USD (Exchange rate: 1 USD = ₹83). These are actual costs charged by Indian hospitals. Final costs may vary based on hospital, surgeon, and patient condition.',
+                stat_procedures: 'Procedures Listed',
+                stat_savings: 'Average Savings',
+                stat_hospitals: 'Partner Hospitals',
+                stat_success: 'Success Rate',
+                cost_breakdown_title: '💰 Complete Heart Surgery Cost Breakdown',
+                major_procedures: 'Major Cardiac Procedures',
+                table_procedure: 'Procedure',
+                table_cost: 'Cost in India (USD)',
+                table_savings: 'Savings vs USA',
+                minimally_invasive: 'Minimally Invasive Procedures',
+                congenital_procedures: 'Congenital Heart Procedures',
+                pacemaker_implants: 'Pacemaker & Device Implants',
+                specialized_procedures: 'Specialized Procedures',
+                diagnostic_procedures: 'Diagnostic & Minor Procedures',
+                why_india_title: 'Why Choose India for Heart Surgery?',
+                why_india_intro: 'India has established itself as the world\'s leading destination for cardiac care, offering several compelling advantages:',
+                cost_savings_title: '1. Significant Cost Savings',
+                cost_savings_desc: 'As demonstrated in our comprehensive cost breakdown above, patients can save 60-85% on heart surgery costs compared to Western countries. For example:',
+                cost_examples: '<li><strong>Heart Bypass Surgery:</strong> $2,150-$2,865 in India vs $15,000-$30,000 in the USA</li><li><strong>Valve Replacement:</strong> $3,307-$5,252 in India vs $25,000-$50,000 in the USA</li><li><strong>Angioplasty:</strong> $1,974-$2,632 in India vs $12,000-$25,000 in the USA</li>',
+                infrastructure_title: '2. World-Class Medical Infrastructure',
+                infrastructure_desc: 'India boasts over 200 JCI-accredited hospitals with state-of-the-art cardiac facilities, including:',
+                infrastructure_list: '<li>Advanced cardiac catheterization labs</li><li>Robotic-assisted surgery systems</li><li>24/7 cardiac intensive care units</li><li>Heart transplant programs</li><li>Pediatric cardiac surgery units</li>',
+                surgeons_title: '3. Internationally Trained Surgeons',
+                surgeons_desc: 'Indian cardiac surgeons are among the world\'s most experienced, with many trained at prestigious institutions in the USA, UK, and Europe. They perform thousands of procedures annually, ensuring exceptional expertise.',
+                no_waiting_title: '4. No Waiting Lists',
+                no_waiting_desc: 'Unlike many Western healthcare systems, India offers immediate access to cardiac procedures without long waiting periods.',
+                packages_title: '💼 All-Inclusive Packages Available',
+                packages_desc: 'Most hospitals offer comprehensive packages including surgery, hospital stay, medications, and follow-up care. Additional services like accommodation, transportation, and interpreter services are also available.',
+                whats_included_title: 'What\'s Included in the Cost?',
+                whats_included_desc: 'The prices listed above typically include:',
+                included_list: '<li>Pre-operative consultations and diagnostics</li><li>Surgical procedure and surgeon fees</li><li>Anesthesia and operating room charges</li><li>Hospital stay (ICU and general ward)</li><li>Basic medications during hospital stay</li><li>Initial follow-up consultations</li>',
+                additional_costs_title: 'Additional Costs to Consider:',
+                additional_costs_list: '<li>Extended hospital stay due to complications</li><li>Premium room accommodations</li><li>Advanced diagnostic tests if required</li><li>Long-term medications</li><li>Travel and accommodation for family</li>',
+                factors_title: 'Factors Affecting Heart Surgery Costs',
+                factors_desc: 'Several factors can influence the final cost of your heart surgery:',
+                hospital_category_title: '1. Hospital Category',
+                hospital_category_list: '<li><strong>Premium Private Hospitals:</strong> Higher costs but luxury amenities</li><li><strong>Standard Private Hospitals:</strong> Excellent care at moderate costs</li><li><strong>Government Hospitals:</strong> Most affordable with quality care</li>',
+                surgeon_experience_title: '2. Surgeon Experience',
+                surgeon_experience_list: '<li>Senior consultants with international training may charge higher fees</li><li>Specialized procedures may require specific expertise</li>',
+                complexity_title: '3. Complexity of the Procedure',
+                complexity_list: '<li>Emergency surgeries may cost more</li><li>Combined procedures increase overall costs</li><li>Revision surgeries are typically more expensive</li>',
+                location_title: '4. Location',
+                location_list: '<li><strong>Metro Cities (Delhi, Mumbai, Bangalore):</strong> Higher costs but more options</li><li><strong>Tier-2 Cities (Pune, Hyderabad, Chennai):</strong> Lower costs with quality care</li>',
+                cost_estimates_title: 'How to Get Accurate Cost Estimates',
+                cost_estimates_desc: 'To receive personalized cost estimates for your specific condition:',
+                cost_estimates_steps: '<li><strong>Medical Evaluation:</strong> Share your medical records and current condition</li><li><strong>Procedure Recommendation:</strong> Get expert opinion on the best treatment approach</li><li><strong>Hospital Selection:</strong> Choose from multiple options based on your budget and preferences</li><li><strong>Detailed Quote:</strong> Receive comprehensive cost breakdown with no hidden fees</li>',
+                personalized_quote_title: '🎯 Get Your Personalized Quote',
+                personalized_quote_desc: 'Every patient\'s case is unique. Contact our medical experts for a detailed cost estimate tailored to your specific condition and requirements.',
+                financing_title: 'Financing and Payment Options',
+                financing_desc: 'To make treatment more accessible, many hospitals offer:',
+                financing_list: '<li><strong>Medical Loans:</strong> Low-interest financing options</li><li><strong>Payment Plans:</strong> Installment-based payments</li><li><strong>Insurance Support:</strong> Assistance with international insurance claims</li><li><strong>Corporate Packages:</strong> Special rates for companies</li><li><strong>Medical Tourism Packages:</strong> All-inclusive deals</li>',
+                quality_title: 'Quality Assurance',
+                quality_desc: 'Despite the lower costs, quality is never compromised:',
+                quality_list: '<li><strong>JCI Accreditation:</strong> International quality standards</li><li><strong>NABH Certification:</strong> National quality recognition</li><li><strong>ISO Compliance:</strong> International organization standards</li><li><strong>Regular Audits:</strong> Continuous quality monitoring</li>',
+                success_rates_title: 'Success Rates',
+                success_rates_desc: 'Indian cardiac surgery outcomes are comparable to international standards:',
+                bypass_success: 'Bypass Surgery Success',
+                valve_success: 'Valve Surgery Success',
+                transplant_success: 'Heart Transplant Success',
+                angioplasty_success: 'Angioplasty Success',
+                // Additional procedure translations
+                proc_mini_cabg: 'Minimally Invasive CABG',
+                proc_heart_transplant: 'Heart Transplant',
+                proc_double_valve: 'Heart Double Valve Replacement',
+                proc_aortic_valve: 'Aortic Valve Replacement',
+                proc_mitral_valve: 'Mitral Valve Replacement',
+                proc_angioplasty: 'Angioplasty and Stent Placement',
+                proc_angiogram: 'Coronary Angiogram',
+                proc_angiography: 'Angiography',
+                proc_balloon_valvuloplasty: 'Balloon Valvuloplasty - Aortic',
+                proc_ptmc: 'PTMC - Percutaneous Transvenous Mitral Commissurotomy',
+                proc_balloon_septostomy: 'Balloon Septostomy',
+                proc_chd: 'Congenital Heart Disorder (CHD)',
+                proc_asd: 'ASD (Atrial Septal Defect) Closure',
+                proc_vsd_adult: 'VSD Closure (Adult) Surgery',
+                proc_vsd_treatment: 'Ventricular Septal Defect (VSD) Treatment',
+                saving_83: '83% savings',
+                saving_70: '70% savings',
+                saving_78: '78% savings',
+                saving_76: '76% savings',
+                saving_75: '75% savings',
+                saving_90: '90% savings',
+                saving_88: '88% savings',
+                saving_82: '82% savings',
+                saving_79: '79% savings',
+                saving_85_2: '85% savings',
+                saving_80_2: '80% savings',
+                saving_82_2: '82% savings',
+                saving_81: '81% savings',
+                saving_84: '84% savings'
+            },
+            es: {
+                // Navigation
+                nav_home: 'Inicio',
+                nav_destinations: 'Destinos',
+                nav_services: 'Servicios',
+                nav_blog: 'Blog',
+                nav_reviews: 'Reseñas de Pacientes',
+                nav_contact: 'Contacto',
+                btn_consult: 'Consultar Online',
+                btn_quote: 'Obtener Cotización Gratis',
+                
+                // Page content
+                page_title: 'Costos de Cirugía Cardíaca en India: Guía Completa de Precios 2024',
+                page_summary: 'Desglose completo de costos para todas las cirugías cardíacas en India. Compare precios de cirugía de bypass, reemplazo de válvulas, angioplastia y procedimientos cardíacos avanzados. Ahorre 60-80% con atención médica de clase mundial.',
+                meta_updated: 'Actualizado Diciembre 2024',
+                meta_read_time: '12 min de lectura',
+                meta_procedures: '37 Procedimientos Listados',
+                
+                // CTA Section
+                cta_title: '¿Listo para Ahorrar en su Cirugía Cardíaca?',
+                cta_description: 'Obtenga estimaciones de costos personalizadas y recomendaciones de tratamiento de nuestros especialistas cardíacos. Sin tarifas ocultas, precios transparentes.',
+                cta_estimate: 'Obtener Estimación de Costo Gratis',
+                cta_consult: 'Consultar Especialista Cardíaco'
+            },
+            fr: {
+                // Navigation
+                nav_home: 'Accueil',
+                nav_destinations: 'Destinations',
+                nav_services: 'Services',
+                nav_blog: 'Blog',
+                nav_reviews: 'Avis Patients',
+                nav_contact: 'Contact',
+                btn_consult: 'Consulter en ligne',
+                btn_quote: 'Devis gratuit',
+                
+                // Page content
+                page_title: 'Coûts de Chirurgie Cardiaque en Inde : Guide Complet des Prix 2024',
+                page_summary: 'Analyse complète des coûts pour toutes les chirurgies cardiaques en Inde. Comparez les prix du pontage, remplacement valvulaire, angioplastie et procédures cardiaques avancées. Économisez 60-80% avec des soins médicaux de classe mondiale.',
+                meta_updated: 'Mis à jour Décembre 2024',
+                meta_read_time: '12 min de lecture',
+                meta_procedures: '37 Procédures Listées',
+                
+                // CTA Section
+                cta_title: 'Prêt à économiser sur votre chirurgie cardiaque?',
+                cta_description: 'Obtenez des estimations de coûts personnalisées et des recommandations de traitement de nos spécialistes cardiaques. Pas de frais cachés, prix transparents.',
+                cta_estimate: 'Estimation gratuite des coûts',
+                cta_consult: 'Consulter un cardiologue'
+            },
+            de: {
+                // Navigation
+                nav_home: 'Startseite',
+                nav_destinations: 'Reiseziele',
+                nav_services: 'Dienstleistungen',
+                nav_blog: 'Blog',
+                nav_reviews: 'Patientenbewertungen',
+                nav_contact: 'Kontakt',
+                btn_consult: 'Online konsultieren',
+                btn_quote: 'Kostenloses Angebot',
+                
+                // Page content
+                page_title: 'Herzchirurgie-Kosten in Indien: Vollständiger Preisleitfaden 2024',
+                page_summary: 'Umfassende Kostenaufschlüsselung für alle Herzoperationen in Indien. Vergleichen Sie Preise für Bypass-Operation, Klappenersatz, Angioplastie und fortgeschrittene Herzverfahren. Sparen Sie 60-80% mit erstklassiger medizinischer Versorgung.',
+                meta_updated: 'Aktualisiert Dezember 2024',
+                meta_read_time: '12 Min. Lesezeit',
+                meta_procedures: '37 Verfahren aufgelistet',
+                
+                // CTA Section
+                cta_title: 'Bereit, bei Ihrer Herzoperation zu sparen?',
+                cta_description: 'Erhalten Sie personalisierte Kostenschätzungen und Behandlungsempfehlungen von unseren Herzspezialisten. Keine versteckten Gebühren, transparente Preise.',
+                cta_estimate: 'Kostenlose Kostenschätzung',
+                cta_consult: 'Herzspezialisten konsultieren'
+            },
+            ru: {
+                // Navigation
+                nav_home: 'Главная',
+                nav_destinations: 'Направления',
+                nav_services: 'Услуги',
+                nav_blog: 'Блог',
+                nav_reviews: 'Отзывы пациентов',
+                nav_contact: 'Контакты',
+                btn_consult: 'Онлайн консультация',
+                btn_quote: 'Бесплатная оценка',
+                
+                // Page content
+                page_title: 'Стоимость кардиохирургии в Индии: Полное руководство по ценам 2024',
+                page_summary: 'Подробный анализ стоимости всех кардиохирургических операций в Индии. Сравните цены на шунтирование, замену клапанов, ангиопластику и передовые кардиологические процедуры. Экономьте 60-80% при получении медицинской помощи мирового класса.',
+                meta_updated: 'Обновлено Декабрь 2024',
+                meta_read_time: '12 мин чтения',
+                meta_procedures: '37 процедур в списке',
+                
+                // CTA Section
+                cta_title: 'Готовы сэкономить на кардиохирургии?',
+                cta_description: 'Получите персонализированные оценки стоимости и рекомендации по лечению от наших кардиологов. Никаких скрытых комиссий, прозрачные цены.',
+                cta_estimate: 'Бесплатная оценка стоимости',
+                cta_consult: 'Консультация кардиолога'
+            },
+            tr: {
+                // Navigation
+                nav_home: 'Ana Sayfa',
+                nav_destinations: 'Destinasyonlar',
+                nav_services: 'Hizmetler',
+                nav_blog: 'Blog',
+                nav_reviews: 'Hasta Yorumları',
+                nav_contact: 'İletişim',
+                btn_consult: 'Online Danışmanlık',
+                btn_quote: 'Ücretsiz Teklif',
+                
+                // Page content
+                page_title: 'Hindistan\'da Kalp Cerrahisi Maliyetleri: Kapsamlı Fiyat Rehberi 2024',
+                page_summary: 'Hindistan\'daki tüm kalp ameliyatları için kapsamlı maliyet analizi. Bypass ameliyatı, kapak değişimi, anjiyoplasti ve gelişmiş kardiyak prosedürler için fiyatları karşılaştırın. Dünya standartlarında tıbbi bakımla %60-80 tasarruf edin.',
+                meta_updated: 'Güncellenme Aralık 2024',
+                meta_read_time: '12 dakika okuma',
+                meta_procedures: '37 Prosedür Listelendi',
+                
+                // CTA Section
+                cta_title: 'Kalp Cerrahisinde Tasarruf Etmeye Hazır mısınız?',
+                cta_description: 'Kalp uzmanlarımızdan kişiselleştirilmiş maliyet tahminleri ve tedavi önerileri alın. Gizli ücret yok, şeffaf fiyatlandırma.',
+                cta_estimate: 'Ücretsiz Maliyet Tahmini',
+                cta_consult: 'Kalp Uzmanına Danış'
+            },
+            it: {
+                // Navigation
+                nav_home: 'Home',
+                nav_destinations: 'Destinazioni',
+                nav_services: 'Servizi',
+                nav_blog: 'Blog',
+                nav_reviews: 'Recensioni Pazienti',
+                nav_contact: 'Contatti',
+                btn_consult: 'Consulta Online',
+                btn_quote: 'Preventivo Gratuito',
+                
+                // Page content
+                page_title: 'Costi Chirurgia Cardiaca in India: Guida Completa ai Prezzi 2024',
+                page_summary: 'Analisi completa dei costi per tutti gli interventi cardiaci in India. Confronta i prezzi per bypass, sostituzione valvolare, angioplastica e procedure cardiache avanzate. Risparmia 60-80% con cure mediche di livello mondiale.',
+                meta_updated: 'Aggiornato Dicembre 2024',
+                meta_read_time: '12 min di lettura',
+                meta_procedures: '37 Procedure Elencate',
+                
+                // CTA Section
+                cta_title: 'Pronto a risparmiare sulla chirurgia cardiaca?',
+                cta_description: 'Ottieni stime personalizzate dei costi e raccomandazioni di trattamento dai nostri specialisti cardiaci. Nessuna commissione nascosta, prezzi trasparenti.',
+                cta_estimate: 'Stima Gratuita dei Costi',
+                cta_consult: 'Consulta Specialista Cardiaco'
+            },
+            pt: {
+                // Navigation
+                nav_home: 'Início',
+                nav_destinations: 'Destinos',
+                nav_services: 'Serviços',
+                nav_blog: 'Blog',
+                nav_reviews: 'Avaliações Pacientes',
+                nav_contact: 'Contato',
+                btn_consult: 'Consulta Online',
+                btn_quote: 'Orçamento Grátis',
+                
+                // Page content
+                page_title: 'Custos de Cirurgia Cardíaca na Índia: Guia Completo de Preços 2024',
+                page_summary: 'Análise abrangente de custos para todas as cirurgias cardíacas na Índia. Compare preços para cirurgia de bypass, substituição de válvulas, angioplastia e procedimentos cardíacos avançados. Economize 60-80% com cuidados médicos de padrão mundial.',
+                meta_updated: 'Atualizado Dezembro 2024',
+                meta_read_time: '12 min de leitura',
+                meta_procedures: '37 Procedimentos Listados',
+                
+                // CTA Section
+                cta_title: 'Pronto para economizar na sua cirurgia cardíaca?',
+                cta_description: 'Obtenha estimativas personalizadas de custos e recomendações de tratamento dos nossos especialistas cardíacos. Sem taxas ocultas, preços transparentes.',
+                cta_estimate: 'Estimativa Gratuita de Custos',
+                cta_consult: 'Consultar Especialista Cardíaco'
+            },
+            zh: {
+                // Navigation
+                nav_home: '首页',
+                nav_destinations: '目的地',
+                nav_services: '服务',
+                nav_blog: '博客',
+                nav_reviews: '患者评价',
+                nav_contact: '联系我们',
+                btn_consult: '在线咨询',
+                btn_quote: '免费报价',
+                
+                // Page content
+                page_title: '印度心脏手术费用：2024年完整价格指南',
+                page_summary: '印度所有心脏手术的综合费用分析。比较搭桥手术、瓣膜置换、血管成形术和高级心脏手术的价格。通过世界级医疗护理节省60-80%费用。',
+                meta_updated: '更新于2024年12月',
+                meta_read_time: '12分钟阅读',
+                meta_procedures: '37个手术项目',
+                
+                // CTA Section
+                cta_title: '准备好节省心脏手术费用了吗？',
+                cta_description: '从我们的心脏专家那里获得个性化的费用估算和治疗建议。无隐藏费用，价格透明。',
+                cta_estimate: '免费费用估算',
+                cta_consult: '咨询心脏专家'
+            },
+            hi: {
+                // Navigation
+                nav_home: 'होम',
+                nav_destinations: 'गंतव्य',
+                nav_services: 'सेवाएं',
+                nav_blog: 'ब्लॉग',
+                nav_reviews: 'मरीज़ समीक्षाएं',
+                nav_contact: 'संपर्क',
+                btn_consult: 'ऑनलाइन सलाह',
+                btn_quote: 'मुफ्त कोटेशन',
+                
+                // Page content
+                page_title: 'भारत में हृदय शल्यचिकित्सा लागत: 2024 की संपूर्ण मूल्य गाइड',
+                page_summary: 'भारत में सभी हृदय शल्यचिकित्साओं के लिए व्यापक लागत विश्लेषण। बाईपास सर्जरी, वॉल्व रिप्लेसमेंट, एंजियोप्लास्टी और उन्नत कार्डियक प्रक्रियाओं की कीमतों की तुलना करें। विश्व स्तरीय चिकित्सा देखभाल के साथ 60-80% बचत करें।',
+                meta_updated: 'दिसंबर 2024 में अपडेट किया गया',
+                meta_read_time: '12 मिनट पढ़ने का समय',
+                meta_procedures: '37 प्रक्रियाएं सूचीबद्ध',
+                
+                // CTA Section
+                cta_title: 'अपनी हृदय शल्यचिकित्सा पर बचत करने के लिए तैयार हैं?',
+                cta_description: 'हमारे हृदय विशेषज्ञों से व्यक्तिगत लागत अनुमान और उपचार सुझाव प्राप्त करें। कोई छुपी फीस नहीं, पारदर्शी मूल्य निर्धारण।',
+                cta_estimate: 'मुफ्त लागत अनुमान',
+                cta_consult: 'हृदय विशेषज्ञ से सलाह लें'
+            },
+            ja: {
+                // Navigation
+                nav_home: 'ホーム',
+                nav_destinations: '目的地',
+                nav_services: 'サービス',
+                nav_blog: 'ブログ',
+                nav_reviews: '患者レビュー',
+                nav_contact: 'お問い合わせ',
+                btn_consult: 'オンライン相談',
+                btn_quote: '無料見積もり',
+                
+                // Page content
+                page_title: 'インドの心臓手術費用：2024年完全価格ガイド',
+                page_summary: 'インドでのすべての心臓手術の包括的な費用分析。バイパス手術、弁置換術、血管形成術、高度な心臓手術の価格を比較。世界クラスの医療ケアで60-80%節約。',
+                meta_updated: '2024年12月更新',
+                meta_read_time: '12分で読める',
+                meta_procedures: '37の手術がリストされています',
+                
+                // CTA Section
+                cta_title: '心臓手術で節約する準備はできていますか？',
+                cta_description: '心臓専門医から個別の費用見積もりと治療推奨を取得。隠れた料金なし、透明な価格設定。',
+                cta_estimate: '無料費用見積もり',
+                cta_consult: '心臓専門医に相談'
+            },
+            ko: {
+                // Navigation
+                nav_home: '홈',
+                nav_destinations: '목적지',
+                nav_services: '서비스',
+                nav_blog: '블로그',
+                nav_reviews: '환자 리뷰',
+                nav_contact: '연락처',
+                btn_consult: '온라인 상담',
+                btn_quote: '무료 견적',
+                
+                // Page content
+                page_title: '인도 심장수술 비용: 2024년 완전 가격 가이드',
+                page_summary: '인도의 모든 심장수술에 대한 포괄적 비용 분석. 바이패스 수술, 판막 교체, 혈관성형술 및 고급 심장 시술의 가격을 비교하세요. 세계 수준의 의료 서비스로 60-80% 절약하세요.',
+                meta_updated: '2024년 12월 업데이트',
+                meta_read_time: '12분 읽기',
+                meta_procedures: '37개 시술 목록',
+                
+                // CTA Section
+                cta_title: '심장수술 비용을 절약할 준비가 되셨나요?',
+                cta_description: '심장 전문의로부터 개인맞춤 비용 견적과 치료 권장사항을 받으세요. 숨겨진 수수료 없음, 투명한 가격책정.',
+                cta_estimate: '무료 비용 견적',
+                cta_consult: '심장 전문의 상담'
+            }
+        };
+
+        function changeLanguage(langCode) {
+            // Store the selected language
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Update HTML direction and language
+            const rtlLanguages = ['ar', 'ur', 'ku', 'bal', 'mey'];
+            if (rtlLanguages.includes(langCode)) {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = langCode;
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = langCode;
+            }
+            
+            // Apply translations if available
+            if (translations[langCode]) {
+                applyTranslations(langCode);
+            }
+            
+            // Update the dropdown selection
+            const selector = document.getElementById('languageSelect');
+            if (selector) {
+                selector.value = langCode;
+            }
+        }
+
+        function applyTranslations(langCode) {
+            const trans = translations[langCode];
+            if (!trans) return;
+            
+            // Apply all translations
+            Object.keys(trans).forEach(key => {
+                const elements = document.querySelectorAll(`[data-key="${key}"]`);
+                elements.forEach(element => {
+                    element.textContent = trans[key];
+                });
+            });
+        }
+
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            // Get saved language or default to Arabic
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+            changeLanguage(savedLanguage);
+            
             // Add smooth scrolling for internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -966,6 +1609,11 @@
                     }
                 });
             });
+        });
+
+        // Auto-load Arabic as default
+        window.addEventListener('load', function() {
+            changeLanguage('ar');
         });
     </script>
 
