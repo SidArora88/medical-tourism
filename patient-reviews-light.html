@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Reviews & Success Stories | Medical Tourism India | MediTravel</title>
+    <title>آراء المرضى وقصص النجاح | السياحة العلاجية في الهند | أفيا إنديا</title>
     <meta name="description" content="Read authentic patient reviews and success stories from Middle East and African patients who chose medical treatment in India. Real experiences, verified testimonials, and treatment outcomes.">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -113,6 +113,27 @@
 
         .btn-primary:hover {
             background: #1d4ed8;
+        }
+
+        .language-selector {
+            margin-right: 0.5rem;
+        }
+
+        .language-dropdown {
+            padding: 0.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: #fff;
+            color: #1e293b;
+            font-size: 0.85rem;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgb(37 99 235 / 0.2);
         }
 
         .reviews-hero {
@@ -369,6 +390,48 @@
             color: white;
         }
 
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        [dir="rtl"] .nav-container {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .nav-actions {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .language-selector {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+        [dir="rtl"] .review-header {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .patient-avatar {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+        [dir="rtl"] .patient-avatar-enhanced {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+        [dir="rtl"] .review-rating {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .stars {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+        [dir="rtl"] .review-footer {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .detail-item {
+            flex-direction: row-reverse;
+        }
+
         @media (max-width: 968px) {
             .nav-menu {
                 display: none;
@@ -401,7 +464,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h1><a href="index.html">MediTravel</a></h1>
+                    <h1><a href="index.html">Afiya India</a></h1>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -424,6 +487,24 @@
                     </li>
                 </ul>
                 <div class="nav-actions">
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-dropdown" onchange="changeLanguage(this.value)">
+                            <option value="ar">🇸🇦 Arabic</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="bn">🇧🇩 Bengali</option>
+                            <option value="ur">🇵🇰 Urdu</option>
+                            <option value="ku">🇮🇶 Kurdish</option>
+                            <option value="so">🇸🇴 Somali</option>
+                            <option value="bal">🇴🇲 Baluchi</option>
+                            <option value="om">🇪🇹 Oromo</option>
+                            <option value="am">🇪🇹 Amharic</option>
+                            <option value="mey">🇾🇪 Mahri</option>
+                            <option value="tk">🇹🇲 Turkmen</option>
+                            <option value="ru">🇷🇺 Russian</option>
+                            <option value="uz">🇺🇿 Uzbek</option>
+                            <option value="sw">🇰🇪 Swahili</option>
+                        </select>
+                    </div>
                     <button class="btn-secondary" onclick="window.location.href='index.html#contact'">Consult Online</button>
                     <button class="btn-primary" onclick="window.location.href='index.html#contact'">Get Free Quote</button>
                 </div>
@@ -560,7 +641,7 @@
                     </div>
                     
                     <div class="review-content">
-                        <p class="review-text">"I was diagnosed with end-stage liver disease and needed an urgent transplant. The doctors in Ghana said it would take years. MediTravel arranged everything within 3 weeks. Dr. Rela at Global Hospital performed a living donor transplant with my brother as donor. They literally saved my life."</p>
+                        <p class="review-text">"I was diagnosed with end-stage liver disease and needed an urgent transplant. The doctors in Ghana said it would take years. Afiya India arranged everything within 3 weeks. Dr. Rela at Global Hospital performed a living donor transplant with my brother as donor. They literally saved my life."</p>
                         
                         <div class="review-details">
                             <h5>Treatment Details</h5>
@@ -602,7 +683,7 @@
                     </div>
                     
                     <div class="review-content">
-                        <p class="review-text">"When I was diagnosed with breast cancer, I was devastated. The treatment costs in South Africa were overwhelming. I found MediTravel online and decided to come to India. Dr. Mistry at Tata Memorial Hospital is simply the best. I'm now cancer-free and saved a fortune."</p>
+                        <p class="review-text">"When I was diagnosed with breast cancer, I was devastated. The treatment costs in South Africa were overwhelming. I found Afiya India online and decided to come to India. Dr. Mistry at Tata Memorial Hospital is simply the best. I'm now cancer-free and saved a fortune."</p>
                         
                         <div class="review-details">
                             <h5>Treatment Details</h5>
@@ -686,7 +767,7 @@
                     </div>
                     
                     <div class="review-content">
-                        <p class="review-text">"I needed 8 dental implants and was quoted $25,000 in Nigeria. Through MediTravel, I got the same treatment at Apollo White Dental in Mumbai for just $8,000. Dr. Kothari used the latest Swiss implants, and the results are amazing. My smile looks natural and beautiful."</p>
+                        <p class="review-text">"I needed 8 dental implants and was quoted $25,000 in Nigeria. Through Afiya India, I got the same treatment at Apollo White Dental in Mumbai for just $8,000. Dr. Kothari used the latest Swiss implants, and the results are amazing. My smile looks natural and beautiful."</p>
                         
                         <div class="review-details">
                             <h5>Treatment Details</h5>
@@ -717,5 +798,148 @@
             </div>
         </div>
     </section>
+
+    <!-- Patient Reviews Translation System -->
+    <script>
+        function changeLanguage(langCode) {
+            // Store selected language in localStorage
+            localStorage.setItem('selectedLanguage', langCode);
+            
+            // Update HTML lang and dir attributes
+            document.documentElement.lang = langCode;
+            const rtlLanguages = ['ar', 'ur', 'ku', 'bal', 'mey'];
+            if (rtlLanguages.includes(langCode)) {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
+            
+            // Show loading indicator
+            document.body.style.opacity = '0.7';
+            
+            // Comprehensive language mappings for patient reviews
+            const translations = {
+                'en': {
+                    // Navigation
+                    'nav-home': 'Home', 'nav-destinations': 'Destinations', 'nav-services': 'Services', 'nav-blog': 'Blog', 'nav-reviews': 'Patient Reviews', 'nav-contact': 'Contact',
+                    'btn-consult': 'Consult Online', 'btn-quote': 'Get Free Quote',
+                    // Reviews Hero Section
+                    'reviews-hero-title': 'Patient Reviews & Success Stories',
+                    'reviews-hero-subtitle': 'Read authentic experiences from patients who chose medical treatment abroad. Real stories, verified outcomes, genuine transformations.',
+                    'reviews-stat1': '500+', 'reviews-stat1-text': 'Happy Patients',
+                    'reviews-stat2': '95%', 'reviews-stat2-text': 'Success Rate',
+                    'reviews-stat3': '50+', 'reviews-stat3-text': 'Countries Served',
+                    // Review Details
+                    'treatment-details': 'Treatment Details', 'hospital-label': 'Hospital:', 'doctor-label': 'Doctor:', 'cost-saved-label': 'Cost Saved:',
+                    'load-more': 'View All 50+ Reviews'
+                },
+                'ar': {
+                    // Navigation
+                    'nav-home': 'الرئيسية', 'nav-destinations': 'الوجهات', 'nav-services': 'الخدمات', 'nav-blog': 'المدونة', 'nav-reviews': 'تقييمات المرضى', 'nav-contact': 'اتصل بنا',
+                    'btn-consult': 'استشارة عبر الإنترنت', 'btn-quote': 'احصل على عرض أسعار مجاني',
+                    // Reviews Hero Section
+                    'reviews-hero-title': 'آراء المرضى وقصص النجاح',
+                    'reviews-hero-subtitle': 'اقرأ التجارب الحقيقية للمرضى الذين اختاروا العلاج الطبي في الخارج. قصص حقيقية، نتائج مؤكدة، تحولات حقيقية.',
+                    'reviews-stat1': '500+', 'reviews-stat1-text': 'مريض سعيد',
+                    'reviews-stat2': '95%', 'reviews-stat2-text': 'معدل النجاح',
+                    'reviews-stat3': '50+', 'reviews-stat3-text': 'دولة نخدمها',
+                    // Review Details
+                    'treatment-details': 'تفاصيل العلاج', 'hospital-label': 'المستشفى:', 'doctor-label': 'الطبيب:', 'cost-saved-label': 'المبلغ الموفر:',
+                    'load-more': 'عرض جميع التقييمات 50+'
+                }
+            };
+            
+            // Update content based on selected language
+            setTimeout(() => {
+                if (translations[langCode]) {
+                    const translation = translations[langCode];
+                    
+                    // Update Navigation
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    const navTexts = ['nav-home', 'nav-destinations', 'nav-services', 'nav-blog', 'nav-reviews', 'nav-contact'];
+                    navLinks.forEach((link, index) => {
+                        if (translation[navTexts[index]]) link.textContent = translation[navTexts[index]];
+                    });
+                    
+                    // Update Buttons
+                    const consultBtn = document.querySelector('.btn-secondary');
+                    const quoteBtn = document.querySelector('.btn-primary');
+                    if (consultBtn && translation['btn-consult']) consultBtn.textContent = translation['btn-consult'];
+                    if (quoteBtn && translation['btn-quote']) quoteBtn.textContent = translation['btn-quote'];
+                    
+                    // Update Reviews Hero Section
+                    const reviewsHeroTitle = document.querySelector('.reviews-hero-content h1');
+                    const reviewsHeroSubtitle = document.querySelector('.reviews-hero-content p');
+                    
+                    if (reviewsHeroTitle) reviewsHeroTitle.textContent = translation['reviews-hero-title'];
+                    if (reviewsHeroSubtitle) reviewsHeroSubtitle.textContent = translation['reviews-hero-subtitle'];
+                    
+                    // Update Reviews Hero Stats
+                    const reviewsStats = document.querySelectorAll('.reviews-hero-stats .stat');
+                    reviewsStats.forEach((stat, index) => {
+                        const statNumber = stat.querySelector('h3');
+                        const statText = stat.querySelector('p');
+                        if (statNumber && translation[`reviews-stat${index + 1}`]) {
+                            statNumber.textContent = translation[`reviews-stat${index + 1}`];
+                        }
+                        if (statText && translation[`reviews-stat${index + 1}-text`]) {
+                            statText.textContent = translation[`reviews-stat${index + 1}-text`];
+                        }
+                    });
+                    
+                    // Update Treatment Details
+                    const treatmentDetailsHeaders = document.querySelectorAll('.review-details h5');
+                    treatmentDetailsHeaders.forEach(header => {
+                        if (translation['treatment-details']) {
+                            header.textContent = translation['treatment-details'];
+                        }
+                    });
+                    
+                    // Update Detail Labels
+                    const detailLabels = document.querySelectorAll('.detail-label');
+                    const labelKeys = ['hospital-label', 'doctor-label', 'cost-saved-label'];
+                    detailLabels.forEach((label, index) => {
+                        const keyIndex = index % 3;
+                        if (translation[labelKeys[keyIndex]]) {
+                            label.textContent = translation[labelKeys[keyIndex]];
+                        }
+                    });
+                    
+                    // Update Load More Button
+                    const loadMoreBtn = document.querySelector('.load-more a');
+                    if (loadMoreBtn && translation['load-more']) {
+                        loadMoreBtn.textContent = translation['load-more'];
+                    }
+                }
+                
+                // Remove loading indicator
+                document.body.style.opacity = '1';
+                
+                // Show success message
+                const languageName = document.querySelector(`option[value="${langCode}"]`)?.textContent || langCode;
+                console.log(`Patient reviews language changed to: ${languageName}`);
+                
+            }, 500);
+        }
+        
+        // Load saved language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage) {
+                const languageSelect = document.getElementById('languageSelect');
+                if (languageSelect) {
+                    languageSelect.value = savedLanguage;
+                    changeLanguage(savedLanguage);
+                }
+            } else {
+                // Default to Arabic
+                const languageSelect = document.getElementById('languageSelect');
+                if (languageSelect) {
+                    languageSelect.value = 'ar';
+                    changeLanguage('ar');
+                }
+            }
+        });
+    </script>
 </body>
 </html>

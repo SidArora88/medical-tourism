@@ -13,7 +13,7 @@ const patientReviews = [
         rating: 5,
         date: "March 2024",
         cost_saved: "$75,000",
-        review: "I came to India from Cairo for my triple bypass surgery after being quoted $120,000 in Germany. The entire experience at Fortis was exceptional. Dr. Trehan and his team were incredibly professional, and the hospital facilities were world-class. I saved over $75,000 and received better care than I could have imagined. The MediTravel team handled everything from visa to accommodation.",
+        review: "I came to India from Cairo for my triple bypass surgery after being quoted $120,000 in Germany. The entire experience at Fortis was exceptional. Dr. Trehan and his team were incredibly professional, and the hospital facilities were world-class. I saved over $75,000 and received better care than I could have imagined. The Afiya India team handled everything from visa to accommodation.",
         avatar: "images/patients/ahmed-hassan.jpg",
         verified: true
     },
@@ -47,7 +47,7 @@ const patientReviews = [
         rating: 5,
         date: "January 2024",
         cost_saved: "$180,000",
-        review: "I was diagnosed with end-stage liver disease and needed an urgent transplant. The doctors in Ghana said it would take years. MediTravel arranged everything within 3 weeks. Dr. Rela at Global Hospital performed a living donor transplant with my brother as donor. The surgery was successful, and I'm completely recovered now. They literally saved my life, and I saved $180,000 compared to US costs.",
+        review: "I was diagnosed with end-stage liver disease and needed an urgent transplant. The doctors in Ghana said it would take years. Afiya India arranged everything within 3 weeks. Dr. Rela at Global Hospital performed a living donor transplant with my brother as donor. The surgery was successful, and I'm completely recovered now. They literally saved my life, and I saved $180,000 compared to US costs.",
         avatar: "images/patients/mohammed-osei.jpg",
         verified: true
     },
@@ -64,7 +64,7 @@ const patientReviews = [
         rating: 5,
         date: "December 2023",
         cost_saved: "$85,000",
-        review: "When I was diagnosed with breast cancer, I was devastated. The treatment costs in South Africa were overwhelming. I found MediTravel online and decided to come to India. Dr. Mistry at Tata Memorial Hospital is simply the best. The lumpectomy and reconstruction were perfect. The hospital staff was so compassionate during my treatment. I'm now cancer-free and saved a fortune.",
+        review: "When I was diagnosed with breast cancer, I was devastated. The treatment costs in South Africa were overwhelming. I found Afiya India online and decided to come to India. Dr. Mistry at Tata Memorial Hospital is simply the best. The lumpectomy and reconstruction were perfect. The hospital staff was so compassionate during my treatment. I'm now cancer-free and saved a fortune.",
         avatar: "images/patients/zara-mbeki.jpg",
         verified: true
     },
@@ -98,7 +98,7 @@ const patientReviews = [
         rating: 5,
         date: "October 2023",
         cost_saved: "$15,000",
-        review: "I needed 8 dental implants and was quoted $25,000 in Nigeria. Through MediTravel, I got the same treatment at Apollo White Dental in Mumbai for just $8,000. Dr. Kothari used the latest Swiss implants, and the results are amazing. My smile looks natural and beautiful. The clinic was ultra-modern, and the staff was very professional. I saved money and got superior quality.",
+        review: "I needed 8 dental implants and was quoted $25,000 in Nigeria. Through Afiya India, I got the same treatment at Apollo White Dental in Mumbai for just $8,000. Dr. Kothari used the latest Swiss implants, and the results are amazing. My smile looks natural and beautiful. The clinic was ultra-modern, and the staff was very professional. I saved money and got superior quality.",
         avatar: "images/patients/grace-okafor.jpg",
         verified: true
     },
@@ -132,7 +132,7 @@ const patientReviews = [
         rating: 5,
         date: "August 2023",
         cost_saved: "$65,000",
-        review: "I had rheumatic heart disease and needed mitral valve replacement. There were no facilities in Mali for this surgery. MediTravel arranged everything for me to come to Narayana Health in Bangalore. Dr. Devi Shetty performed the valve replacement perfectly. The care I received was extraordinary. I'm now leading a normal, active life. The cost was incredibly affordable compared to European standards.",
+        review: "I had rheumatic heart disease and needed mitral valve replacement. There were no facilities in Mali for this surgery. Afiya India arranged everything for me to come to Narayana Health in Bangalore. Dr. Devi Shetty performed the valve replacement perfectly. The care I received was extraordinary. I'm now leading a normal, active life. The cost was incredibly affordable compared to European standards.",
         avatar: "images/patients/amina-traore.jpg",
         verified: true
     },

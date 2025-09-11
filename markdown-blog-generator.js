@@ -177,7 +177,7 @@ const blogTemplate = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}} | MediTravel</title>
+    <title>{{TITLE}} | Afiya India</title>
     <meta name="description" content="{{DESCRIPTION}}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -586,7 +586,7 @@ const blogTemplate = `<!DOCTYPE html>
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h1><a href="index.html">MediTravel</a></h1>
+                    <h1><a href="index.html">Afiya India</a></h1>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -660,7 +660,7 @@ const blogTemplate = `<!DOCTYPE html>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MediTravel</h3>
+                    <h3>Afiya India</h3>
                     <p>Your trusted partner for safe, affordable, and high-quality medical care worldwide.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -698,7 +698,7 @@ const blogTemplate = `<!DOCTYPE html>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 MediTravel. All rights reserved.</p>
+                <p>&copy; 2024 Afiya India. All rights reserved.</p>
             </div>
         </div>
     </footer>
