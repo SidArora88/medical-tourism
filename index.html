@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Hospitals and Treatments in India | African & Asian Patients | Afiya India</title>
-    <meta name="description" content="Top medical tourism services in India for African and Southeast Asian patients. World-class cardiac surgery, cancer treatment, and cosmetic procedures at 70% lower costs. JCI-accredited hospitals with international patient support.">
-    <meta name="keywords" content="medical tourism India, cardiac surgery India, cancer treatment India, best hospitals India, medical tourism from Africa, medical tourism Southeast Asia, India healthcare international patients, JCI hospitals India">
+    <title>أفضل المستشفيات والعلاجات في الهند | المرضى الأفارقة والآسيويين | Afiya India</title>
+    <meta name="description" content="خدمات السياحة العلاجية الرائدة في الهند للمرضى الأفارقة وجنوب شرق آسيا. جراحة القلب وعلاج السرطان والإجراءات التجميلية عالمية المستوى بتكلفة أقل بنسبة 70%. مستشفيات معتمدة من JCI مع دعم المرضى الدوليين.">
+    <meta name="keywords" content="السياحة العلاجية الهند، جراحة القلب الهند، علاج السرطان الهند، أفضل المستشفيات الهند، السياحة العلاجية من أفريقيا، السياحة العلاجية جنوب شرق آسيا، الرعاية الصحية الهند المرضى الدوليين، مستشفيات JCI الهند">
     
     <!-- Geo-targeting and Language -->
     <meta name="geo.region" content="IN">
@@ -15,8 +15,8 @@
     <link rel="alternate" hreflang="en" href="https://afiyaindia.com/">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Best Hospitals and Treatments in India | African & Asian Patients">
-    <meta property="og:description" content="World-class medical treatments in India at 70% lower costs. JCI-accredited hospitals specializing in cardiac surgery, cancer treatment, and cosmetic procedures.">
+    <meta property="og:title" content="أفضل المستشفيات والعلاجات في الهند | المرضى الأفارقة والآسيويين">
+    <meta property="og:description" content="علاجات طبية عالمية المستوى في الهند بتكلفة أقل بنسبة 70%. مستشفيات معتمدة من JCI متخصصة في جراحة القلب وعلاج السرطان والإجراءات التجميلية.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://afiyaindia.com/">
     <meta property="og:image" content="https://afiyaindia.com/images/medical-tourism-india.jpg">
@@ -25,8 +25,8 @@
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Best Hospitals and Treatments in India | African & Asian Patients">
-    <meta name="twitter:description" content="World-class medical treatments in India at 70% lower costs. JCI-accredited hospitals with international patient support.">
+    <meta name="twitter:title" content="أفضل المستشفيات والعلاجات في الهند | المرضى الأفارقة والآسيويين">
+    <meta name="twitter:description" content="علاجات طبية عالمية المستوى في الهند بتكلفة أقل بنسبة 70%. مستشفيات معتمدة من JCI مع دعم المرضى الدوليين.">
     <meta name="twitter:image" content="https://afiyaindia.com/images/medical-tourism-india.jpg">
     
     <!-- Canonical URL -->
@@ -844,20 +844,20 @@
                 <div class="contact-form">
                     <form id="consultationForm" action="https://formspree.io/f/xnnbjryd" method="POST">
                         <div class="form-group">
-                            <label for="name" class="visually-hidden">Full Name</label>
+                            <label for="name" class="visually-hidden">الاسم الكامل</label>
                             <input type="text" id="name" name="name" placeholder="الاسم الكامل" required aria-label="أدخل اسمك الكامل">
                         </div>
                         <div class="form-group">
-                            <label for="email" class="visually-hidden">Email Address</label>
+                            <label for="email" class="visually-hidden">عنوان البريد الإلكتروني</label>
                             <input type="email" id="email" name="email" placeholder="عنوان البريد الإلكتروني" required aria-label="أدخل عنوان بريدك الإلكتروني">
                         </div>
                         <div class="form-group">
-                            <label for="phone" class="visually-hidden">Phone Number</label>
+                            <label for="phone" class="visually-hidden">رقم الهاتف</label>
                             <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required aria-label="أدخل رقم هاتفك">
                         </div>
                         <div class="form-group">
-                            <label for="treatment" class="visually-hidden">Treatment Type</label>
-                            <select id="treatment" name="treatment" required aria-label="Select treatment type">
+                            <label for="treatment" class="visually-hidden">نوع العلاج</label>
+                            <select id="treatment" name="treatment" required aria-label="اختر نوع العلاج">
                                 <option value="">اختر نوع العلاج</option>
                                 <option value="cardiology">طب القلب</option>
                                 <option value="oncology">طب الأورام</option>
@@ -869,7 +869,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message" class="visually-hidden">Medical Needs</label>
+                            <label for="message" class="visually-hidden">الاحتياجات الطبية</label>
                             <textarea id="message" name="message" placeholder="أخبرنا عن احتياجاتك الطبية..." rows="4" aria-label="وصف احتياجاتك الطبية"></textarea>
                         </div>
                         <input type="hidden" name="form_source" value="Contact Section">
@@ -1638,13 +1638,14 @@
         // Load saved language on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedLanguage = localStorage.getItem('selectedLanguage');
-            if (savedLanguage) {
+            if (savedLanguage && savedLanguage !== 'ar') {
+                // Only translate if a non-Arabic language was previously saved
                 document.getElementById('languageSelect').value = savedLanguage;
                 changeLanguage(savedLanguage);
             } else {
-                // Default to Arabic
+                // Default to Arabic - no translation needed since content is natively Arabic
                 document.getElementById('languageSelect').value = 'ar';
-                changeLanguage('ar');
+                // Don't call changeLanguage('ar') since content is already in Arabic
             }
         });
     </script>
