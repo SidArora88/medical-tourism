@@ -1143,7 +1143,13 @@
                     'contact-title': 'هل أنت مستعد لبدء رحلتك الطبية؟', 'contact-subtitle': 'احصل على توصيات العلاج المخصصة وتقديرات التكلفة من خبرائنا الطبيين.',
                     'contact-feature1': 'استشارة مجانية مع خبراء طبيين', 'contact-feature2': 'تقديرات تكلفة مفصلة خلال 24 ساعة', 'contact-feature3': 'تخطيط كامل للسفر والإقامة',
                     // Footer
-                    'footer-services': 'الخدمات', 'footer-destinations': 'الوجهات', 'footer-support': 'الدعم'
+                    'footer-services': 'الخدمات', 'footer-destinations': 'الوجهات', 'footer-support': 'الدعم',
+                    'footer-tagline': 'شريكك الموثوق للرعاية الطبية الآمنة وبأسعار معقولة وعالية الجودة في جميع أنحاء العالم.',
+                    'footer-copyright': '© 2024 Afiya India. جميع الحقوق محفوظة.',
+                    // Destinations content
+                    'turkey-title': 'تركيا', 'turkey-desc': 'مشهورة بجراحة التجميل وزراعة الشعر وعلاجات الأسنان بمعايير أوروبية.',
+                    'thailand-title': 'تايلاند', 'thailand-desc': 'وجهة رائدة لعلاجات الصحة وإجراءات الخصوبة وجراحة تغيير الجنس.',
+                    'uae-title': 'الإمارات العربية المتحدة', 'uae-desc': 'مرافق حديثة للجراحات المعقدة وطب الأعصاب والرعاية الطارئة مع وسائل الراحة الفاخرة.'
                 },
                 'bn': {
                     // Navigation
@@ -1567,6 +1573,56 @@
                             section.textContent = translation[footerKeys[index]];
                         }
                     });
+                    
+                    // Update Footer Tagline
+                    const footerTagline = document.querySelector('.footer-section p');
+                    if (footerTagline && translation['footer-tagline']) {
+                        footerTagline.textContent = translation['footer-tagline'];
+                    }
+                    
+                    // Update Footer Copyright
+                    const footerCopyright = document.querySelector('.footer-bottom p');
+                    if (footerCopyright && translation['footer-copyright']) {
+                        footerCopyright.textContent = translation['footer-copyright'];
+                    }
+                    
+                    // Update All Destination Cards
+                    const destinationCards = document.querySelectorAll('.destination-card');
+                    const destinationKeys = ['india', 'turkey', 'thailand', 'uae'];
+                    destinationCards.forEach((card, index) => {
+                        const titleEl = card.querySelector('h3');
+                        const descEl = card.querySelector('p');
+                        const key = destinationKeys[index];
+                        
+                        if (titleEl && translation[key + '-title']) {
+                            titleEl.textContent = translation[key + '-title'];
+                        }
+                        if (descEl && translation[key + '-desc']) {
+                            descEl.textContent = translation[key + '-desc'];
+                        }
+                    });
+                    
+                    // Update Footer Service Links
+                    const footerLinks = document.querySelectorAll('.footer-section ul li a');
+                    if (footerLinks.length > 0 && langCode === 'ar') {
+                        // Services section links
+                        if (footerLinks[0]) footerLinks[0].textContent = 'الاستشارة الطبية';
+                        if (footerLinks[1]) footerLinks[1].textContent = 'تخطيط العلاج';
+                        if (footerLinks[2]) footerLinks[2].textContent = 'تنسيق السفر';
+                        if (footerLinks[3]) footerLinks[3].textContent = 'الدعم بعد الرعاية';
+                        
+                        // Destinations section links
+                        if (footerLinks[4]) footerLinks[4].textContent = 'الهند';
+                        if (footerLinks[5]) footerLinks[5].textContent = 'تركيا';
+                        if (footerLinks[6]) footerLinks[6].textContent = 'تايلاند';
+                        if (footerLinks[7]) footerLinks[7].textContent = 'الإمارات';
+                        
+                        // Support section links
+                        if (footerLinks[8]) footerLinks[8].textContent = 'المدونة';
+                        if (footerLinks[9]) footerLinks[9].textContent = 'تقييمات المرضى';
+                        if (footerLinks[10]) footerLinks[10].textContent = 'اتصل بنا';
+                        if (footerLinks[11]) footerLinks[11].textContent = 'سياسة الخصوصية';
+                    }
                 }
                 
                 // Remove loading indicator
